@@ -4,7 +4,7 @@
 | Main Version | PDF Version |
 | :-: | :-: |
 | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb">Analysis</a> | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf">Analysis</a> |
-| <a href="https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptm">Presentation</a> | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf">Presentation</a> |</td>
+| <a href="https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx">Presentation</a> | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf">Presentation</a> |</td>
     
 </table>
 
