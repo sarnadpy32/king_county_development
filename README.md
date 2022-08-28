@@ -116,7 +116,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;I started by identifying the columns with missing data.
 &ensp;Since there were only 63 entries missing a value in the `view` column, I decided to just drop those entries.
-&ensp;I then used the `MissingIndicator()` function from `sklearn` to create an encoded column to be added to the DataFrame for each of the columns the held missing data.
+&ensp;I then used the `MissingIndicator()` function from `sklearn` to create an encoded column to be added to the DataFrame for each of the columns that held missing data.
 &ensp;I could then fill in the `NaN`'s of those columns with something appropriate so that they wouldn't cause problems during my analysis.
 &ensp;For the `waterfront` column, I then used the `OrdinalEncoder()` from `sklearn` to code and replace the column in a binary format.
 
