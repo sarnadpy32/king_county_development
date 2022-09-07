@@ -1,3 +1,11 @@
+<h1 align='center'><strong><u>King County Development</u></strong></h1>
+<p align="center">
+    <img src="images/kc_dev_logo.png">
+</p>
+<h3 align='center'><strong><em>An Academic Multiple Regression Analysis Project</em></strong></h3>
+<h3 align='center'><strong><em>by <a href="www.linkedin.com/in/devin-sarnataro-0b639b148">Devin Sarnataro</a></em></strong></h3>
+<h4 align='center'>September 7th, 2022</h4>
+
 <table align="center" border="0" width='75%'>
     <td>
         
@@ -7,6 +15,20 @@
 | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx">Presentation</a> | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf">Presentation</a> |</td>
     
 </table>
+
+<h1 align='center'><strong><u>Repository Structure</u></strong></h1>
+
+```
+├── data
+├── images
+├── visuals
+├── Phase 2 - Project - yr_built changed.ipynb
+├── Phase 2 - Project.ipynb
+├── Presentation.pptx
+├── README.md
+├── notebook.pdf
+├── pdf_presentation.pdf
+```
 
 <h1 align='center'><strong><u>Project Overview</u></strong></h1>
 
@@ -77,56 +99,19 @@
 * [Insights and Conclusions](#sect_insights_and_conclusions)
 * [Future Investigations](#sect_fut_invest)
 
-<a id='sect_import'></a>
+<h1 style="color: green;">MAYBE PUT SOMETHING HERE</h1>
 
-<h1 align='center'><strong><u>Importing the Necessary Modules and Functions</u></strong></h1>
+<h1 style="color: green;">MAYBE PUT SOMETHING HERE</h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;I started by importing the modules and functions that I knew I would most likely need.
-&ensp;If I needed to import any others at any point, I would come back here and add them to this cell to keep everything organized.
-&ensp;I also created some output formatters that I commonly use so that I wouldn't have to rewrite them each time.
-
-<a id='sect_expl_data'></a>
-
-<h1 align='center'><strong><u>Exploring the Data</u></strong></h1>
-
-&nbsp;&nbsp;&nbsp;&nbsp;I began my analysis by importing the dataset provided to me by <a href='https://flatironschool.com/'>Flatiron School</a>.
-&ensp;I decided to sort the dataframe by `id`, as it would make identifying any potential duplicates easier.
-&ensp;During my analysis, I also found out that there were 70 different ZIP codes, so I downloaded the free ZIP code database available at <a href='https://www.unitedstateszipcodes.org/zip-code-database/'>this page</a>, to replace the ZIP codes with the appropriate city names.
-&ensp;This reduced the number of categories in the column to 24 and served as a more useful tool for analysis.
-
-<h2 align='center'><strong>Duplicated ID's</strong></h2>
-
-&nbsp;&nbsp;&nbsp;&nbsp;I found out there were sales with duplicate `id`s.
-&ensp;Before I could begin my analysis, I had to determine if these were resales or errors?
-&ensp;I first changed the `date` column to make comparisons easier, and it also allowed me to easily see the period of time covered by the dataset, which was only a single year's worth of sales, specifically from May 2014 to May 2015.
-&ensp;I then isolated all the duplicated `id`s into a single dataframe to investigate my concerns.
-&ensp;After checking, they do seem do be resales and there were therefore no duplicates that needed to be dropped.
+<h1 style="color: green;">MAYBE PUT SOMETHING HERE</h1>
 
 <a id='sect_stake_biz_update'></a>
 
 <h1 align='center'><strong><u>Stakeholder and Business Problem Update</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;As I mentioned in the section above, I discovered that the period of time covered by the dataset was only a single year.
+&nbsp;&nbsp;&nbsp;&nbsp;I discovered that the period of time covered by the dataset was only a single year.
 &ensp;My original idea of analyzing the prices of houses in certain areas over time was therefore not going to work, nor any other analysis of the changing effects of the other features over time.
 &ensp;While my options for a client were still open, I was going to have to perform an analysis of the effect of the features themselves on the prices of houses in the year concerned.
-
-<a id='sect_eda_preproc'></a>
-
-<h1 align='center'><strong><u>EDA and Initial Preprocessing Steps</u></strong></h1>
-
-&nbsp;&nbsp;&nbsp;&nbsp;I started by identifying the columns with missing data.
-&ensp;Since there were only 63 entries missing a value in the `view` column, I decided to just drop those entries.
-&ensp;I then used the `MissingIndicator()` function from `sklearn` to create an encoded column to be added to the DataFrame for each of the columns that held missing data.
-&ensp;I could then fill in the `NaN`'s of those columns with something appropriate so that they wouldn't cause problems during my analysis.
-&ensp;For the `waterfront` column, I then used the `OrdinalEncoder()` from `sklearn` to code and replace the column in a binary format.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I found out later that the `sqft_basement` column also contained a value that was basically equivalent to `NaN`.
-&ensp;I came back here to deal with it in the same section.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I then dropped the `id`, `date`, `lat`, and `long` columns as they were no longer necessary for my analysis.
-&ensp;The `date`, `lat`, and `long` columns were all inappropriate to use as parameters in the model at this point, and the `id` column is inappropriate for linear models in general.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Then I split the data into the target (dependent variable) series and two separate dataframes for the dependent variables, one for the numerical dependent variables, and one for the categorical dependent variables.
 
 <a id='sect_dist_viz'></a>
 
@@ -134,8 +119,8 @@
 
 <h2 align='center'><strong>Price Distribution Visualization</strong></h2>
 
-&nbsp;&nbsp;&nbsp;&nbsp;I first checked the distribution of `price` (the target variable).
-&ensp;Before I created any visualizations, I wrote functions to properly format the ticks of any visualizations and any `pandas` outputs that contained currency information, as well a function to get a lighter version of a simple, prenamed color to use in visualizations as needed.
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;I first checked the distribution of `price` (the target variable).
+&ensp;Before I created any visualizations, I wrote functions to properly format the ticks of any visualizations and any `pandas` outputs that contained currency information, as well a function to get a lighter version of a simple, prenamed color to use in visualizations as needed. -->
 
 <details align='center'>
     <summary><center><strong><center>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualization.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</center></strong></center></summary>
@@ -143,9 +128,6 @@
         <img src='visuals/price_distribution.png'>
     </p>
 </details>     
-
-&nbsp;&nbsp;&nbsp;&nbsp;There seemed to be a heavy skew which was confirmed by the large difference between the 75th quantile and the max value for the series.
-&ensp;I eliminated the outliers so that the performance of the model would be improved.
 
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualization.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -156,7 +138,7 @@
 
 <h2 align='center'><strong>Numerical Features Distribution Visualizations</strong></h2>
 
-&nbsp;&nbsp;&nbsp;&nbsp;I then created visualizations to explore the distributions of the numerical features.
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;I then created visualizations to explore the distributions of the numerical features. -->
 
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -165,26 +147,12 @@
     </p>
 </details>
 
-&nbsp;&nbsp;&nbsp;&nbsp;There seemed to be spikes at `0` for the columns `sqft_lot`, `sqft_basement`, `sqft_lot15`, and `yr_renovated`.
-&ensp;By eliminating the `0`'s in the distribution visualizations for those columns, I determined that the `sqft_basement` and `yr_renvoated` columns were heavily affected by removing the `0`'s, while the other two were not as clearly affected.
-&ensp;It was therefore useful to turn the `sqft_basement` and `yr_renovated` into categorical features by either turning them into binary encoded features, or by splitting them into more complex categorical features.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I initially explored turning them into more complex categorical features, but in the end, I decided to just turn them into binary features.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I decided to turn the `yr_built` column into a categorical feature by splitting the values into groups of every 20 years.
-&ensp;I also knew that I would be sorting some of the `xticklabels()` of the [Categorical Feature Distribution Visualizations](#sub_sect_cat_feat_dist_viz) using dictionaries, as well as making sure the dummy variables were in the correct order when I encoded the categorical features, so I just created one for the `yr_built` column here.
-&ensp;I will address this change again later in my [Insights and Conclusions](#sect_insights_conclusions) section.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I then switched the three  columns I had restructured from the numerical features dataframe to the categorical features dataframe.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I again eliminated any outliers to improve the performance of the model.
-
 <a id='sub_sect_cat_feat_dist_viz'></a>
 
 <h2 align='center'><strong>Categorical Features Distribution Visualizations</strong></h2>
-
+<!-- 
 &nbsp;&nbsp;&nbsp;&nbsp;After the numerical features were taken care of, I checked the distribution of the categorical variables.
-&ensp;These would have to be encoded in an appropriate manner to be used in my model.
+&ensp;These would have to be encoded in an appropriate manner to be used in my model. -->
 
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -192,18 +160,6 @@
         <img src='visuals/categorical_features_distributions.png'>
     </p>
 </details>
-
-&nbsp;&nbsp;&nbsp;&nbsp;I found out later that empty spaces in the values of a column caused problems during my analysis.
-&ensp;Also, if you look at the visualizations above, you can see that the `xticklabels` in the visualizations for the distributions of `grade`, `condition`, `view`, and `yr_built` seem to be out of order.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I therefore figured this would be an appropriate place to eliminate the spaces in the values of the `grade`, `condition`, and `city` columns, as well as creating the sorting dictionaries I previously mentioned for the `grade`, `condition`, and `view` columns so that I could sort their `xticklabels`, as well as their dummy columns.
-
-&nbsp;&nbsp;&nbsp;&nbsp;By analyzing the `value_counts()` for each categorical column, I found that there were some categories with less than 10 entries associated with them.
-&ensp;I thought of these as the outliers of the categorical features, and I dropped them accordingly.
-
-&nbsp;&nbsp;&nbsp;&nbsp;As I mentioned earlier, I found out later that empty spaces in the values of a column would cause problems in my analysis.
-&ensp;This was also the case with `.`'s.
-&ensp;Once they were in `str` format, I could then use the `.replace()` function to replace the `.`'s with `_`'s.
 
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -213,26 +169,6 @@
     </p>
 </details>
 
-<a id='sect_corr'></a>
-
-<h1 align='center'><strong><u>Initial Correlation Examination</u></strong></h1>
-
-&nbsp;&nbsp;&nbsp;&nbsp;The basic point of building a regression model is to find what impact an increase in one predictor, or ***independent*** variable, has on the target, or ***dependent*** variable, holding everything else constant.
-&ensp;Eliminating predictors that are already highly correlated with each other attempts to achieve that goal as closely as possible.
-&ensp;The predictors that are eliminated in this section could not be considered independent and would lead to unreliable statistical measurements.
-
-<h2 align='center'><strong>Removing Highly Correlated Predictors</strong></h2>
-
-&nbsp;&nbsp;&nbsp;&nbsp;Based on my initial correlation examination, I decided to drop the `sqft_above` column from the `kc_nums` dataframe.
-
-<a id='sect_dummies'></a>
-
-<h1 align='center'><strong><u>Dummy Variable Creation</u></strong></h1>
-
-&nbsp;&nbsp;&nbsp;&nbsp;I used the `OneHotEncoder()` on the appropriate columns to create a properly encoded version of `kc_cats`.
-&ensp;I also created a dictionary with the original categorical columns as the keys and the dummy columns that were created from each of them as the values for each key.
-&ensp;Finally, I rearranged the columns of `kc_cats` in a way that I found more logical.
-
 <a id='sect_preproc'></a>
 
 <h1 align='center'><strong><u>Preprocessed DataFrames</u></strong></h1>
@@ -241,10 +177,6 @@
 &ensp;To explore the difference between the sales of residential properties inside Seattle vs. outside Seattle, which predictors were important for each, as well as the difference between the coefficients of the important predictors shared by both, I created a separate preprocessed dataframe for each.
 &ensp;Of course, I also created a preprocessed dataframe for all of King County.
 &ensp;Beyond the intrinsic value of building a model for the entire county, it also had the added benefit of serving as a useful comparison to the results of the separated dataframes.
-
-&nbsp;&nbsp;&nbsp;&nbsp;For each of the preprocessed dataframes, I first removed the dummy columns created from the `city` column.
-&ensp;I did this because I created the entirely separate models to analyze the difference between the prices of sales inside Seattle with those outside Seattle and including them at this point would’ve just added unnecessary noise to my models.
-&ensp;I then split the preprocessed dataframes into their `x` and `y` components and performed one final check to make sure there were no categorical variables present with low frequencies.
 
 <h2 align='center'><strong>All King County Preprocessed DataFrame</strong></h2>
 
@@ -603,47 +535,27 @@
     
 </details>
 
-<h3><strong><code>kc_VIF</code></strong></h3>
+<h3 align="center"><strong><code>kc_VIF</code></strong></h3>
 
-<ul align='left'>
-	<li>High VIF Dropped Columns</li>
-	<ul align='left'>
-		<li><code>grade_7_Average</code>, <code>condition_Average</code></li>
-	</ul>
+| High VIF Dropped Columns |
+| :-: |
+| `grade_7_Average`, `condition_Average` |
 
-</ul>
+| Mid VIF Dropped Columns |
+| :-: |
+| `sqft_living` |
 
-<ul align='left'>
-	<li>Mid VIF Dropped Columns</li>
-	<ul align='left'>
-		<li><code>sqft_living</code></li>
-	</ul>
+<h3 align="center"><strong><code>kc_RFECV</code></strong></h3>
 
-</ul>
+| RFECV Dropped Columns |
+| :-: |
+| `bedrooms`, `condition_Fair` |
 
-<ul align='left'>
-	<li>VIF Elimination Finsihed</li>
-</ul>
+<h3 align="center"><strong><code>kc_pvals</code></strong></h3>
 
-<h3><strong><code>kc_RFECV</code></strong></h3>
-
-<ul align='left'>
-	<li>RFECV Dropped Columns</li>
-	<ul align='left'>
-		<li><code>bedrooms</code>, <code>condition_Fair</code></li>
-	</ul>
-
-</ul>
-
-<ul align='left'>
-	<li>RFECV Finished</li>
-</ul>
-
-<h3><strong><code>kc_pvals</code></strong></h3>
-
-<ul align='left'>
-	<li>High p_value Elimination Finished</li>
-</ul>
+| High p_value Eliminated Columns |
+| :-: |
+| None |
 
 <h3 align='center'><strong><code>kc_fin_model</code></strong></h3>
 
@@ -789,6 +701,9 @@
 
 <h3 align='center'><strong>Comparing <code>kc</code> Models</strong></h3>
 
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+
 |                         |   base   |     full     |  full_VIF  |  full_RFECV  |    fin     |   log   |
 |:-----------------------:|:--------:|:------------:|:----------:|:------------:|:----------:|:-------:|
 |          const          | -7280.35 | 1.85126e+06  | 181853.63  |  184086.86   | 184086.86  | 12.4751 |
@@ -826,6 +741,8 @@
 | yr_built_2000_to_2020_s |    -     |   -244944    | -256734.33 |  -257185.94  | -257185.94 | -0.456  |
 |         r_score         |   0.46   |     0.67     |    0.65    |     0.65     |    0.65    | 0.6452  |
 |       r_adj_score       |   0.46   |     0.67     |    0.65    |     0.65     |    0.65    | 0.6448  |
+    
+</details>
 
 <h3 align='center'><strong><code>kc_log_eq</code></strong></h3>
 
@@ -927,55 +844,23 @@ price = 261735 +
     
 </details>
 
-<h3><strong><code>seattle_VIF</code></strong></h3>
+<h3 align="center"><strong><code>seattle_VIF</code></strong></h3>
 
-<ul align='left'>
-	<li>High VIF Dropped Columns</li>
-	<ul align='left'>
-		<li><code>grade_7_Average</code>, <code>condition_Average</code></li>
-	</ul>
+| High VIF Dropped Columns |
+| :-: |
+| `grade_7_Average`, `condition_Average` |
 
-</ul>
+<h3 align="center"><strong><code>seattle_RFECV</code></strong></h3>
 
-<ul align='left'>
-	<li>VIF Elimination Finsihed</li>
-</ul>
+| RFECV Dropped Columns |
+| :-: |
+| `view_AVERAGE`, `condition_Fair`, `renovated`, `yr_built_1920_to_1940_s` |
 
-<h3><strong><code>seattle_RFECV</code></strong></h3>
+<h3 align="center"><strong><code>seattle_pvals</code></strong></h3>
 
-<ul align='left'>
-	<li>RFECV Dropped Columns</li>
-	<ul align='left'>
-		<li><code>view_AVERAGE</code>, <code>condition_Fair</code>, <code>renovated</code>, <code>yr_built_1920_to_1940_s</code></li>
-	</ul>
-
-</ul>
-
-<ul align='left'>
-	<li>RFECV Finished</li>
-</ul>
-
-<h3><strong><code>seattle_pvals</code></strong></h3>
-
-<ul align='left'>
-	<li>1 - High p-value Column Dropped</li>
-	<ul align='left'>
-		<li><code>view_FAIR</code></li>
-	</ul>
-
-</ul>
-
-<ul align='left'>
-	<li>2 - High p-value Column Dropped</li>
-	<ul align='left'>
-		<li><code>basement</code></li>
-	</ul>
-
-</ul>
-
-<ul align='left'>
-	<li>High p_value Elimination Finished</li>
-</ul>
+| High p_value Eliminated Columns |
+| :-: |
+| `view_FAIR`, `basement` |
 
 <h3 align='center'><strong><code>seattle_fin_model</code></strong></h3>
 
@@ -1113,6 +998,9 @@ price = 261735 +
 
 <h3 align='center'><strong>Comparing <code>seattle</code> Models</strong></h3>
 
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+
 |                         |  base   |   full   |  full_VIF  |  full_RFECV  |    fin     | log     |
 |:-----------------------:|:-------:|:--------:|:----------:|:------------:|:----------:|:--------|
 |          const          | 7148.41 |  491438  | 158847.89  |  155356.89   | 150633.28  | 12.5694 |
@@ -1149,6 +1037,8 @@ price = 261735 +
 | yr_built_2000_to_2020_s |    -    | -202398  | -201521.89 |  -198890.26  | -200151.41 | -0.3417 |
 |         r_score         |  0.49   |   0.75   |    0.75    |     0.75     |    0.75    | 0.6978  |
 |       r_adj_score       |  0.49   |   0.75   |    0.75    |     0.75     |    0.75    | 0.697   |
+    
+</details>
 
 <h3 align='center'><strong><code>seattle_log_eq</code></strong></h3>
 
@@ -1247,55 +1137,27 @@ price = 287626 +
     
 </details>
 
-<h3><strong><code>out_seattle_VIF</code></strong></h3>
+<h3 align="center"><strong><code>out_seattle_VIF</code></strong></h3>
 
-<ul align='left'>
-	<li>High VIF Dropped Columns</li>
-	<ul align='left'>
-		<li><code>grade_7_Average</code>, <code>condition_Average</code>, <code>yr_built_1980_to_2000_s</code></li>
-	</ul>
+| High VIF Dropped Columns |
+| :-: |
+| `grade_7_Average`, `condition_Average`, `yr_built_1980_to_2000_s` |
 
-</ul>
+| Mid VIF Dropped Columns |
+| :-: |
+| `sqft_living` |
+	
+<h3 align="center"><strong><code>out_seattle_RFECV</code></strong></h3>
 
-<ul align='left'>
-	<li>Mid VIF Dropped Columns</li>
-	<ul align='left'>
-		<li><code>sqft_living</code></li>
-	</ul>
+| RFECV Dropped Columns |
+| :-: |
+| None |
 
-</ul>
+<h3 align="center"><strong><code>out_seattle_pvals</code></strong></h3>
 
-<ul align='left'>
-	<li>VIF Elimination Finsihed</li>
-</ul>
-
-<h3><strong><code>out_seattle_RFECV</code></strong></h3>
-
-<ul align='left'>
-	<li>RFECV Finished</li>
-</ul>
-
-<h3><strong><code>out_seattle_pvals</code></strong></h3>
-
-<ul align='left'>
-	<li>1 - High p-value Column Dropped</li>
-	<ul align='left'>
-		<li><code>grade_4_Low</code></li>
-	</ul>
-
-</ul>
-
-<ul align='left'>
-	<li>2 - High p-value Column Dropped</li>
-	<ul align='left'>
-		<li><code>condition_FAIR</code></li>
-	</ul>
-
-</ul>
-
-<ul align='left'>
-	<li>High p_value Elimination Finished</li>
-</ul>
+| High p-value Eliminated Columns |
+| :-: | 
+| `grade_4_Low`, `condition_FAIR` |
 
 <h3 align='center'><strong><code>out_seattle_fin_model</code></strong></h3>
 
@@ -1439,6 +1301,9 @@ price = 287626 +
 
 <h3 align='center'><strong>Comparing <code>out_seattle</code> Models</strong></h3>
 
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+
 |                         |   base    |     full     |  full_VIF  |  full_RFECV  |    fin     | log     |
 |:-----------------------:|:---------:|:------------:|:----------:|:------------:|:----------:|:--------|
 |          const          | -88031.96 | 1.62385e+06  | -71551.43  |  -71551.43   | -72877.59  | 11.9124 |
@@ -1476,6 +1341,8 @@ price = 287626 +
 | yr_built_2000_to_2020_s |     -     |   -67913.1   |  23061.71  |   23061.71   |  23224.04  | 0.0279  |
 |         r_score         |    0.5    |     0.67     |    0.65    |     0.65     |    0.65    | 0.6557  |
 |       r_adj_score       |    0.5    |     0.67     |    0.65    |     0.65     |    0.65    | 0.655   |
+    
+</details>
 
 <h3 align='center'><strong><code>out_seattle_log_eq</code></strong></h3>
 
@@ -1618,7 +1485,12 @@ price = 149110 +
         </ul>
 </ul>
 
-<h2 align='center'><strong>This Jupyter NB's Results</strong></h2>
+<h2 align='center'><strong>Main Analysis Results</strong></h2>
+
+<br>
+
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Results compared in a Table.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <table align="center" width='99%'>
 
@@ -1665,9 +1537,16 @@ price = 149110 +
 </td></tr> 
 </table>
 
+</details>
+
 <a id='sub_sect_other_yr_built_results'></a>
 
-<h2 align='center'><strong><code>yr_built</code> Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>other Jupyter NB</a></strong></h2>
+<h2 align='center'><strong><code>yr_built</code> Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
+
+<br>
+
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the `yr_built` Results from the Secondary Analysis.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <table align="center" width='99%'>
   <tr valign="middle">
@@ -1683,6 +1562,8 @@ price = 149110 +
   </tr>
 </table>
 
+</details>
+
 <h2 align='center'><strong>Visualizations of the Coefficients of the Three Log Models</strong></h2>
 
 <img src='visuals/presentation_pic_1.png'>
@@ -1692,7 +1573,7 @@ price = 149110 +
 <img src='visuals/presentation_pic_5.png'>
 <img src='visuals/presentation_pic_6.png'>
 
-<h2 align='center'><strong><code>yr_built</code> Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>other Jupyter NB</a></strong></h2>
+<h2 align='center'><strong><code>yr_built</code> Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
     
 <img src='visuals/presentation_pic_6_special.png'>
 
