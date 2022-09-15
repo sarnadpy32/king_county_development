@@ -4,7 +4,7 @@
 </p>
 <h3 align='center'><strong><em>An Academic Multiple Regression Analysis Project</em></strong></h3>
 <h3 align='center'><strong><em>by <a href="www.linkedin.com/in/devin-sarnataro-0b639b148">Devin Sarnataro</a></em></strong></h3>
-<h4 align='center'>September 7th, 2022</h4>
+<h4 align='center'>September 15th, 2022</h4>
 
 <h1 align='center'><strong><u>Repository Structure</u></strong></h1>
 
