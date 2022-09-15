@@ -20,22 +20,16 @@
 
 <h1 align='center'><strong><u>Table of Contents</u></strong></h1>
 
-* [Importing the Necessary Modules and Functions](#sect_import)
+* [Project Overview](#sect_proj_over)
 * [Exploring the Data](#sect_expl_data)
-* [Stakeholder and Business Problem Update](#sect_stake_biz_update)
-* [EDA and Initial Preprocessing Steps](#sect_eda_preproc)
 * [Feature Distribution Visualizations](#sect_dist_viz)
-* [Initial Correlation Examination](#sect_corr)
-* [Dummy Variable Creation](#sect_dummies)
 * [Preprocessed DataFrames](#sect_preproc)
 * [Base Models](#sect_base_models)
 * [Full Models](#sect_full)
-    * [All King County Full Model](#sub_sect_kc)
-    * [Seattle Full Model](#sub_sect_seattle)
-    * [Outside Seattle Full Model](#sub_sect_out_seattle)
-* [Stakeholder and Business Problem Decision](#sect_stake_biz_decision)
 * [Insights and Conclusions](#sect_insights_and_conclusions)
 * [Future Investigations](#sect_fut_invest)
+
+<a id='sect_proj_over'></a>
 
 <h1 align='center'><strong><u>Project Overview</u></strong></h1>
 
@@ -87,6 +81,8 @@
 </p>
     
 </details>
+
+<a id='sect_expl_data'></a>
 
 <h1 align="center"><u>Exploring the Data</u></h1>
 
@@ -1687,8 +1683,3 @@ price = 149110 +
 <p align='center'>
     <img src='images/rd_dev_video_still.png'>
 </p>
-
-
-```python
-
-```
