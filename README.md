@@ -6,44 +6,47 @@
 <h3 align='center'><strong><em>by <a href="www.linkedin.com/in/devin-sarnataro-0b639b148">Devin Sarnataro</a></em></strong></h3>
 <h4 align='center'>September 7th, 2022</h4>
 
-<table align="center" border="0" width='75%'>
-    <td>
-        
-| Main Version | PDF Version |
-| :-: | :-: |
-| <a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb">Analysis</a> | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf">Analysis</a> |
-| <a href="https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx">Presentation</a> | <a href="https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf">Presentation</a> |</td>
-    
-</table>
-
 <h1 align='center'><strong><u>Repository Structure</u></strong></h1>
 
-```
-├── data
-├── images
-├── visuals
-├── Phase 2 - Project - yr_built changed.ipynb
-├── Phase 2 - Project.ipynb
-├── Presentation.pptx
-├── README.md
-├── notebook.pdf
-├── pdf_presentation.pdf
-```
+- <a href='https://github.com/sarnadpy32/king_county_development/tree/master/data'>data</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/tree/master/images'>images</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/tree/master/visuals'>visuals</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Phase 2 - Project - yr_built changed.ipynb</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb'>Phase 2 - Project.ipynb</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx'>Presentation.pptx</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/README.md'>README.md</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf'>notebook.pdf</a>
+- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf'>pdf_presentation.pdf</a>
+
+<h1 align='center'><strong><u>Table of Contents</u></strong></h1>
+
+* [Importing the Necessary Modules and Functions](#sect_import)
+* [Exploring the Data](#sect_expl_data)
+* [Stakeholder and Business Problem Update](#sect_stake_biz_update)
+* [EDA and Initial Preprocessing Steps](#sect_eda_preproc)
+* [Feature Distribution Visualizations](#sect_dist_viz)
+* [Initial Correlation Examination](#sect_corr)
+* [Dummy Variable Creation](#sect_dummies)
+* [Preprocessed DataFrames](#sect_preproc)
+* [Base Models](#sect_base_models)
+* [Full Models](#sect_full)
+    * [All King County Full Model](#sub_sect_kc)
+    * [Seattle Full Model](#sub_sect_seattle)
+    * [Outside Seattle Full Model](#sub_sect_out_seattle)
+* [Stakeholder and Business Problem Decision](#sect_stake_biz_decision)
+* [Insights and Conclusions](#sect_insights_and_conclusions)
+* [Future Investigations](#sect_fut_invest)
 
 <h1 align='center'><strong><u>Project Overview</u></strong></h1>
 
 &nbsp;&nbsp;&nbsp;&nbsp;For this project, <a href='https://flatironschool.com/'>Flatiron School</a> provided me with a dataset of residential property sales in King County, Washington.
-&ensp;We were instructed to create a hypothetical stakeholder, or client, and business problem, in contrast to the first project in which we were provided with both.
-&ensp;For students who were struggling to define a stakeholder, they recommended a real estate agency that assists homeowners in selling their homes, with the specific business problem of providing the agency with the analysis necessary to tell their clients whether renovations really do increase the value of a house and if so, by how much.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Based on the project description, and prior to any exploration of the dataset, I already had real estate agency in mind as a client, but I didn’t want to limit myself before I began my analysis.
-&ensp;My initial thoughts were that areas with rapidly increasing home prices would be useful to a real estate agency, while areas with homes prices that were stagnant, or were perhaps even decreasing, would be useful to a state government agency, or maybe even some sort of charitable organization, as areas that may be in need of economic development or support.
-&ensp;Even if I did end up going with a real estate agency, I was hoping to provide my hypothetical client with insights concerning other possible revelations that could be attained through a thorough analysis of the data.
-&ensp;So, I began my analysis without identifying a client or business problem, with the purpose of seeing what was possible first.
+&ensp;We were instructed to create a hypothetical stakeholder, or client, as well as design a business problem that could be addressed with a multiple regression analysis.
+&ensp;I created a real estate development company called King County Development.
+&ensp;For the specific business problem, I chose to provide the real estate developer with key insights into which property features were the most relevant in predicting the sales price, and how much those features affected the sales price.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Along with the dataset, Flatiron also provided me with a `.md` <a href="https://github.com/sarnadpy32/king_county_development/blob/master/data/column_names.md">file with the column names and a brief description of each column</a>.
 &ensp;However, two of the columns, `condition` and `grade`, required me to go to a <a href='https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r'>glossary of terms</a> on the King County Assessor’s website to see what the entities within the columns specifically meant, which can be seen in <a href="https://github.com/sarnadpy32/king_county_development/blob/master/data/column_names_and_descriptions.md">this version of the file</a>.
-&ensp;I've also included the columns and their descriptions below if you click on the collapsible section.
+&ensp;I've included the columns and their descriptions below if you click on the collapsible section.
 
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Column Names and Descriptions.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -75,111 +78,110 @@
 </details>
 
 &nbsp;&nbsp;&nbsp;&nbsp;I also used the opportunity to explore the site a little, and by doing so I was able to obtain a map of the county from the county government's <a href="https://gismaps.kingcounty.gov/iMap/">iMap</a> feature.
+<br><br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see a Map of King County.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <p align="center">
     <img src="images/king_county_imap.svg">
 </p>
+    
+</details>
 
-<h1 align='center'><strong><u>Table of Contents</u></strong></h1>
+<h1 align="center"><u>Exploring the Data</u></h1>
 
-* [Importing the Necessary Modules and Functions](#sect_import)
-* [Exploring the Data](#sect_expl_data)
-* [Stakeholder and Business Problem Update](#sect_stake_biz_update)
-* [EDA and Initial Preprocessing Steps](#sect_eda_preproc)
-* [Feature Distribution Visualizations](#sect_dist_viz)
-* [Initial Correlation Examination](#sect_corr)
-* [Dummy Variable Creation](#sect_dummies)
-* [Preprocessed DataFrames](#sect_preproc)
-* [Base Models](#sect_base_models)
-* [Full Models](#sect_full)
-    * [All King County Full Model](#sub_sect_kc)
-    * [Seattle Full Model](#sub_sect_seattle)
-    * [Outside Seattle Full Model](#sub_sect_out_seattle)
-* [Stakeholder and Business Problem Decision](#sect_stake_biz_decision)
-* [Insights and Conclusions](#sect_insights_and_conclusions)
-* [Future Investigations](#sect_fut_invest)
+&nbsp;&nbsp;&nbsp;&nbsp;I began my analysis by importing the dataset provided to me by <a href='https://flatironschool.com/'>Flatiron School</a>.
+&ensp;I decided to sort the dataframe by `id`, as it would make identifying any potential duplicates easier.
+&ensp;During my analysis, I also found out that there were 70 different ZIP codes, so I downloaded the free ZIP code database available at <a href='https://www.unitedstateszipcodes.org/zip-code-database/'>this page</a>, to replace the ZIP codes with the appropriate city names.
+&ensp;This reduced the number of categories in the column to 24 and served as a more useful tool for analysis.
 
-<h1 style="color: green;">MAYBE PUT SOMETHING HERE</h1>
-
-<h1 style="color: green;">MAYBE PUT SOMETHING HERE</h1>
-
-<h1 style="color: green;">MAYBE PUT SOMETHING HERE</h1>
-
-<a id='sect_stake_biz_update'></a>
-
-<h1 align='center'><strong><u>Stakeholder and Business Problem Update</u></strong></h1>
-
-&nbsp;&nbsp;&nbsp;&nbsp;I discovered that the period of time covered by the dataset was only a single year.
-&ensp;My original idea of analyzing the prices of houses in certain areas over time was therefore not going to work, nor any other analysis of the changing effects of the other features over time.
-&ensp;While my options for a client were still open, I was going to have to perform an analysis of the effect of the features themselves on the prices of houses in the year concerned.
+&nbsp;&nbsp;&nbsp;&nbsp;After checking to make sure there were no duplicates, I handled entries with missing data with the appropriate encoders from `sklearn`, and dropped the columns that served no purpose in my analysis.
+&ensp;I then split the data into the target (dependent variable) series and two separate dataframes for the independent variables, one for the numerical independent variables, and one for the categorical independent variables.
 
 <a id='sect_dist_viz'></a>
 
 <h1 align='center'><strong><u>Feature Distribution Visualizations</u></strong></h1>
 
-<h2 align='center'><strong>Price Distribution Visualization</strong></h2>
+&nbsp;&nbsp;&nbsp;&nbsp;I created distribution visualizations to explore each of the features.
+&ensp;I used the visualizations, as well as the `describe` and `value_counts` functions, to identify and eliminate outliers, and to restructure features if necessary.
+&ensp;The only visualization that I will specifically discuss in this summary is the one I created for the `City` feature, as it is crucial to understanding my analysis.
+&ensp;As you can see, there were almost 9,000 residential property sales in Seattle alone, much more than any other single city.
+&ensp;I therefore decided it would be highly useful to create three separate models, one for all of King County, one for inside of Seattle, and one for outside of Seattle, and then compare the results.
 
+<br>
+<p align='center'>
+    <img src='visuals/city_distribution.png'>
+</p>
+<br>
+<details align='center'>
+    <summary><center><strong><center>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the other Visualizations I created.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</center></strong></center></summary>
+
+<h2 align='center'><strong>Price Distribution Visualization</strong></h2>
+<br>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;I first checked the distribution of `price` (the target variable).
 &ensp;Before I created any visualizations, I wrote functions to properly format the ticks of any visualizations and any `pandas` outputs that contained currency information, as well a function to get a lighter version of a simple, prenamed color to use in visualizations as needed. -->
-
+<!-- <br> -->
 <details align='center'>
     <summary><center><strong><center>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualization.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</center></strong></center></summary>
     <p align='center'>
         <img src='visuals/price_distribution.png'>
     </p>
-</details>     
-
+</details>    
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualization.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
         <img src='visuals/price_distribution_2.png'>
     </p>
-</details> 
-
+</details>
+<br>
 <h2 align='center'><strong>Numerical Features Distribution Visualizations</strong></h2>
-
+<br>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;I then created visualizations to explore the distributions of the numerical features. -->
-
+<!-- <br> -->
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
         <img src='visuals/numeric_features_distributions.png'>
     </p>
 </details>
-
+<br>
 <a id='sub_sect_cat_feat_dist_viz'></a>
-
 <h2 align='center'><strong>Categorical Features Distribution Visualizations</strong></h2>
 <!-- 
 &nbsp;&nbsp;&nbsp;&nbsp;After the numerical features were taken care of, I checked the distribution of the categorical variables.
 &ensp;These would have to be encoded in an appropriate manner to be used in my model. -->
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
         <img src='visuals/categorical_features_distributions.png'>
     </p>
 </details>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
         <img src='visuals/categorical_features_distributions_2.png'>
-        <img src='visuals/city_distribution.png'>
     </p>
+</details>
+    
 </details>
 
 <a id='sect_preproc'></a>
 
 <h1 align='center'><strong><u>Preprocessed DataFrames</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;The last visualization that I created shows that there were significantly more entries within the city of Seattle compared to the rest of the cities.
-&ensp;To explore the difference between the sales of residential properties inside Seattle vs. outside Seattle, which predictors were important for each, as well as the difference between the coefficients of the important predictors shared by both, I created a separate preprocessed dataframe for each.
-&ensp;Of course, I also created a preprocessed dataframe for all of King County.
-&ensp;Beyond the intrinsic value of building a model for the entire county, it also had the added benefit of serving as a useful comparison to the results of the separated dataframes.
+&nbsp;&nbsp;&nbsp;&nbsp;After removing the `sqft_above` column because it was highly correlated with the `sqft_living` column, the numerical features were ready, so I turned my attention to the categorical features.
+&ensp;I used the `OneHotEncoder()` on the appropriate columns to create a properly encoded version of `kc_cats`.
+&ensp;I then recombined the numerical and categorical features into a full preprocessed dataframe for all of King County, which I split into preprocessed dataframes for inside of Seattle and outside of Seattle.
+&ensp;Then I split all three preprocessed dataframes into their `X` and `y` components, which you can view by clicking on the collapsible sections below.
+
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Preprocessed DataFrame for each of the Three Models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <h2 align='center'><strong>All King County Preprocessed DataFrame</strong></h2>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the All King County Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -236,8 +238,9 @@
     
 </details>
 
-<h2 align='center'><strong>Seattle Preprocessed DataFrame</strong></h2>
 
+<h2 align='center'><strong>Seattle Preprocessed DataFrame</strong></h2>
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Seattle Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -286,7 +289,7 @@
 </details>
 
 <h2 align='center'><strong>Outside Seattle Preprocessed DataFrame</strong></h2>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Outside Seattle Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     
@@ -338,17 +341,23 @@
     None
     
 </details>
+    
+</details>
 
 <a id='sect_base_models'></a>
 
 <h1 align='center'><strong><u>Base Models</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;The base models for each preprocessed dataframe are just the relationship between the most correlated feature, `sqft_living`, and the target variable, `price`, which will be used to judge the performance of future models.
-
-<h2 align='center'><strong>All King County Base Model</strong></h2>
+&nbsp;&nbsp;&nbsp;&nbsp;The base models for each preprocessed dataframe were simply the relationship between the most correlated feature, `sqft_living`, and the target variable, `price`, which will be used to judge the performance of future models.
 
 <details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.summary()</code> for each of the Three Models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+
+<h2 align='center'><strong>All King County Base Model</strong></h2>
+<br>
+<details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc_base_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    
     
                                 OLS Regression Results                            
     ==============================================================================
@@ -379,9 +388,9 @@
     strong multicollinearity or other numerical problems.
     
 </details>
-
+<br>
 <h2 align='center'><strong>Seattle Base Model</strong></h2>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_base_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -414,9 +423,9 @@
     strong multicollinearity or other numerical problems.
 
 </details>
-
+<br>
 <h2 align='center'><strong>Outside Seattle Base Model</strong></h2>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_base_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     
@@ -449,6 +458,8 @@
     strong multicollinearity or other numerical problems.
 
 </details>
+    
+</details>
 
 <a id='sect_full'></a>
 
@@ -467,12 +478,19 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;I also created simple dataframes with the coefficients, the $r^2$, and the adjusted $r^2$ scores from each model to make any comparisons between the models easier.
 
+&nbsp;&nbsp;&nbsp;&nbsp;If you click on the collapsible sections below, you can see more details on the model iterations I created, as well as the model comparison dataframes and the final equations for each model.
+
 <a id='sub_sect_kc'></a>
 
-<h2 align='center'><strong>All King County Full Model</strong></h2>
-
 <details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc_full_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the details on the model iterations, the model comparison dataframes, and the final equations for the three models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+<h2 align='center'><strong>All King County Models</strong></h2>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the details on the iterations of the <code>kc</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Initial <code>kc_full_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     
                                 OLS Regression Results                            
     ==============================================================================
@@ -535,7 +553,15 @@
     
 </details>
 
-<h3 align="center"><strong><code>kc_VIF</code></strong></h3>
+<h3 align="center"><strong><code>kc_full_model</code> Feature Elimination</strong></h3>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Features Eliminated in  the <code>kc_full_model</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+
+<h4 align="center"><strong><code>kc_VIF</code></strong></h4>
+
+<table align="center" border="0" width='75%'>
+    <td>
 
 | High VIF Dropped Columns |
 | :-: |
@@ -543,22 +569,36 @@
 
 | Mid VIF Dropped Columns |
 | :-: |
-| `sqft_living` |
+| `sqft_living` |</td>
 
-<h3 align="center"><strong><code>kc_RFECV</code></strong></h3>
+</table>
+
+<h4 align="center"><strong><code>kc_RFECV</code></strong></h4>
+
+<table align="center" border="0" width='75%'>
+    <td>
 
 | RFECV Dropped Columns |
 | :-: |
-| `bedrooms`, `condition_Fair` |
+| `bedrooms`, `condition_Fair` |</td>
 
-<h3 align="center"><strong><code>kc_pvals</code></strong></h3>
+</table>
+
+<h4 align="center"><strong><code>kc_pvals</code></strong></h4>
+
+<table align="center" border="0" width='75%'>
+    <td>
 
 | High p_value Eliminated Columns |
 | :-: |
-| None |
+| None |</td>
+
+</table>
+    
+</details>
 
 <h3 align='center'><strong><code>kc_fin_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc_fin_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     
@@ -619,7 +659,7 @@
 </details>
 
 <h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>kc_fin_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
@@ -629,7 +669,7 @@
 </details>
 
 <h3 align='center'><strong><code>kc_log_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc_log_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -690,7 +730,7 @@
 </details>
 
 <h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>kc_log_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
@@ -698,11 +738,13 @@
     </p>
     
 </details>
+    
+</details>
 
 <h3 align='center'><strong>Comparing <code>kc</code> Models</strong></h3>
-
+<br>
 <details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc</code> Model Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 |                         |   base   |     full     |  full_VIF  |  full_RFECV  |    fin     |   log   |
 |:-----------------------:|:--------:|:------------:|:----------:|:------------:|:----------:|:-------:|
@@ -745,6 +787,9 @@
 </details>
 
 <h3 align='center'><strong><code>kc_log_eq</code></strong></h3>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Final Equation for the <code>kc</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 ```
 price = 261735 +
@@ -776,11 +821,15 @@ price = 261735 +
 -49% * yr_built_1980_to_2000_s +
 -45% * yr_built_2000_to_2020_s
 ```
+    
+</details>
 
-<a id='sub_sect_seattle'></a>
 
-<h2 align='center'><strong>Seattle Full Model</strong></h2>
-
+<h2 align='center'><strong>Seattle Models</strong></h2>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see more details on the iterations of the <code>seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_full_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     
@@ -843,27 +892,49 @@ price = 261735 +
     strong multicollinearity or other numerical problems.
     
 </details>
-
+    
+<h3 align="center"><strong><code>seattle_full_model</code> Feature Elimination</strong></h3>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Features Eliminated in  the <code>seattle_full_model</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    
 <h3 align="center"><strong><code>seattle_VIF</code></strong></h3>
 
+<table align="center" border="0" width='75%'>
+    <td>    
+    
 | High VIF Dropped Columns |
 | :-: |
-| `grade_7_Average`, `condition_Average` |
+| `grade_7_Average`, `condition_Average` |</td>
+        
+</table>
 
 <h3 align="center"><strong><code>seattle_RFECV</code></strong></h3>
 
+<table align="center" border="0" width='75%'>
+    <td>    
+    
 | RFECV Dropped Columns |
 | :-: |
-| `view_AVERAGE`, `condition_Fair`, `renovated`, `yr_built_1920_to_1940_s` |
+| `view_AVERAGE`, `condition_Fair`, `renovated`, `yr_built_1920_to_1940_s` |</td>
+        
+</table>
 
 <h3 align="center"><strong><code>seattle_pvals</code></strong></h3>
 
+<table align="center" border="0" width='75%'>
+    <td>    
+    
 | High p_value Eliminated Columns |
 | :-: |
-| `view_FAIR`, `basement` |
-
+| `view_FAIR`, `basement` |</td>
+    
+</table>
+    
+</details>
+    
 <h3 align='center'><strong><code>seattle_fin_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_fin_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -920,7 +991,7 @@ price = 261735 +
 </details>
 
 <h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>seattle_fin_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
@@ -930,7 +1001,7 @@ price = 261735 +
 </details>
 
 <h3 align='center'><strong><code>seattle_log_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_log_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     
@@ -987,7 +1058,7 @@ price = 261735 +
 </details>
 
 <h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>seattle_log_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
@@ -995,11 +1066,13 @@ price = 261735 +
     </p>
     
 </details>
+    
+</details>
 
 <h3 align='center'><strong>Comparing <code>seattle</code> Models</strong></h3>
-
+<br>
 <details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle</code> Model Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 |                         |  base   |   full   |  full_VIF  |  full_RFECV  |    fin     | log     |
 |:-----------------------:|:-------:|:--------:|:----------:|:------------:|:----------:|:--------|
@@ -1041,6 +1114,9 @@ price = 261735 +
 </details>
 
 <h3 align='center'><strong><code>seattle_log_eq</code></strong></h3>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Final Equation for the <code>seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 ```
 price = 287626 +
@@ -1068,11 +1144,17 @@ price = 287626 +
 -30% * yr_built_1980_to_2000_s +
 -34% * yr_built_2000_to_2020_s
 ```
+    
+</details>
+      
 
 <a id='sub_sect_out_seattle'></a>
 
-<h2 align='center'><strong>Outside Seattle Full Model</strong></h2>
-
+<h2 align='center'><strong>Outside Seattle Models</strong></h2>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see more details on the iterations of the <code>out_seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_full_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     
@@ -1136,8 +1218,16 @@ price = 287626 +
     strong multicollinearity or other numerical problems.
     
 </details>
+    
+<h3 align="center"><strong><code>out_seattle_full_model</code> Feature Elimination</strong></h3>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Features Eliminated in  the <code>out_seattle_full_model</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <h3 align="center"><strong><code>out_seattle_VIF</code></strong></h3>
+
+<table align="center" border="0" width='75%'>
+    <td>
 
 | High VIF Dropped Columns |
 | :-: |
@@ -1145,22 +1235,36 @@ price = 287626 +
 
 | Mid VIF Dropped Columns |
 | :-: |
-| `sqft_living` |
+| `sqft_living` |</td>
+
+</table>
 	
 <h3 align="center"><strong><code>out_seattle_RFECV</code></strong></h3>
 
+<table align="center" border="0" width='75%'>
+    <td>
+
 | RFECV Dropped Columns |
 | :-: |
-| None |
+| None |</td>
+
+</table>
 
 <h3 align="center"><strong><code>out_seattle_pvals</code></strong></h3>
 
+<table align="center" border="0" width='75%'>
+    <td>
+
 | High p-value Eliminated Columns |
 | :-: | 
-| `grade_4_Low`, `condition_FAIR` |
+| `grade_4_Low`, `condition_FAIR` |</td>
 
+</table>
+    
+</details>
+    
 <h3 align='center'><strong><code>out_seattle_fin_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_fin_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -1218,9 +1322,9 @@ price = 287626 +
     strong multicollinearity or other numerical problems.
     
 </details>
-
+    
 <h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>out_seattle_fin_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
@@ -1228,9 +1332,9 @@ price = 287626 +
     </p>
     
 </details>
-
+    
 <h3 align='center'><strong><code>out_seattle_log_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_log_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -1288,9 +1392,9 @@ price = 287626 +
     strong multicollinearity or other numerical problems.
     
 </details>
-
+    
 <h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>out_seattle_log_model</code></strong></h3>
-
+<br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
     <p align='center'>
@@ -1298,11 +1402,13 @@ price = 287626 +
     </p>
     
 </details>
+    
+</details>    
 
 <h3 align='center'><strong>Comparing <code>out_seattle</code> Models</strong></h3>
-
+<br>
 <details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle</code> Model Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 |                         |   base    |     full     |  full_VIF  |  full_RFECV  |    fin     | log     |
 |:-----------------------:|:---------:|:------------:|:----------:|:------------:|:----------:|:--------|
@@ -1345,6 +1451,9 @@ price = 287626 +
 </details>
 
 <h3 align='center'><strong><code>out_seattle_log_eq</code></strong></h3>
+<br>
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Final Equation for the <code>out_seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 ```
 price = 149110 +
@@ -1375,25 +1484,10 @@ price = 149110 +
 8% * yr_built_1960_to_1980_s +
 2% * yr_built_2000_to_2020_s
 ```
-
-<a id='sect_stake_biz_decision'></a>
-
-<h1 align='center'><strong><u>Stakeholder and Business Problem Decision</u></strong></h1>
-
-&nbsp;&nbsp;&nbsp;&nbsp;Based on the results obtained through the three models I created, I chose a real estate developer as the stakeholder for this project.
-&ensp;While I could have chosen a real estate agency, I felt a developer could make better use of the insights I gained through my analysis.
-&ensp;Real estate agencies would be limited by the desires of their client and the physical location of the client’s property.
-&ensp;Developers have more freedom in their decision making, both in terms what changes to make to the properties they acquire, and what properties to acquire in the first place.
-&ensp;They may ultimately rely on investors to acquire the property, but they will need an analysis like this, to convince those investors of a property’s / design’s value.
-&ensp;A real estate developer could also take on clients simply wanting renovations, or even remodeling services.
-&ensp;My analysis would just be a step in a process, of course, which I will discuss more in the [Future Investigations](#sect_fut_invest) section.
-&ensp;I named my hypothetical client King County Development.
-
-<p align='center'>
-    <img src='images/kc_dev_logo.png'>
-</p>
-
-&nbsp;&nbsp;&nbsp;&nbsp;For the specific business problem, I chose to provide the real estate developer with key insights into which property features were the most relevant in predicting the sales price, and how much the sales price would be affected by either a one-unit increase in those predictors, or if a property were to have certain categorical features.
+    
+</details>
+    
+</details>
 
 <a id='sect_insights_and_conclusions'></a>
 
@@ -1485,7 +1579,7 @@ price = 149110 +
         </ul>
 </ul>
 
-<h2 align='center'><strong>Main Analysis Results</strong></h2>
+<h2 align='center'><strong>Results from the Primary Analysis</strong></h2>
 
 <br>
 
@@ -1573,7 +1667,7 @@ price = 149110 +
 <img src='visuals/presentation_pic_5.png'>
 <img src='visuals/presentation_pic_6.png'>
 
-<h2 align='center'><strong><code>yr_built</code> Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
+<h2 align='center'><strong><code>yr_built</code> Coefficient Visualizations from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
     
 <img src='visuals/presentation_pic_6_special.png'>
 
@@ -1583,7 +1677,7 @@ price = 149110 +
 
 &nbsp;&nbsp;&nbsp;&nbsp;Besides the picture databases I mentioned regarding the `grade`, `view`, and `condition` features, there is a lot more work that King County Development will need to perform if they want to be profitable, efficient in their spending, and if they want to provide the highest quality services to their clients and / or investors.
 &ensp;There is more valuable information that can no doubt be gleaned from the dataset that was provided to me for this project, including testing interactions and / or building polynomial regression models, but the dataset only covered one year’s worth of sales, so any further investigation would still be limited.
-&ensp;A much larger dataset, possibly with even more predictors to build models with, can undoubtedly be <a href='https://kingcountyexec.govqa.us/WEBAPP/_rs/'>obtained</a>.
+&ensp;A much larger dataset, possibly with even more predictors to build models with, as well as data on commercial property sales as well, can undoubtedly be <a href='https://kingcountyexec.govqa.us/WEBAPP/_rs/'>obtained</a>.
 &ensp;At that point there should be enough data to build separate models for each city in King County, and to also analyze the various ZIP codes within each city.
 &ensp;They should then develop maps of each city and / or ZIP code, separated with the appropriate zoning laws, to see what is even possible in every inch of King County.
 &ensp;Areas of high potential should be identified, and the owners of any potentially lucrative properties should be approached to gauge their interest in either their property being acquired, or if they are at least interested in any renovation or remodeling services.
@@ -1593,3 +1687,8 @@ price = 149110 +
 <p align='center'>
     <img src='images/rd_dev_video_still.png'>
 </p>
+
+
+```python
+
+```
