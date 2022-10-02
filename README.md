@@ -6,29 +6,9 @@
 <h3 align='center'><strong><em>by <a href="www.linkedin.com/in/devin-sarnataro-0b639b148">Devin Sarnataro</a></em></strong></h3>
 <h4 align='center'>September 15th, 2022</h4>
 
-<h1 align='center'><strong><u>Repository Structure</u></strong></h1>
-
-- <a href='https://github.com/sarnadpy32/king_county_development/tree/master/data'>data</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/tree/master/images'>images</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/tree/master/visuals'>visuals</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Phase 2 - Project - yr_built changed.ipynb</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb'>Phase 2 - Project.ipynb</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx'>Presentation.pptx</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/README.md'>README.md</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf'>notebook.pdf</a>
-- <a href='https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf'>pdf_presentation.pdf</a>
-
-<h1 align='center'><strong><u>Table of Contents</u></strong></h1>
-
-* [Project Overview](#sect_proj_over)
-* [Exploring the Data](#sect_expl_data)
-* [Feature Distribution Visualizations](#sect_dist_viz)
-* [Preprocessed DataFrames](#sect_preproc)
-* [Base Models](#sect_base_models)
-* [Full Models](#sect_full)
-* [Insights and Conclusions](#sect_insights_and_conclusions)
-* [Future Investigations](#sect_fut_invest)
-
+| <h1 align='center'><center><strong><u>Repository Structure</u></strong></center></h1> | <h1 align='center'><center><strong><u>Table of Contents</u></strong></center></h1> |
+| :- | :- |
+|   <ul><li>[data](#https://github.com/sarnadpy32/king_county_development/tree/master/data)</li><li>[images](#https://github.com/sarnadpy32/king_county_development/tree/master/images)</li><li>[visuals](#https://github.com/sarnadpy32/king_county_development/tree/master/visuals)</li><li>[Phase 2 - Project - yr_built changed.ipynb](#https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb)</li><li>[Phase 2 - Project.ipynb](#https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb)</li><li>[Presentation.pptx](#https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx)</li><li>[README.md](#https://github.com/sarnadpy32/king_county_development/blob/master/README.md)</li><li>[notebook.pdf](#https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf)</li><li>[pdf_presentation.pdf](#https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf)</li></ul> | <ul><li>[Project Overview](#sect_proj_over)</li><li>[Stakeholder & Business Problem](#sect_bus_under)</li><li>[Understanding & Preparing the Data](#sect_data_under)</li><ul><li>[Initial Data Exploration](#sect_expl_data)</li><li>[Feature Distribution Visualizations](#sect_dist_viz)</li><li>[Preprocessed DataFrames](#sect_preproc)</li></ul><li>[Model Iterations](#sect_model_iter)</li><li>[Insights and Conclusions](#sect_insights_and_conclusions)</li><li>[Future Investigations](#sect_fut_invest)</li> |                               
 <a id='sect_proj_over'></a>
 
 <h1 align='center'><strong><u>Project Overview</u></strong></h1>
@@ -36,10 +16,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;For this project, <a href='https://flatironschool.com/'>Flatiron School</a> provided me with a dataset of residential property sales in King County, Washington.
 &ensp;We were instructed to create a hypothetical stakeholder, or client, as well as design a business problem that could be addressed with a multiple regression analysis.
 &ensp;I created a real estate development company called King County Development.
-&ensp;For the specific business problem, I chose to provide the real estate developer with key insights into which property features were the most relevant in predicting the sales price, and how much those features affected the sales price.
+&ensp;For the specific business problem, I chose to provide the real estate developer with key insights into which property features were the most relevant in predicting the sales price, and to what extent those features affected the sales price.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Along with the dataset, Flatiron also provided me with a `.md` <a href="https://github.com/sarnadpy32/king_county_development/blob/master/data/column_names.md">file with the column names and a brief description of each column</a>.
-&ensp;However, two of the columns, `condition` and `grade`, required me to go to a <a href='https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r'>glossary of terms</a> on the King County Assessor’s website to see what the entities within the columns specifically meant, which can be seen in <a href="https://github.com/sarnadpy32/king_county_development/blob/master/data/column_names_and_descriptions.md">this version of the file</a>.
 &ensp;I've included the columns and their descriptions below if you click on the collapsible section.
 
 <details align='center'>
@@ -71,7 +50,8 @@
     
 </details>
 
-&nbsp;&nbsp;&nbsp;&nbsp;I also used the opportunity to explore the site a little, and by doing so I was able to obtain a map of the county from the county government's <a href="https://gismaps.kingcounty.gov/iMap/">iMap</a> feature.
+&nbsp;&nbsp;&nbsp;&nbsp;Two of the columns, `condition` and `grade`, had categories that required me to check the King County Assessor’s <a href='https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r'>glossary of terms</a> to see what the entities within the columns specifically meant.
+&ensp;I also used the opportunity to explore the site a little, and by doing so I was able to obtain a map of the county from the county government's <a href="https://gismaps.kingcounty.gov/iMap/">iMap</a> feature.
 <br><br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see a Map of King County.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -82,21 +62,46 @@
     
 </details>
 
+<a id='sect_bus_under'></a>
+
+<h1 align="center"><b><u>Stakeholder & Business Problem</u></b></h1>
+
+&nbsp;&nbsp;&nbsp;&nbsp;As I previously mentioned, I chose a real estate developer as the stakeholder for this project.
+&ensp;Flatiron had recommended a real estate agency for students having a hard time coming up with a hypothetical stakeholder, so I did have that in mind as I started the project.
+While I could have chosen a real estate agency, I felt a developer could make better use of the insights I gained through my analysis.  
+
+&nbsp;&nbsp;&nbsp;&nbsp;Real estate agencies would be limited by the desires of their client and the physical location of the client’s property.
+&ensp;Developers have more freedom in their decision making, both in terms what changes to make to the properties they acquire, and what properties to acquire in the first place.
+&ensp;They may ultimately rely on investors to acquire the property, but they will need an analysis like this, to convince those investors of the potential value of a property or a specific design.
+&ensp;A real estate developer could also take on clients simply wanting renovations, or even remodeling services.
+
+&nbsp;&nbsp;&nbsp;&nbsp;For a potential business problem, I chose to identify the features that had the most significant impact on, and were the most statistically relevant to, the sales price of residential properties.
+&ensp;I could then develop specific recommendations based on which features were identified as being statistically significant.
+&ensp;That way I could provide King County Development with recommendations that would help them to:
+-	Be profitable
+-	Be efficient in their spending
+-	Provide the highest quality services to their clients and / or investors
+
+
+<a id='sect_data_under'></a>
+
+<h1 align="center"><u>Understanding & Preparing the Data</u></h1>
+
 <a id='sect_expl_data'></a>
 
-<h1 align="center"><u>Exploring the Data</u></h1>
+<h2 align="center">Initial Data Exploration</h2>
 
 &nbsp;&nbsp;&nbsp;&nbsp;I began my analysis by importing the dataset provided to me by <a href='https://flatironschool.com/'>Flatiron School</a>.
 &ensp;I decided to sort the dataframe by `id`, as it would make identifying any potential duplicates easier.
 &ensp;During my analysis, I also found out that there were 70 different ZIP codes, so I downloaded the free ZIP code database available at <a href='https://www.unitedstateszipcodes.org/zip-code-database/'>this page</a>, to replace the ZIP codes with the appropriate city names.
 &ensp;This reduced the number of categories in the column to 24 and served as a more useful tool for analysis.
 
-&nbsp;&nbsp;&nbsp;&nbsp;After checking to make sure there were no duplicates, I handled entries with missing data with the appropriate encoders from `sklearn`, and dropped the columns that served no purpose in my analysis.
+&nbsp;&nbsp;&nbsp;&nbsp;After ensuring there were no duplicates, I handled entries with missing data with the appropriate encoders from `sklearn`, and dropped the columns that served no purpose in my analysis.
 &ensp;I then split the data into the target (dependent variable) series and two separate dataframes for the independent variables, one for the numerical independent variables, and one for the categorical independent variables.
 
 <a id='sect_dist_viz'></a>
 
-<h1 align='center'><strong><u>Feature Distribution Visualizations</u></strong></h1>
+<h2 align='center'><strong>Feature Distribution Visualizations</strong></h2>
 
 &nbsp;&nbsp;&nbsp;&nbsp;I created distribution visualizations to explore each of the features.
 &ensp;I used the visualizations, as well as the `describe` and `value_counts` functions, to identify and eliminate outliers, and to restructure features if necessary.
@@ -112,7 +117,7 @@
 <details align='center'>
     <summary><center><strong><center>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the other Visualizations I created.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</center></strong></center></summary>
 
-<h2 align='center'><strong>Price Distribution Visualization</strong></h2>
+<h3 align='center'><strong>Price Distribution Visualization</strong></h3>
 <br>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;I first checked the distribution of `price` (the target variable).
 &ensp;Before I created any visualizations, I wrote functions to properly format the ticks of any visualizations and any `pandas` outputs that contained currency information, as well a function to get a lighter version of a simple, prenamed color to use in visualizations as needed. -->
@@ -131,7 +136,7 @@
     </p>
 </details>
 <br>
-<h2 align='center'><strong>Numerical Features Distribution Visualizations</strong></h2>
+<h3 align='center'><strong>Numerical Features Distribution Visualizations</strong></h3>
 <br>
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;I then created visualizations to explore the distributions of the numerical features. -->
 <!-- <br> -->
@@ -143,7 +148,7 @@
 </details>
 <br>
 <a id='sub_sect_cat_feat_dist_viz'></a>
-<h2 align='center'><strong>Categorical Features Distribution Visualizations</strong></h2>
+<h3 align='center'><strong>Categorical Features Distribution Visualizations</strong></h3>
 <!-- 
 &nbsp;&nbsp;&nbsp;&nbsp;After the numerical features were taken care of, I checked the distribution of the categorical variables.
 &ensp;These would have to be encoded in an appropriate manner to be used in my model. -->
@@ -166,7 +171,7 @@
 
 <a id='sect_preproc'></a>
 
-<h1 align='center'><strong><u>Preprocessed DataFrames</u></strong></h1>
+<h2 align='center'><strong>Preprocessed DataFrames</strong></h2>
 
 &nbsp;&nbsp;&nbsp;&nbsp;After removing the `sqft_above` column because it was highly correlated with the `sqft_living` column, the numerical features were ready, so I turned my attention to the categorical features.
 &ensp;I used the `OneHotEncoder()` on the appropriate columns to create a properly encoded version of `kc_cats`.
@@ -176,7 +181,7 @@
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Preprocessed DataFrame for each of the Three Models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
-<h2 align='center'><strong>All King County Preprocessed DataFrame</strong></h2>
+<h3 align='center'><strong>All King County Preprocessed DataFrame</strong></h3>
 <br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the All King County Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -235,7 +240,7 @@
 </details>
 
 
-<h2 align='center'><strong>Seattle Preprocessed DataFrame</strong></h2>
+<h3 align='center'><strong>Seattle Preprocessed DataFrame</strong></h3>
 <br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Seattle Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -284,7 +289,7 @@
     
 </details>
 
-<h2 align='center'><strong>Outside Seattle Preprocessed DataFrame</strong></h2>
+<h3 align='center'><strong>Outside Seattle Preprocessed DataFrame</strong></h3>
 <br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Outside Seattle Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
@@ -340,402 +345,35 @@
     
 </details>
 
-<a id='sect_base_models'></a>
+<a id='sect_model_iter'></a>
 
-<h1 align='center'><strong><u>Base Models</u></strong></h1>
+<h1 align='center'><strong><u>Model Iterations</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;The base models for each preprocessed dataframe were simply the relationship between the most correlated feature, `sqft_living`, and the target variable, `price`, which will be used to judge the performance of future models.
-
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.summary()</code> for each of the Three Models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-<h2 align='center'><strong>All King County Base Model</strong></h2>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc_base_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-    
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.464
-    Model:                            OLS   Adj. R-squared:                  0.464
-    Method:                 Least Squares   F-statistic:                 1.837e+04
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:09:09   Log-Likelihood:            -2.9376e+05
-    No. Observations:               21252   AIC:                         5.875e+05
-    Df Residuals:                   21250   BIC:                         5.875e+05
-    Df Model:                           1                                         
-    Covariance Type:            nonrobust                                         
-    ===============================================================================
-                      coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------
-    const       -7280.3547   4323.725     -1.684      0.092   -1.58e+04    1194.473
-    sqft_living   261.4841      1.929    135.554      0.000     257.703     265.265
-    ==============================================================================
-    Omnibus:                    10223.163   Durbin-Watson:                   0.954
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):           109164.634
-    Skew:                           2.054   Prob(JB):                         0.00
-    Kurtosis:                      13.315   Cond. No.                     5.80e+03
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 5.8e+03. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-<br>
-<h2 align='center'><strong>Seattle Base Model</strong></h2>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_base_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.494
-    Model:                            OLS   Adj. R-squared:                  0.494
-    Method:                 Least Squares   F-statistic:                     8607.
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:08:41   Log-Likelihood:            -1.2142e+05
-    No. Observations:                8828   AIC:                         2.429e+05
-    Df Residuals:                    8826   BIC:                         2.429e+05
-    Df Model:                           1                                         
-    Covariance Type:            nonrobust                                         
-    ===============================================================================
-                      coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------
-    const        7148.4104   6168.085      1.159      0.247   -4942.473    1.92e+04
-    sqft_living   293.1728      3.160     92.772      0.000     286.978     299.367
-    ==============================================================================
-    Omnibus:                     3096.976   Durbin-Watson:                   1.071
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):            25190.013
-    Skew:                           1.456   Prob(JB):                         0.00
-    Kurtosis:                      10.746   Cond. No.                     4.97e+03
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 4.97e+03. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-
-</details>
-<br>
-<h2 align='center'><strong>Outside Seattle Base Model</strong></h2>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_base_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.503
-    Model:                            OLS   Adj. R-squared:                  0.503
-    Method:                 Least Squares   F-statistic:                 1.256e+04
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:07:56   Log-Likelihood:            -1.7159e+05
-    No. Observations:               12424   AIC:                         3.432e+05
-    Df Residuals:                   12422   BIC:                         3.432e+05
-    Df Model:                           1                                         
-    Covariance Type:            nonrobust                                         
-    ===============================================================================
-                      coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------
-    const       -8.803e+04   5949.375    -14.797      0.000   -9.97e+04   -7.64e+04
-    sqft_living   274.7931      2.452    112.067      0.000     269.987     279.599
-    ==============================================================================
-    Omnibus:                     6960.148   Durbin-Watson:                   1.037
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):            98513.719
-    Skew:                           2.398   Prob(JB):                         0.00
-    Kurtosis:                      15.934   Cond. No.                     6.68e+03
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 6.68e+03. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-
-</details>
-    
-</details>
-
-<a id='sect_full'></a>
-
-<h1 align='center'><strong><u>Full Models</u></strong></h1>
-
-&nbsp;&nbsp;&nbsp;&nbsp;After getting a baseline for each preprocessed dataframe, I created models for each with all the predictors available.
+&nbsp;&nbsp;&nbsp;&nbsp;With the preprocessed dataframes ready, I could begin building models.
+&ensp;The base models for each preprocessed dataframe were simply the relationship between the target variable, `price`, and the most correlated feature, `sqft_living`, which could then be used to judge the performance of any future model iterations.
+&ensp;After establishing a baseline for each preprocessed dataframe, I created models for each with all the predictors available.
 &ensp;I then began eliminating them to create a final model with only the best predictors.
-&ensp;First, I removed predictors based on their `Variance Inflation Factor (VIF)` scores to eliminate predictors with high levels of multicollinearity missed by my initial correlation examination.
-&ensp;I then used the `RFECV` feature selection method to eliminate all but the best predictors.
-&ensp;Finally, I eliminated all predictors with `pvalues` less than the standard confidence level of `0.05`, to only include the predictors of the highest statistical significance.
+&ensp;I eliminated the predictors using three methods:
+- `Variance Inflation Factor (VIF)`
+    - Predictors with high levels of multicollinearity missed by my initial correlation examination were eliminated.
+- `Recursive Feature Elimination with Cross-Validation (RFECV)`
+    - Using machine learning to eliminate the weakest features.
+- `P-Values`
+    - Any remaining features with `p-values` less than the standard confidence level of `0.05` were eliminated to only include the predictors of the highest statistical significance.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Once the predictors for each model were finalized, I could investigate the `Linearity, Normality, and Homoscedasticity` of the predicted values generated by each model.
-&ensp;For each of the models, a log transformation was required for the model to meet the assumptions required when building multiple linear regression models.
+&ensp;For each of the models, a log transformation of the target variable was necessary for the model to meet the assumptions required when building multiple linear regression models.
 &ensp;I then had a final equation that I could analyze to produce my [Insights and Conclusions](#sect_insights_and_conclusions).
 &ensp;I transformed the coefficients in the equation to make understanding them easier.
-
-&nbsp;&nbsp;&nbsp;&nbsp;I also created simple dataframes with the coefficients, the $r^2$, and the adjusted $r^2$ scores from each model to make any comparisons between the models easier.
-
-&nbsp;&nbsp;&nbsp;&nbsp;If you click on the collapsible sections below, you can see more details on the model iterations I created, as well as the model comparison dataframes and the final equations for each model.
+&ensp;I also created simple dataframes with the coefficients, the $r^2$, and the adjusted $r^2$ scores from each model to make any comparisons between the models easier.
+&ensp;If you click on the collapsible section below, you can see more details on the model iterations I created, as well as the model comparison dataframes and the final equations for each model.
+&ensp;It is 
 
 <a id='sub_sect_kc'></a>
 
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the details on the model iterations, the model comparison dataframes, and the final equations for the three models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 <h2 align='center'><strong>All King County Models</strong></h2>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the details on the iterations of the <code>kc</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Initial <code>kc_full_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.670
-    Model:                            OLS   Adj. R-squared:                  0.669
-    Method:                 Least Squares   F-statistic:                     1344.
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:06:47   Log-Likelihood:            -2.8862e+05
-    No. Observations:               21252   AIC:                         5.773e+05
-    Df Residuals:                   21219   BIC:                         5.776e+05
-    Df Model:                          32                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                    1.851e+06   1.18e+05     15.688      0.000    1.62e+06    2.08e+06
-    sqft_living               101.4147      3.512     28.873      0.000      94.530     108.299
-    sqft_lot                    0.0006      0.072      0.008      0.994      -0.140       0.141
-    sqft_living15              43.9458      3.336     13.174      0.000      37.407      50.484
-    sqft_lot15                 -0.4105      0.098     -4.186      0.000      -0.603      -0.218
-    floors                   3.224e+04   3738.928      8.623      0.000    2.49e+04    3.96e+04
-    bedrooms                -2.056e+04   2004.271    -10.260      0.000   -2.45e+04   -1.66e+04
-    bathrooms                4.365e+04   3263.331     13.376      0.000    3.73e+04       5e+04
-    basement                 2.827e+04   3172.188      8.912      0.000    2.21e+04    3.45e+04
-    grade_4_Low             -1.846e+06   1.23e+05    -15.058      0.000   -2.09e+06   -1.61e+06
-    grade_5_Fair            -1.807e+06   1.12e+05    -16.121      0.000   -2.03e+06   -1.59e+06
-    grade_6_Low_Average     -1.752e+06   1.11e+05    -15.732      0.000   -1.97e+06   -1.53e+06
-    grade_7_Average         -1.666e+06   1.11e+05    -14.991      0.000   -1.88e+06   -1.45e+06
-    grade_8_Good            -1.582e+06   1.11e+05    -14.241      0.000    -1.8e+06   -1.36e+06
-    grade_9_Better           -1.44e+06   1.11e+05    -12.979      0.000   -1.66e+06   -1.22e+06
-    grade_10_Very_Good      -1.248e+06   1.11e+05    -11.251      0.000   -1.47e+06   -1.03e+06
-    grade_11_Excellent      -9.795e+05   1.11e+05     -8.809      0.000    -1.2e+06   -7.62e+05
-    grade_12_Luxury          -7.32e+05   1.14e+05     -6.442      0.000   -9.55e+05   -5.09e+05
-    view_FAIR                1.088e+05   1.09e+04     10.015      0.000    8.75e+04     1.3e+05
-    view_AVERAGE             5.272e+04   6612.669      7.973      0.000    3.98e+04    6.57e+04
-    view_GOOD                1.091e+05   9069.679     12.029      0.000    9.13e+04    1.27e+05
-    view_EXCELLENT           2.774e+05   1.39e+04     19.955      0.000     2.5e+05    3.05e+05
-    waterfront               3.916e+05   2.04e+04     19.180      0.000    3.52e+05    4.32e+05
-    condition_Fair           1.818e+04   4.06e+04      0.448      0.654   -6.14e+04    9.78e+04
-    condition_Average        4.165e+04   3.79e+04      1.099      0.272   -3.26e+04    1.16e+05
-    condition_Good           7.026e+04   3.79e+04      1.854      0.064   -4034.586    1.45e+05
-    condition_Very_Good        1.1e+05   3.81e+04      2.887      0.004    3.53e+04    1.85e+05
-    renovated                4.321e+04   7646.065      5.651      0.000    2.82e+04    5.82e+04
-    yr_built_1920_to_1940_s -2.139e+04   6910.496     -3.095      0.002   -3.49e+04   -7842.427
-    yr_built_1940_to_1960_s -9.031e+04   6047.353    -14.934      0.000   -1.02e+05   -7.85e+04
-    yr_built_1960_to_1980_s  -1.89e+05   6164.464    -30.660      0.000   -2.01e+05   -1.77e+05
-    yr_built_1980_to_2000_s -2.672e+05   6629.456    -40.308      0.000    -2.8e+05   -2.54e+05
-    yr_built_2000_to_2020_s -2.449e+05   7051.885    -34.735      0.000   -2.59e+05   -2.31e+05
-    ==============================================================================
-    Omnibus:                     8300.227   Durbin-Watson:                   1.103
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):            85846.062
-    Skew:                           1.585   Prob(JB):                         0.00
-    Kurtosis:                      12.322   Cond. No.                     1.08e+07
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.08e+07. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-
-<h3 align="center"><strong><code>kc_full_model</code> Feature Elimination</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Features Eliminated in  the <code>kc_full_model</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-<h4 align="center"><strong><code>kc_VIF</code></strong></h4>
-
-<table align="center" border="0" width='75%'>
-    <td>
-
-| High VIF Dropped Columns |
-| :-: |
-| `grade_7_Average`, `condition_Average` |
-
-| Mid VIF Dropped Columns |
-| :-: |
-| `sqft_living` |</td>
-
-</table>
-
-<h4 align="center"><strong><code>kc_RFECV</code></strong></h4>
-
-<table align="center" border="0" width='75%'>
-    <td>
-
-| RFECV Dropped Columns |
-| :-: |
-| `bedrooms`, `condition_Fair` |</td>
-
-</table>
-
-<h4 align="center"><strong><code>kc_pvals</code></strong></h4>
-
-<table align="center" border="0" width='75%'>
-    <td>
-
-| High p_value Eliminated Columns |
-| :-: |
-| None |</td>
-
-</table>
-    
-</details>
-
-<h3 align='center'><strong><code>kc_fin_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc_fin_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.652
-    Model:                            OLS   Adj. R-squared:                  0.651
-    Method:                 Least Squares   F-statistic:                     1471.
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:05:10   Log-Likelihood:            -2.8917e+05
-    No. Observations:               21252   AIC:                         5.784e+05
-    Df Residuals:                   21224   BIC:                         5.786e+05
-    Df Model:                          27                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                    1.841e+05   9730.270     18.919      0.000    1.65e+05    2.03e+05
-    sqft_lot                    0.1581      0.073      2.161      0.031       0.015       0.302
-    sqft_living15              85.0044      3.082     27.581      0.000      78.963      91.045
-    sqft_lot15                 -0.3409      0.101     -3.390      0.001      -0.538      -0.144
-    floors                    3.86e+04   3827.794     10.083      0.000    3.11e+04    4.61e+04
-    bathrooms                7.864e+04   2902.351     27.094      0.000    7.29e+04    8.43e+04
-    basement                 4.692e+04   3186.803     14.724      0.000    4.07e+04    5.32e+04
-    grade_4_Low             -2.052e+05   5.27e+04     -3.894      0.000   -3.08e+05   -1.02e+05
-    grade_5_Fair            -1.582e+05   1.39e+04    -11.374      0.000   -1.85e+05   -1.31e+05
-    grade_6_Low_Average     -9.258e+04   5229.200    -17.704      0.000   -1.03e+05   -8.23e+04
-    grade_8_Good             9.605e+04   3753.322     25.592      0.000    8.87e+04    1.03e+05
-    grade_9_Better           2.677e+05   5595.822     47.841      0.000    2.57e+05    2.79e+05
-    grade_10_Very_Good       4.913e+05   7837.253     62.683      0.000    4.76e+05    5.07e+05
-    grade_11_Excellent       7.962e+05   1.24e+04     64.348      0.000    7.72e+05     8.2e+05
-    grade_12_Luxury          1.073e+06   2.75e+04     38.989      0.000    1.02e+06    1.13e+06
-    view_FAIR                1.122e+05   1.11e+04     10.065      0.000    9.03e+04    1.34e+05
-    view_AVERAGE             5.741e+04   6778.895      8.468      0.000    4.41e+04    7.07e+04
-    view_GOOD                1.124e+05   9297.219     12.089      0.000    9.42e+04    1.31e+05
-    view_EXCELLENT           2.834e+05   1.43e+04     19.874      0.000    2.55e+05    3.11e+05
-    waterfront               4.028e+05   2.09e+04     19.233      0.000    3.62e+05    4.44e+05
-    condition_Good           3.202e+04   3437.045      9.315      0.000    2.53e+04    3.88e+04
-    condition_Very_Good      7.238e+04   5446.952     13.289      0.000    6.17e+04    8.31e+04
-    renovated                5.051e+04   7834.850      6.446      0.000    3.52e+04    6.59e+04
-    yr_built_1920_to_1940_s -2.291e+04   7090.551     -3.230      0.001   -3.68e+04   -9007.548
-    yr_built_1940_to_1960_s -9.106e+04   6202.619    -14.681      0.000   -1.03e+05   -7.89e+04
-    yr_built_1960_to_1980_s  -1.97e+05   6312.858    -31.199      0.000   -2.09e+05   -1.85e+05
-    yr_built_1980_to_2000_s -2.821e+05   6738.724    -41.857      0.000   -2.95e+05   -2.69e+05
-    yr_built_2000_to_2020_s -2.572e+05   7150.000    -35.970      0.000   -2.71e+05   -2.43e+05
-    ==============================================================================
-    Omnibus:                     9317.923   Durbin-Watson:                   1.151
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):           115457.812
-    Skew:                           1.774   Prob(JB):                         0.00
-    Kurtosis:                      13.854   Cond. No.                     1.58e+06
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.58e+06. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-
-<h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>kc_fin_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/kc_model_check.png'>
-    </p>
-    
-</details>
-
-<h3 align='center'><strong><code>kc_log_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc_log_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.645
-    Model:                            OLS   Adj. R-squared:                  0.645
-    Method:                 Least Squares   F-statistic:                     1430.
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:04:24   Log-Likelihood:                -5003.7
-    No. Observations:               21252   AIC:                         1.006e+04
-    Df Residuals:                   21224   BIC:                         1.029e+04
-    Df Model:                          27                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                      12.4751      0.015    822.366      0.000      12.445      12.505
-    sqft_lot                 5.308e-07   1.14e-07      4.652      0.000    3.07e-07    7.54e-07
-    sqft_living15               0.0002    4.8e-06     34.919      0.000       0.000       0.000
-    sqft_lot15              -3.228e-07   1.57e-07     -2.059      0.040    -6.3e-07   -1.55e-08
-    floors                      0.0798      0.006     13.371      0.000       0.068       0.091
-    bathrooms                   0.1102      0.005     24.363      0.000       0.101       0.119
-    basement                    0.1023      0.005     20.596      0.000       0.093       0.112
-    grade_4_Low                -0.7330      0.082     -8.922      0.000      -0.894      -0.572
-    grade_5_Fair               -0.4922      0.022    -22.706      0.000      -0.535      -0.450
-    grade_6_Low_Average        -0.2792      0.008    -34.252      0.000      -0.295      -0.263
-    grade_8_Good                0.2232      0.006     38.139      0.000       0.212       0.235
-    grade_9_Better              0.4668      0.009     53.513      0.000       0.450       0.484
-    grade_10_Very_Good          0.6668      0.012     54.569      0.000       0.643       0.691
-    grade_11_Excellent          0.8407      0.019     43.577      0.000       0.803       0.878
-    grade_12_Luxury             0.9651      0.043     22.498      0.000       0.881       1.049
-    view_FAIR                   0.1442      0.017      8.303      0.000       0.110       0.178
-    view_AVERAGE                0.0781      0.011      7.391      0.000       0.057       0.099
-    view_GOOD                   0.0971      0.014      6.698      0.000       0.069       0.125
-    view_EXCELLENT              0.2578      0.022     11.597      0.000       0.214       0.301
-    waterfront                  0.3097      0.033      9.485      0.000       0.246       0.374
-    condition_Good              0.0517      0.005      9.656      0.000       0.041       0.062
-    condition_Very_Good         0.1136      0.008     13.372      0.000       0.097       0.130
-    renovated                   0.0428      0.012      3.506      0.000       0.019       0.067
-    yr_built_1920_to_1940_s    -0.0518      0.011     -4.686      0.000      -0.073      -0.030
-    yr_built_1940_to_1960_s    -0.1928      0.010    -19.939      0.000      -0.212      -0.174
-    yr_built_1960_to_1980_s    -0.3973      0.010    -40.370      0.000      -0.417      -0.378
-    yr_built_1980_to_2000_s    -0.4949      0.011    -47.107      0.000      -0.515      -0.474
-    yr_built_2000_to_2020_s    -0.4560      0.011    -40.911      0.000      -0.478      -0.434
-    ==============================================================================
-    Omnibus:                       52.085   Durbin-Watson:                   1.061
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):               65.021
-    Skew:                          -0.030   Prob(JB):                     7.60e-15
-    Kurtosis:                       3.264   Cond. No.                     1.58e+06
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.58e+06. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-
-<h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>kc_log_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/kc_model_check_log.png'>
-    </p>
-    
-</details>
-    
-</details>
 
 <h3 align='center'><strong>Comparing <code>kc</code> Models</strong></h3>
 <br>
@@ -820,250 +458,8 @@ price = 261735 +
     
 </details>
 
-
 <h2 align='center'><strong>Seattle Models</strong></h2>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see more details on the iterations of the <code>seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_full_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.749
-    Model:                            OLS   Adj. R-squared:                  0.748
-    Method:                 Least Squares   F-statistic:                     848.1
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:03:13   Log-Likelihood:            -1.1832e+05
-    No. Observations:                8828   AIC:                         2.367e+05
-    Df Residuals:                    8796   BIC:                         2.369e+05
-    Df Model:                          31                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                    4.914e+05   1.02e+05      4.806      0.000    2.91e+05    6.92e+05
-    sqft_living               135.1470      4.706     28.715      0.000     125.921     144.373
-    sqft_lot                   -2.5103      0.469     -5.351      0.000      -3.430      -1.591
-    sqft_living15             131.7733      5.135     25.663      0.000     121.708     141.839
-    sqft_lot15                -10.4842      0.639    -16.417      0.000     -11.736      -9.232
-    floors                   2.652e+04   4888.596      5.424      0.000    1.69e+04    3.61e+04
-    bedrooms                -2.029e+04   2418.013     -8.390      0.000    -2.5e+04   -1.55e+04
-    bathrooms                2.213e+04   3905.297      5.667      0.000    1.45e+04    2.98e+04
-    basement                -6765.9476   4193.167     -1.614      0.107    -1.5e+04    1453.640
-    grade_5_Fair            -5.531e+05   9.48e+04     -5.836      0.000   -7.39e+05   -3.67e+05
-    grade_6_Low_Average     -5.361e+05   9.31e+04     -5.757      0.000   -7.19e+05   -3.54e+05
-    grade_7_Average         -4.746e+05    9.3e+04     -5.104      0.000   -6.57e+05   -2.92e+05
-    grade_8_Good            -3.937e+05    9.3e+04     -4.234      0.000   -5.76e+05   -2.11e+05
-    grade_9_Better          -1.905e+05   9.31e+04     -2.046      0.041   -3.73e+05   -8003.387
-    grade_10_Very_Good       6.324e+04   9.36e+04      0.676      0.499    -1.2e+05    2.47e+05
-    grade_11_Excellent       4.518e+05   9.56e+04      4.726      0.000    2.64e+05    6.39e+05
-    grade_12_Luxury          7.865e+05   1.08e+05      7.299      0.000    5.75e+05    9.98e+05
-    view_FAIR                1.324e+04   1.21e+04      1.095      0.273   -1.05e+04    3.69e+04
-    view_AVERAGE             2284.0432   7718.457      0.296      0.767   -1.28e+04    1.74e+04
-    view_GOOD                4.058e+04   1.08e+04      3.771      0.000    1.95e+04    6.17e+04
-    view_EXCELLENT           1.519e+05   1.58e+04      9.614      0.000    1.21e+05    1.83e+05
-    waterfront               2.888e+05    2.5e+04     11.560      0.000     2.4e+05    3.38e+05
-    condition_Fair           1.237e+05   4.38e+04      2.826      0.005    3.79e+04     2.1e+05
-    condition_Average        1.426e+05   4.07e+04      3.509      0.000    6.29e+04    2.22e+05
-    condition_Good           1.647e+05   4.07e+04      4.045      0.000    8.49e+04    2.44e+05
-    condition_Very_Good      1.972e+05   4.09e+04      4.818      0.000    1.17e+05    2.77e+05
-    renovated               -1184.3113   8275.759     -0.143      0.886   -1.74e+04     1.5e+04
-    yr_built_1920_to_1940_s -5859.9748   6198.730     -0.945      0.345    -1.8e+04    6290.985
-    yr_built_1940_to_1960_s -7.092e+04   5780.737    -12.268      0.000   -8.22e+04   -5.96e+04
-    yr_built_1960_to_1980_s -1.709e+05   7475.044    -22.863      0.000   -1.86e+05   -1.56e+05
-    yr_built_1980_to_2000_s -1.979e+05   8896.429    -22.248      0.000   -2.15e+05    -1.8e+05
-    yr_built_2000_to_2020_s -2.024e+05   8505.891    -23.795      0.000   -2.19e+05   -1.86e+05
-    ==============================================================================
-    Omnibus:                     2543.517   Durbin-Watson:                   1.481
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):            26951.083
-    Skew:                           1.073   Prob(JB):                         0.00
-    Kurtosis:                      11.286   Cond. No.                     1.82e+06
-    ==============================================================================
 
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.82e+06. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-    
-<h3 align="center"><strong><code>seattle_full_model</code> Feature Elimination</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Features Eliminated in  the <code>seattle_full_model</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-<h3 align="center"><strong><code>seattle_VIF</code></strong></h3>
-
-<table align="center" border="0" width='75%'>
-    <td>    
-    
-| High VIF Dropped Columns |
-| :-: |
-| `grade_7_Average`, `condition_Average` |</td>
-        
-</table>
-
-<h3 align="center"><strong><code>seattle_RFECV</code></strong></h3>
-
-<table align="center" border="0" width='75%'>
-    <td>    
-    
-| RFECV Dropped Columns |
-| :-: |
-| `view_AVERAGE`, `condition_Fair`, `renovated`, `yr_built_1920_to_1940_s` |</td>
-        
-</table>
-
-<h3 align="center"><strong><code>seattle_pvals</code></strong></h3>
-
-<table align="center" border="0" width='75%'>
-    <td>    
-    
-| High p_value Eliminated Columns |
-| :-: |
-| `view_FAIR`, `basement` |</td>
-    
-</table>
-    
-</details>
-    
-<h3 align='center'><strong><code>seattle_fin_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_fin_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.748
-    Model:                            OLS   Adj. R-squared:                  0.747
-    Method:                 Least Squares   F-statistic:                     1136.
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:02:20   Log-Likelihood:            -1.1834e+05
-    No. Observations:                8828   AIC:                         2.367e+05
-    Df Residuals:                    8804   BIC:                         2.369e+05
-    Df Model:                          23                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                    1.506e+05   1.14e+04     13.228      0.000    1.28e+05    1.73e+05
-    sqft_living               134.3331      4.528     29.670      0.000     125.458     143.208
-    sqft_lot                   -2.4796      0.468     -5.296      0.000      -3.397      -1.562
-    sqft_living15             131.7524      5.035     26.165      0.000     121.882     141.623
-    sqft_lot15                -10.4113      0.634    -16.419      0.000     -11.654      -9.168
-    floors                   2.958e+04   4562.128      6.483      0.000    2.06e+04    3.85e+04
-    bedrooms                -2.049e+04   2407.938     -8.510      0.000   -2.52e+04   -1.58e+04
-    bathrooms                2.143e+04   3827.656      5.598      0.000    1.39e+04    2.89e+04
-    grade_5_Fair            -8.559e+04   1.83e+04     -4.680      0.000   -1.21e+05   -4.97e+04
-    grade_6_Low_Average     -6.195e+04   5478.488    -11.307      0.000   -7.27e+04   -5.12e+04
-    grade_8_Good             8.072e+04   4992.021     16.170      0.000    7.09e+04    9.05e+04
-    grade_9_Better           2.845e+05   8292.336     34.305      0.000    2.68e+05    3.01e+05
-    grade_10_Very_Good       5.381e+05   1.35e+04     39.964      0.000    5.12e+05    5.65e+05
-    grade_11_Excellent       9.273e+05   2.42e+04     38.320      0.000     8.8e+05    9.75e+05
-    grade_12_Luxury          1.262e+06    5.5e+04     22.931      0.000    1.15e+06    1.37e+06
-    view_GOOD                3.876e+04   1.06e+04      3.642      0.000    1.79e+04    5.96e+04
-    view_EXCELLENT           1.485e+05   1.57e+04      9.470      0.000    1.18e+05    1.79e+05
-    waterfront               2.872e+05    2.5e+04     11.476      0.000    2.38e+05    3.36e+05
-    condition_Good           2.258e+04   4348.714      5.192      0.000    1.41e+04    3.11e+04
-    condition_Very_Good      5.493e+04   6026.906      9.115      0.000    4.31e+04    6.67e+04
-    yr_built_1940_to_1960_s -6.614e+04   4590.176    -14.408      0.000   -7.51e+04   -5.71e+04
-    yr_built_1960_to_1980_s -1.667e+05   6528.379    -25.540      0.000    -1.8e+05   -1.54e+05
-    yr_built_1980_to_2000_s -1.937e+05   8030.055    -24.120      0.000   -2.09e+05   -1.78e+05
-    yr_built_2000_to_2020_s -2.002e+05   7464.612    -26.813      0.000   -2.15e+05   -1.86e+05
-    ==============================================================================
-    Omnibus:                     2788.788   Durbin-Watson:                   1.488
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):            33707.325
-    Skew:                           1.166   Prob(JB):                         0.00
-    Kurtosis:                      12.284   Cond. No.                     3.59e+05
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 3.59e+05. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-
-<h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>seattle_fin_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/seattle_model_check.png'>
-    </p>
-    
-</details>
-
-<h3 align='center'><strong><code>seattle_log_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle_log_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.698
-    Model:                            OLS   Adj. R-squared:                  0.697
-    Method:                 Least Squares   F-statistic:                     883.9
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:01:09   Log-Likelihood:                -1063.4
-    No. Observations:                8828   AIC:                             2175.
-    Df Residuals:                    8804   BIC:                             2345.
-    Df Model:                          23                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                      12.5694      0.019    649.446      0.000      12.531      12.607
-    sqft_living                 0.0002    7.7e-06     26.167      0.000       0.000       0.000
-    sqft_lot                -6.238e-06   7.96e-07     -7.838      0.000    -7.8e-06   -4.68e-06
-    sqft_living15               0.0002   8.56e-06     21.406      0.000       0.000       0.000
-    sqft_lot15              -1.758e-05   1.08e-06    -16.309      0.000   -1.97e-05   -1.55e-05
-    floors                      0.0254      0.008      3.274      0.001       0.010       0.041
-    bedrooms                   -0.0288      0.004     -7.046      0.000      -0.037      -0.021
-    bathrooms                   0.0455      0.007      6.998      0.000       0.033       0.058
-    grade_5_Fair               -0.4120      0.031    -13.255      0.000      -0.473      -0.351
-    grade_6_Low_Average        -0.2459      0.009    -26.408      0.000      -0.264      -0.228
-    grade_8_Good                0.1949      0.008     22.966      0.000       0.178       0.211
-    grade_9_Better              0.4383      0.014     31.096      0.000       0.411       0.466
-    grade_10_Very_Good          0.5654      0.023     24.704      0.000       0.521       0.610
-    grade_11_Excellent          0.7060      0.041     17.165      0.000       0.625       0.787
-    grade_12_Luxury             1.1849      0.094     12.670      0.000       1.002       1.368
-    view_GOOD                   0.0447      0.018      2.474      0.013       0.009       0.080
-    view_EXCELLENT              0.2145      0.027      8.048      0.000       0.162       0.267
-    waterfront                  0.3810      0.043      8.958      0.000       0.298       0.464
-    condition_Good              0.0705      0.007      9.533      0.000       0.056       0.085
-    condition_Very_Good         0.1024      0.010     10.001      0.000       0.082       0.123
-    yr_built_1940_to_1960_s    -0.1483      0.008    -19.015      0.000      -0.164      -0.133
-    yr_built_1960_to_1980_s    -0.3214      0.011    -28.962      0.000      -0.343      -0.300
-    yr_built_1980_to_2000_s    -0.3039      0.014    -22.264      0.000      -0.331      -0.277
-    yr_built_2000_to_2020_s    -0.3417      0.013    -26.932      0.000      -0.367      -0.317
-    ==============================================================================
-    Omnibus:                      217.004   Durbin-Watson:                   1.367
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              292.734
-    Skew:                          -0.291   Prob(JB):                     2.71e-64
-    Kurtosis:                       3.676   Cond. No.                     3.59e+05
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 3.59e+05. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-
-<h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>seattle_log_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/seattle_model_check_log.png'>
-    </p>
-    
-</details>
-    
-</details>
 
 <h3 align='center'><strong>Comparing <code>seattle</code> Models</strong></h3>
 <br>
@@ -1143,263 +539,9 @@ price = 287626 +
     
 </details>
       
-
 <a id='sub_sect_out_seattle'></a>
 
 <h2 align='center'><strong>Outside Seattle Models</strong></h2>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see more details on the iterations of the <code>out_seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_full_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.673
-    Model:                            OLS   Adj. R-squared:                  0.672
-    Method:                 Least Squares   F-statistic:                     795.3
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        06:57:11   Log-Likelihood:            -1.6900e+05
-    No. Observations:               12424   AIC:                         3.381e+05
-    Df Residuals:                   12391   BIC:                         3.383e+05
-    Df Model:                          32                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                    1.624e+06   1.54e+05     10.522      0.000    1.32e+06    1.93e+06
-    sqft_living               117.2134      4.813     24.351      0.000     107.778     126.648
-    sqft_lot                    0.0915      0.074      1.231      0.218      -0.054       0.237
-    sqft_living15              59.5667      4.501     13.235      0.000      50.745      68.389
-    sqft_lot15                 -0.2854      0.102     -2.810      0.005      -0.485      -0.086
-    floors                   -3.33e+04   5596.497     -5.951      0.000   -4.43e+04   -2.23e+04
-    bedrooms                -1.731e+04   2884.359     -6.001      0.000    -2.3e+04   -1.17e+04
-    bathrooms                5.084e+04   4752.816     10.696      0.000    4.15e+04    6.02e+04
-    basement                -1.297e+04   4758.849     -2.726      0.006   -2.23e+04   -3646.651
-    grade_4_Low             -1.546e+06   1.51e+05    -10.252      0.000   -1.84e+06   -1.25e+06
-    grade_5_Fair            -1.543e+06   1.41e+05    -10.968      0.000   -1.82e+06   -1.27e+06
-    grade_6_Low_Average     -1.513e+06    1.4e+05    -10.835      0.000   -1.79e+06   -1.24e+06
-    grade_7_Average         -1.461e+06   1.39e+05    -10.487      0.000   -1.73e+06   -1.19e+06
-    grade_8_Good            -1.397e+06   1.39e+05    -10.039      0.000   -1.67e+06   -1.12e+06
-    grade_9_Better          -1.291e+06   1.39e+05     -9.289      0.000   -1.56e+06   -1.02e+06
-    grade_10_Very_Good      -1.127e+06   1.39e+05     -8.109      0.000    -1.4e+06   -8.54e+05
-    grade_11_Excellent      -8.955e+05   1.39e+05     -6.436      0.000   -1.17e+06   -6.23e+05
-    grade_12_Luxury         -6.202e+05   1.42e+05     -4.379      0.000   -8.98e+05   -3.43e+05
-    view_FAIR                1.886e+05   1.71e+04     11.006      0.000    1.55e+05    2.22e+05
-    view_AVERAGE             5.889e+04   9956.124      5.915      0.000    3.94e+04    7.84e+04
-    view_GOOD                8.555e+04   1.36e+04      6.290      0.000    5.89e+04    1.12e+05
-    view_EXCELLENT           3.513e+05   2.18e+04     16.122      0.000    3.09e+05    3.94e+05
-    waterfront               5.841e+05   2.95e+04     19.807      0.000    5.26e+05    6.42e+05
-    condition_Fair          -1.199e+05   6.64e+04     -1.806      0.071    -2.5e+05    1.02e+04
-    condition_Average       -9.232e+04   6.25e+04     -1.476      0.140   -2.15e+05    3.03e+04
-    condition_Good          -6.237e+04   6.25e+04     -0.998      0.318   -1.85e+05    6.02e+04
-    condition_Very_Good      -2.61e+04   6.28e+04     -0.415      0.678   -1.49e+05    9.71e+04
-    renovated                1.394e+05   1.28e+04     10.892      0.000    1.14e+05    1.64e+05
-    yr_built_1920_to_1940_s   341.0372   2.11e+04      0.016      0.987   -4.11e+04    4.18e+04
-    yr_built_1940_to_1960_s  7.452e+04    1.8e+04      4.151      0.000    3.93e+04     1.1e+05
-    yr_built_1960_to_1980_s -2.038e+04   1.79e+04     -1.139      0.255   -5.54e+04    1.47e+04
-    yr_built_1980_to_2000_s  -7.89e+04   1.83e+04     -4.309      0.000   -1.15e+05    -4.3e+04
-    yr_built_2000_to_2020_s -6.791e+04   1.88e+04     -3.619      0.000   -1.05e+05   -3.11e+04
-    ==============================================================================
-    Omnibus:                     4956.828   Durbin-Watson:                   1.023
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):            51673.091
-    Skew:                           1.622   Prob(JB):                         0.00
-    Kurtosis:                      12.450   Cond. No.                     1.31e+07
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.31e+07. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-    
-<h3 align="center"><strong><code>out_seattle_full_model</code> Feature Elimination</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Features Eliminated in  the <code>out_seattle_full_model</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-<h3 align="center"><strong><code>out_seattle_VIF</code></strong></h3>
-
-<table align="center" border="0" width='75%'>
-    <td>
-
-| High VIF Dropped Columns |
-| :-: |
-| `grade_7_Average`, `condition_Average`, `yr_built_1980_to_2000_s` |
-
-| Mid VIF Dropped Columns |
-| :-: |
-| `sqft_living` |</td>
-
-</table>
-	
-<h3 align="center"><strong><code>out_seattle_RFECV</code></strong></h3>
-
-<table align="center" border="0" width='75%'>
-    <td>
-
-| RFECV Dropped Columns |
-| :-: |
-| None |</td>
-
-</table>
-
-<h3 align="center"><strong><code>out_seattle_pvals</code></strong></h3>
-
-<table align="center" border="0" width='75%'>
-    <td>
-
-| High p-value Eliminated Columns |
-| :-: | 
-| `grade_4_Low`, `condition_FAIR` |</td>
-
-</table>
-    
-</details>
-    
-<h3 align='center'><strong><code>out_seattle_fin_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_fin_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.652
-    Model:                            OLS   Adj. R-squared:                  0.651
-    Method:                 Least Squares   F-statistic:                     892.5
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        06:56:07   Log-Likelihood:            -1.6938e+05
-    No. Observations:               12424   AIC:                         3.388e+05
-    Df Residuals:                   12397   BIC:                         3.390e+05
-    Df Model:                          26                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                   -7.288e+04   1.29e+04     -5.664      0.000   -9.81e+04   -4.77e+04
-    sqft_lot                    0.2743      0.076      3.602      0.000       0.125       0.424
-    sqft_living15             100.0886      4.345     23.038      0.000      91.573     108.605
-    sqft_lot15                 -0.2230      0.105     -2.133      0.033      -0.428      -0.018
-    floors                  -1.743e+04   5722.412     -3.046      0.002   -2.86e+04   -6212.240
-    bedrooms                 7859.8526   2781.825      2.825      0.005    2407.044    1.33e+04
-    bathrooms                8.862e+04   4582.903     19.337      0.000    7.96e+04    9.76e+04
-    basement                 1.522e+04   4756.994      3.199      0.001    5893.431    2.45e+04
-    grade_5_Fair            -6.923e+04   1.87e+04     -3.702      0.000   -1.06e+05   -3.26e+04
-    grade_6_Low_Average     -4.426e+04   8869.727     -4.990      0.000   -6.16e+04   -2.69e+04
-    grade_8_Good             8.013e+04   4998.352     16.031      0.000    7.03e+04    8.99e+04
-    grade_9_Better           2.187e+05   7180.576     30.452      0.000    2.05e+05    2.33e+05
-    grade_10_Very_Good       4.216e+05   9670.972     43.592      0.000    4.03e+05    4.41e+05
-    grade_11_Excellent       6.943e+05   1.47e+04     47.141      0.000    6.65e+05    7.23e+05
-    grade_12_Luxury          1.009e+06   3.19e+04     31.587      0.000    9.46e+05    1.07e+06
-    view_FAIR                1.947e+05   1.77e+04     11.033      0.000     1.6e+05    2.29e+05
-    view_AVERAGE             6.973e+04   1.03e+04      6.800      0.000    4.96e+04    8.98e+04
-    view_GOOD                8.893e+04    1.4e+04      6.347      0.000    6.15e+04    1.16e+05
-    view_EXCELLENT           3.672e+05   2.25e+04     16.354      0.000    3.23e+05    4.11e+05
-    waterfront               5.977e+05   3.04e+04     19.664      0.000    5.38e+05    6.57e+05
-    condition_Good            3.65e+04   4699.882      7.767      0.000    2.73e+04    4.57e+04
-    condition_Very_Good      7.783e+04   8294.462      9.383      0.000    6.16e+04    9.41e+04
-    renovated                1.612e+05   1.29e+04     12.495      0.000    1.36e+05    1.87e+05
-    yr_built_1920_to_1940_s  6.916e+04   1.53e+04      4.516      0.000    3.91e+04    9.92e+04
-    yr_built_1940_to_1960_s  1.575e+05   8004.897     19.676      0.000    1.42e+05    1.73e+05
-    yr_built_1960_to_1980_s  6.034e+04   5596.812     10.780      0.000    4.94e+04    7.13e+04
-    yr_built_2000_to_2020_s  2.322e+04   5260.036      4.415      0.000    1.29e+04    3.35e+04
-    ==============================================================================
-    Omnibus:                     5560.330   Durbin-Watson:                   1.062
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):            68096.851
-    Skew:                           1.821   Prob(JB):                         0.00
-    Kurtosis:                      13.876   Cond. No.                     9.88e+05
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 9.88e+05. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-    
-<h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>out_seattle_fin_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/out_seattle_model_check.png'>
-    </p>
-    
-</details>
-    
-<h3 align='center'><strong><code>out_seattle_log_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle_log_model.summary()</code>&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:                  price   R-squared:                       0.656
-    Model:                            OLS   Adj. R-squared:                  0.655
-    Method:                 Least Squares   F-statistic:                     908.0
-    Date:                Fri, 22 Jul 2022   Prob (F-statistic):               0.00
-    Time:                        07:17:28   Log-Likelihood:                -3026.0
-    No. Observations:               12424   AIC:                             6106.
-    Df Residuals:                   12397   BIC:                             6307.
-    Df Model:                          26                                         
-    Covariance Type:            nonrobust                                         
-    ===========================================================================================
-                                  coef    std err          t      P>|t|      [0.025      0.975]
-    -------------------------------------------------------------------------------------------
-    const                      11.9124      0.020    604.705      0.000      11.874      11.951
-    sqft_lot                 7.593e-07   1.17e-07      6.514      0.000    5.31e-07    9.88e-07
-    sqft_living15               0.0002   6.65e-06     32.640      0.000       0.000       0.000
-    sqft_lot15              -1.465e-07    1.6e-07     -0.916      0.360    -4.6e-07    1.67e-07
-    floors                      0.0063      0.009      0.719      0.472      -0.011       0.023
-    bedrooms                    0.0154      0.004      3.605      0.000       0.007       0.024
-    bathrooms                   0.1255      0.007     17.883      0.000       0.112       0.139
-    basement                    0.0435      0.007      5.978      0.000       0.029       0.058
-    grade_5_Fair               -0.2987      0.029    -10.434      0.000      -0.355      -0.243
-    grade_6_Low_Average        -0.1998      0.014    -14.716      0.000      -0.226      -0.173
-    grade_8_Good                0.2084      0.008     27.235      0.000       0.193       0.223
-    grade_9_Better              0.4119      0.011     37.473      0.000       0.390       0.433
-    grade_10_Very_Good          0.6038      0.015     40.782      0.000       0.575       0.633
-    grade_11_Excellent          0.7448      0.023     33.032      0.000       0.701       0.789
-    grade_12_Luxury             0.8752      0.049     17.902      0.000       0.779       0.971
-    view_FAIR                   0.2116      0.027      7.830      0.000       0.159       0.265
-    view_AVERAGE                0.0795      0.016      5.065      0.000       0.049       0.110
-    view_GOOD                   0.0668      0.021      3.116      0.002       0.025       0.109
-    view_EXCELLENT              0.2614      0.034      7.604      0.000       0.194       0.329
-    waterfront                  0.4678      0.047     10.055      0.000       0.377       0.559
-    condition_Good              0.0491      0.007      6.820      0.000       0.035       0.063
-    condition_Very_Good         0.1325      0.013     10.432      0.000       0.108       0.157
-    renovated                   0.1626      0.020      8.233      0.000       0.124       0.201
-    yr_built_1920_to_1940_s     0.1454      0.023      6.203      0.000       0.099       0.191
-    yr_built_1940_to_1960_s     0.2579      0.012     21.048      0.000       0.234       0.282
-    yr_built_1960_to_1980_s     0.0878      0.009     10.247      0.000       0.071       0.105
-    yr_built_2000_to_2020_s     0.0279      0.008      3.463      0.001       0.012       0.044
-    ==============================================================================
-    Omnibus:                       60.696   Durbin-Watson:                   0.891
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):               63.893
-    Skew:                           0.148   Prob(JB):                     1.34e-14
-    Kurtosis:                       3.190   Cond. No.                     9.88e+05
-    ==============================================================================
-
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 9.88e+05. This might indicate that there are
-    strong multicollinearity or other numerical problems.
-    
-</details>
-    
-<h3 align='center'><strong>Investigating the Linearity, Normality and Homoscedasticity of <code>out_seattle_log_model</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/out_seattle_model_check_log.png'>
-    </p>
-    
-</details>
-    
-</details>    
 
 <h3 align='center'><strong>Comparing <code>out_seattle</code> Models</strong></h3>
 <br>
@@ -1485,12 +627,47 @@ price = 149110 +
     
 </details>
 
+&nbsp;&nbsp;&nbsp;&nbsp;Unfortunately, none of the models I created could truly be relied upon to predict the sales prices of a residential property.
+&ensp;The $𝑟^2$, and the adjusted $𝑟^2$ scores never even broke a value of .7, meaning that the models were not reliable as predictive algorithms.
+&ensp;I could have refined the models further to increase their predictive abilities, but I will discuss why I didn’t in the [Future Investigations](#sect_fut_invest) section.
+&ensp;While the [Insights and Conclusions](#sect_insights_and_conclusions) I gleaned from my analysis are certainly an important first step, more data will need to be gathered if King County Development is to build a regression model that serves as a reliable predictive algorithm.
+
 <a id='sect_insights_and_conclusions'></a>
 
 <h1 align='center'><strong><u>Insights and Conclusions</u></strong></h1>
 
 &nbsp;&nbsp;&nbsp;&nbsp;By creating the separate models, I was able to gain valuable insights.
 &ensp;I created a dataframe and visualiztions with the coefficients of the three log-transformed models to identify the differences between the predictors that were included in each model and their values more easily.
+&ensp;Based on my results, I developed specific recommendations for King County Development.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The most important feature in all three models was the `grade` of a property.
+&ensp;King County Development should therefore develop a database of pictures of properties with each `grade` category.
+&ensp;This should also be done for each of the `condition` and `view` categories, as they also had a significant impact on the sales price of a property.
+&ensp;These databases could guide King County Development as they design and build new properties, or to properly advise clients seeking renovation or remodeling services as to the cost versus the reward in making changes to a property.
+&ensp;They could also serve in any promotional material advertising those services.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Besides the picture databases for the `grade`, `condition`, and `view` features, my only other specific recommendations concern [Future Investigations](#sect_fut_invest), but there were other important, or at least interesting, features in my results of which King County Development should be aware.
+
+&nbsp;&nbsp;&nbsp;&nbsp;While the square footage features were not important on a per unit basis, `Living Area` does seem to a be extremely important inside of Seattle, as it was the only model in which the `Square Footage – Living Area` feature was even included.
+&ensp;It is also exhibited by the negative effect caused by increasing the number of bedrooms, holding everything else constant, in the Seattle model.
+&ensp;By itself, this would actually decrease the `Living Area`, again showing its value in Seattle.
+&ensp;This makes sense in an area where apartments are going to be more common than houses, which also would explain why, on the other hand, the `Basement` feature was not included inside of Seattle.
+
+&nbsp;&nbsp;&nbsp;&nbsp;It was also very interesting that the `Renovated` feature was not included at all in the Seattle model but was very important in the Outside Seattle model.
+&ensp;It was impossible to say for sure whether this was because renovations were expected in Seattle properties, or because it was not important, and people are happy just to get an apartment.
+&ensp;Either way, it is absolutely something that King County Development should address in an any [Future Investigations](#sect_fut_invest).
+
+&nbsp;&nbsp;&nbsp;&nbsp;Of course, being a `Waterfront` property adds significant value to a property, with the effect being the greatest in the Outside Seattle model.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Finally, my adjustment of the `yr_built` feature from a numerical feature to a categorical one split into periods of 20 years did not lead to any revelations worth mentioning, but I did notice a general negative trend in all three models.
+&ensp;I therefore created ***insert_link_here***another version*** of my analysis in which I did not make such an adjustment to investigate this further, which confirmed my hypothesis.
+&ensp;If the `yr_built` feature increased, in had a negative effect in all three models.
+&ensp;This could possibly indicate that older properties are preferred to newer properties.
+&ensp;This could also be addressed in any [Future Investigations](#sect_fut_invest), although I would say it should not be as high a priority as the investigating the `Renovated` feature.
+&ensp;If you wish to view my analysis of each individual feature, you can click on the collapsible section below.
+
+<details align='center'>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see my full analysis of the results.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <ul style='list-style-type: none;'>
     <li>Intercepts</li>
@@ -1538,7 +715,7 @@ price = 149110 +
         </ul>
     <li><code>grade</code></li> 
         <ul>
-            <li>This seems to be the most important feature when determining the price of a property.  The categories in this feature resulted in the largest changes in price, both positively and negatively.   Anything below <code>7_Average</code> had a negative effect if it was included at all, and the lower the <code>grade</code>, the worse the effect, while <code>7_Average</code> itself was not included in any of the models.  Anything above <code>7_Average</code> had a positive effect, and the size of the effect increases as <code>grade</code> does.  A few things that are worth noting, is how much of an increase in value is gained by increasing the <code>grade</code> from <code>8_Good</code> to <code>9_Better</code>, as well as the increase from <code>9_Better</code> to <code>10_Very_Good</code>, and another is how much a <code>grade</code> of <code>12_Luxury</code> increases the price for Seattle properties.</li>
+            <li>This seems to be the most important feature when determining the price of a property.  The categories in this feature resulted in the largest changes in price, both positively and negatively.   Anything below <code>7_Average</code> had a negative effect if it was included at all, and the lower the <code>grade</code>, the worse the effect.  <code>7_Average</code> itself was not included in any of the models.  Anything above <code>7_Average</code> had a positive effect, and the size of the effect increases as <code>grade</code> does.</li>
             <li><u>Specific Recommendation</u></li>
                 <ul>
                     <li>Create a database of example pictures of properties with each <code>grade</code> value (<em>as many as can be gathered</em>)</li>
@@ -1571,16 +748,16 @@ price = 149110 +
         </ul>
     <li><code>yr_built</code></li>
         <ul>
-            <li>This was the most difficult predictor to analyze.  In the entire King County model, the effect was negative for each dummy column and, generally, was less negative the further back in time the property was built.  In the Seattle model, the <code>1920s to 1940s</code> dummy column wasn’t even included, neither was the <code>1980s to 2000s</code> in the Outside Seattle model.  Both the Seattle and Outside Seattle models showed that older built properties seemed to be more valuable in general, although the trend was much clearer Outside Seattle.  Just to clarify that there was an overall negative effect as the <code>yr_built</code> increases in each model, I created a <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>copy of this notebook in which I did not restructure the <code>yr_built</code> column</a>, which confirmed my hypothesis.  I included the <code>yr_built</code> results from the other notebook <a href='sub_sect_other_yr_built_results'>below</a>.</li>
+            <li>This was the most difficult predictor to analyze.  In the entire King County model, the effect was negative for each dummy column and, generally, was less negative the further back in time the property was built.  In the Seattle model, the <code>1920s to 1940s</code> dummy column wasn’t even included, neither was the <code>1980s to 2000s</code> in the Outside Seattle model.  Both the Seattle and Outside Seattle models showed that older built properties seemed to be more valuable in general, although the trend was much clearer Outside Seattle.  Just to confirm that there was an overall negative effect as the <code>yr_built</code> increases in each model, I created a <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>copy of this notebook in which I did not restructure the <code>yr_built</code> column</a>, which confirmed my hypothesis.  I included the <code>yr_built</code> results from the other notebook below.</li>
         </ul>
 </ul>
+    
+</details>
 
-<h2 align='center'><strong>Results from the Primary Analysis</strong></h2>
-
-<br>
-
+&nbsp;&nbsp;&nbsp;&nbsp;If you would like to see the final equations of the three models from my primary analysis in a dataframe, click on the collapsible section below.
+<br><br>
 <details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Results compared in a Table.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Primary Results compared in a DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <table align="center" width='99%'>
 
@@ -1629,14 +806,12 @@ price = 149110 +
 
 </details>
 
-<a id='sub_sect_other_yr_built_results'></a>
-
-<h2 align='center'><strong><code>yr_built</code> Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
+&nbsp;&nbsp;&nbsp;&nbsp;If you wish to see the `yr_built` Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a> in a dataframe, click on the collapsible section below.
 
 <br>
 
 <details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the `yr_built` Results from the Secondary Analysis.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>yr_built</code> Results from the Secondary Analysis in a DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
 <table align="center" width='99%'>
   <tr valign="middle">
@@ -1663,7 +838,7 @@ price = 149110 +
 <img src='visuals/presentation_pic_5.png'>
 <img src='visuals/presentation_pic_6.png'>
 
-<h2 align='center'><strong><code>yr_built</code> Coefficient Visualizations from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
+<h2 align='center'><strong><code>yr_built</code> Coefficient Visualization from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
     
 <img src='visuals/presentation_pic_6_special.png'>
 
@@ -1673,12 +848,15 @@ price = 149110 +
 
 &nbsp;&nbsp;&nbsp;&nbsp;Besides the picture databases I mentioned regarding the `grade`, `view`, and `condition` features, there is a lot more work that King County Development will need to perform if they want to be profitable, efficient in their spending, and if they want to provide the highest quality services to their clients and / or investors.
 &ensp;There is more valuable information that can no doubt be gleaned from the dataset that was provided to me for this project, including testing interactions and / or building polynomial regression models, but the dataset only covered one year’s worth of sales, so any further investigation would still be limited.
-&ensp;A much larger dataset, possibly with even more predictors to build models with, as well as data on commercial property sales as well, can undoubtedly be <a href='https://kingcountyexec.govqa.us/WEBAPP/_rs/'>obtained</a>.
+
+&nbsp;&nbsp;&nbsp;&nbsp;A much larger dataset, possibly with even more predictors to build models with, can undoubtedly be <a href='https://kingcountyexec.govqa.us/WEBAPP/_rs/'>obtained</a>.
+&ensp;Data on commercial property could also be gathered.
 &ensp;At that point there should be enough data to build separate models for each city in King County, and to also analyze the various ZIP codes within each city.
 &ensp;They should then develop maps of each city and / or ZIP code, separated with the appropriate zoning laws, to see what is even possible in every inch of King County.
+
 &ensp;Areas of high potential should be identified, and the owners of any potentially lucrative properties should be approached to gauge their interest in either their property being acquired, or if they are at least interested in any renovation or remodeling services.
 &ensp;If not, King County Development will at least be fully prepared should any enticing properties become available, or if they are approached for their other services.
-&ensp;The image below is from a <a href='https://www.youtube.com/watch?v=ZeRd3aurWz8'>video</a> from the <a href='https://www.youtube.com/c/RealEstateforNoobs'>Real Estate for Noobs</a> YouTube channel, and even that is only a piece of the puzzle when it comes to real estate development.
+&ensp;The image below is from a <a href='https://www.youtube.com/watch?v=ZeRd3aurWz8'>video</a> from the <a href='https://www.youtube.com/c/RealEstateforNoobs'>Real Estate for Noobs</a> YouTube channel, and the steps that it shows is still only one small piece of the puzzle when it comes to real estate development.
 
 <p align='center'>
     <img src='images/rd_dev_video_still.png'>
