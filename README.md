@@ -7,12 +7,38 @@
 <h4 align='center'>September 15th, 2022</h4>
 
 <table align="center" border="0">
-  <tr>
-    <td>
-        
-| <h1 align='center'><center><strong><u>Repository Structure</u></strong></center></h1> | <h1 align='center'><center><strong><u>Table of Contents</u></strong></center></h1> |
-| :- | :- |
-|   <ul><li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/data">data</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/images">images</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/visuals">visuals</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb">Phase 2 - Project - yr_built changed.ipynb</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb">Phase 2 - Project.ipynb</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx">Presentation.pptx</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/README.md">README.md</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf">notebook.pdf</a></li><li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf">pdf_presentation.pdf</a></li></ul> | <ul><li>[Project Overview](#sect_proj_over)</li><li>[Stakeholder & Business Problem](#sect_bus_under)</li><li>[Understanding & Preparing the Data](#sect_data_under)</li><ul><li>[Initial Data Exploration](#sect_expl_data)</li><li>[Feature Distribution Visualizations](#sect_dist_viz)</li><li>[Preprocessed DataFrames](#sect_preproc)</li></ul><li>[Model Iterations](#sect_model_iter)</li><li>[Insights and Conclusions](#sect_insights_and_conclusions)</li><li>[Future Investigations](#sect_fut_invest)</li></ul> |</td></tr></table>
+    <tr><th><h1 align='center'><center><strong><u>Repository Structure</u></strong></center></h1></th><th><h1 align='center'><center><strong><u>Table of Contents</u></strong></center></h1></th></tr>
+    <tr>
+        <td>
+            <ul>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/data">data</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/images">images</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/visuals">visuals</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb">Phase 2 - Project - yr_built changed.ipynb</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb">Phase 2 - Project.ipynb</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx">Presentation.pptx</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/README.md">README.md</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf">notebook.pdf</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf">pdf_presentation.pdf</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li><a href="sect_proj_over">Project Overview</a></li>
+                <li><a href="sect_bus_under">Stakeholder & Business Problem</a></li>
+                <li><a href="sect_data_under">Understanding & Preparing the Data</a></li>
+                    <ul>
+                        <li><a href="sect_expl_data">Initial Data Exploration</a></li>
+                        <li><a href="sect_dist_viz">Feature Distribution Visualizations</a></li>
+                        <li><a href="sect_preproc">Preprocessed DataFrames</a></li>
+                    </ul>
+                <li><a href="sect_model_iter">Model Iterations</a></li>
+                <li><a href="sect_insights_and_conclusions">Insights and Conclusions</a></li>
+                <li><a href="sect_fut_invest">Future Investigations</a></li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
 <a id='sect_proj_over'></a>
 
