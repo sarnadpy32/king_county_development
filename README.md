@@ -4,7 +4,7 @@
 </p>
 <h3 align='center'><strong><em>An Academic Multiple Regression Analysis Project</em></strong></h3>
 <h3 align='center'><strong><em>by <a href="www.linkedin.com/in/devin-sarnataro-0b639b148">Devin Sarnataro</a></em></strong></h3>
-<h4 align='center'>September 15th, 2022</h4>
+<h4 align='center'>October 2nd, 2022</h4>
 
 <table align="center" border="0">
     <tr><th><h1 align='center'><center><strong><u>Repository Structure</u></strong></center></h1></th><th><h1 align='center'><center><strong><u>Table of Contents</u></strong></center></h1></th></tr>
@@ -24,17 +24,17 @@
         </td>
         <td>
             <ul>
-                <li><a href="sect_proj_over">Project Overview</a></li>
-                <li><a href="sect_bus_under">Stakeholder & Business Problem</a></li>
-                <li><a href="sect_data_under">Understanding & Preparing the Data</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development#project-overview">Project Overview</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development#stakeholder--business-problem">Stakeholder & Business Problem</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development#understanding--preparing-the-data">Understanding & Preparing the Data</a></li>
                     <ul>
-                        <li><a href="sect_expl_data">Initial Data Exploration</a></li>
-                        <li><a href="sect_dist_viz">Feature Distribution Visualizations</a></li>
-                        <li><a href="sect_preproc">Preprocessed DataFrames</a></li>
+                        <li><a href="https://github.com/sarnadpy32/king_county_development#initial-data-exploration">Initial Data Exploration</a></li>
+                        <li><a href="https://github.com/sarnadpy32/king_county_development#feature-distribution-visualizations">Feature Distribution Visualizations</a></li>
+                        <li><a href="https://github.com/sarnadpy32/king_county_development#preprocessed-dataframes">Preprocessed DataFrames</a></li>
                     </ul>
-                <li><a href="sect_model_iter">Model Iterations</a></li>
-                <li><a href="sect_insights_and_conclusions">Insights and Conclusions</a></li>
-                <li><a href="sect_fut_invest">Future Investigations</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development#model-iterations">Model Iterations</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development#insights-and-conclusions">Insights and Conclusions</a></li>
+                <li><a href="https://github.com/sarnadpy32/king_county_development#future-investigations">Future Investigations</a></li>
             </ul>
         </td>
     </tr>
@@ -51,7 +51,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Along with the dataset, Flatiron also provided me with a `.md` <a href="https://github.com/sarnadpy32/king_county_development/blob/master/data/column_names.md">file with the column names and a brief description of each column</a>.
 &ensp;I've included the columns and their descriptions below if you click on the collapsible section.
-
+<br><br>
 <details align='center'>
     <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Column Names and Descriptions.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 
@@ -403,7 +403,7 @@ While I could have chosen a real estate agency, I felt a developer could make be
 <a id='sub_sect_kc'></a>
 
 <details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the details on the model iterations, the model comparison dataframes, and the final equations for the three models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the model comparison dataframes and the final equations for the three models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
 <h2 align='center'><strong>All King County Models</strong></h2>
 
 <h3 align='center'><strong>Comparing <code>kc</code> Models</strong></h3>
