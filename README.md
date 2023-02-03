@@ -6,888 +6,345 @@
 <h3 align='center'><strong><em>by <a href="www.linkedin.com/in/devin-sarnataro-0b639b148">Devin Sarnataro</a></em></strong></h3>
 <h4 align='center'>October 2nd, 2022</h4>
 
-<table align="center" border="0">
-    <tr><th><h1 align='center'><center><strong><u>Repository Structure</u></strong></center></h1></th><th><h1 align='center'><center><strong><u>Table of Contents</u></strong></center></h1></th></tr>
-    <tr>
-        <td>
-            <ul>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/data">data</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/images">images</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/tree/master/visuals">visuals</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb">Phase 2 - Project - yr_built changed.ipynb</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project.ipynb">Phase 2 - Project.ipynb</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/Presentation.pptx">Presentation.pptx</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/README.md">README.md</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/notebook.pdf">notebook.pdf</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development/blob/master/pdf_presentation.pdf">pdf_presentation.pdf</a></li>
-            </ul>
-        </td>
-        <td>
-            <ul>
-                <li><a href="https://github.com/sarnadpy32/king_county_development#project-overview">Project Overview</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development#stakeholder--business-problem">Stakeholder & Business Problem</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development#understanding--preparing-the-data">Understanding & Preparing the Data</a></li>
-                    <ul>
-                        <li><a href="https://github.com/sarnadpy32/king_county_development#initial-data-exploration">Initial Data Exploration</a></li>
-                        <li><a href="https://github.com/sarnadpy32/king_county_development#feature-distribution-visualizations">Feature Distribution Visualizations</a></li>
-                        <li><a href="https://github.com/sarnadpy32/king_county_development#preprocessed-dataframes">Preprocessed DataFrames</a></li>
-                    </ul>
-                <li><a href="https://github.com/sarnadpy32/king_county_development#model-iterations">Model Iterations</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development#insights-and-conclusions">Insights and Conclusions</a></li>
-                <li><a href="https://github.com/sarnadpy32/king_county_development#future-investigations">Future Investigations</a></li>
-            </ul>
-        </td>
-    </tr>
-</table>
+# Repository Structure
+```
+- data
+- images
+- visuals
+- Phase 2 - Project.ipynb
+- Presentation.pptx
+- README.md
+- notebook.pdf
+- pdf_presentation.pdf
+```
+
+# Table of Contents
+
+- <a href="https://github.com/sarnadpy32/king_county_development#project-overview">Project Overview</a>
+- <a href="https://github.com/sarnadpy32/king_county_development#stakeholder--business-problem">Stakeholder & Business Problem</a>
+- <a href="https://github.com/sarnadpy32/king_county_development#understanding--preparing-the-data">Understanding & Preparing the Data</a>
+    - <a href="https://github.com/sarnadpy32/king_county_development#three-models">Three Models</a>
+- <a href="https://github.com/sarnadpy32/king_county_development#model-iterations">Model Iterations</a>
+- <a href="https://github.com/sarnadpy32/king_county_development#insights-and-conclusions">Insights, Conclusions, and Recommendations</a>
+    - <a href="https://github.com/sarnadpy32/king_county_development#visualizations-of-the-three-log-models">Visualizations of the Coefficients of the Three Log Models</a>
+    - <a href="https://github.com/sarnadpy32/king_county_development#general-conclusions">General Conclusions</a>
+    - <a href="https://github.com/sarnadpy32/king_county_development#picture-databases">Picture Databases</a>
+    - <a href="https://github.com/sarnadpy32/king_county_development#sales-price-calculator">Sales Price Calculator</a>
+- <a href="https://github.com/sarnadpy32/king_county_development#future-investigations">Future Investigations</a>
 
 <a id='sect_proj_over'></a>
 
 <h1 align='center'><strong><u>Project Overview</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;For this project, <a href='https://flatironschool.com/'>Flatiron School</a> provided me with a dataset of residential property sales in King County, Washington.
-&ensp;We were instructed to create a hypothetical stakeholder, or client, as well as design a business problem that could be addressed with a multiple regression analysis.
-&ensp;I created a real estate development company called King County Development.
-&ensp;For the specific business problem, I chose to provide the real estate developer with key insights into which property features were the most relevant in predicting the sales price, and to what extent those features affected the sales price.
+This project’s purpose was to perform a multiple regression analysis to provide a client with a solution to a business problem.  I created a real estate developer named King County Development as a client.  For a specific business problem, I chose to determine which property features were significant to the sales price of a residential property and how much of an effect those features had on the sales price, individually and collectively.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Along with the dataset, Flatiron also provided me with a `.md` <a href="https://github.com/sarnadpy32/king_county_development/blob/master/data/column_names.md">file with the column names and a brief description of each column</a>.
-&ensp;I've included the columns and their descriptions below if you click on the collapsible section.
-<br><br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Column Names and Descriptions.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+Features deemed significant that positively affected the sales price would be desirable and worth investment. The opposite would be true for features deemed significant that negatively affected the sales price.  Knowing how much of an effect those features had on the sales price would allow King County Development to weigh the costs of specific renovations, remodeling, or construction against the potential increase in the sales price that would be achieved.
 
-| Column | Description | Additional Information |
-| :-: | :-: | :-: |
-| `id` | Unique identifier for a house | |
-| `date` | Date house was sold | |
-| `price` | Sale price<br>(prediction target) | |
-| `bedrooms` | Number of bedrooms | |
-| `bathrooms` | Number of bathrooms | |
-| `sqft_living` | Square footage of living space in the home | |
-| `sqft_lot` | Square footage of the lot | |
-| `floors` | Number of floors (levels) in house | |
-| `waterfront` | Whether the house is on a waterfront | <em>(Includes Duwamish, Elliott Bay, Puget Sound, Lake Union, Ship Canal, Lake Washington, Lake Sammamish, other lake, and river/slough waterfronts)</em> |
-| `view` | Quality of view from house | <em>(Includes views of Mt. Rainier, Olympics, Cascades, Territorial, Seattle Skyline, Puget Sound, Lake Washington, Lake Sammamish, small lake / river / creek, and other)</em> |
-| `condition` | How good the overall condition of the house is. Related to maintenance of house. | `1 = Poor`<br>Worn out. Repair and overhaul needed on painted surfaces, roofing, plumbing, heating and numerous functional inadequacies. Excessive deferred maintenance and abuse, limited value-in-use, approaching abandonment or major reconstruction; reuse or change in occupancy is imminent. Effective age is near the end of the scale regardless of the actual chronological age.<br><br>`2 = Fair`<br>Badly worn. Much repair needed. Many items need refinishing or overhauling, deferred maintenance obvious, inadequate building utility and systems all shortening the life expectancy and increasing the effective age.<br><br>`3 = Average`<br>Some evidence of deferred maintenance and normal obsolescence with age in that a few minor repairs are needed, along with some refinishing. All major components still functional and contributing toward an extended life expectancy. Effective age and utility is standard for like properties of its class and usage.<br><br>`4 = Good`<br>No obvious maintenance required but neither is everything new. Appearance and utility are above the standard and the overall effective age will be lower than the typical property.<br><br>`5 = Very Good`<br>All items well maintained, many having been overhauled and repaired as they have shown signs of wear, increasing the life expectancy and lowering the effective age with little deterioration or obsolescence evident with a high degree of utility.|
-| grade | Overall grade of the house. Related to the construction and design of the house. | `1-3`<br>Falls short of minimum building standards. Normally cabin or inferior structure.<br><br>`4`<br>Generally older, low quality construction. Does not meet code.<br><br>`5`<br>Low construction costs and workmanship. Small, simple design.<br><br>`6`<br>Lowest grade currently meeting building code. Low quality materials and simple designs.<br><br>`7`<br>Average grade of construction and design. Commonly seen in plats and older sub-divisions.<br><br>`8`<br>Just above average in construction and design. Usually better materials in both the exterior and interior finish work.<br><br>`9`<br>Better architectural design with extra interior and exterior design and quality.<br><br>`10`<br>Homes of this quality generally have high quality features. Finish work is better and more design quality is seen in the floor plans. Generally have a larger square footage.<br><br>`11`<br>Custom design and higher quality finish work with added amenities of solid woods, bathroom fixtures and more luxurious options.<br><br>`12`<br>Custom design and excellent builders. All materials are of the highest quality and all conveniences are present.<br><br>`13`<br>Generally custom designed and built. Mansion level. Large amount of highest quality cabinet work, wood trim, marble, entry ways etc. |
-| `sqft_above` | Square footage of house apart from basement | |
-| `sqft_basement` | Square footage of the basement | |
-| `yr_built` | Year when house was built | |
-| `yr_renovated` | Year when house was renovated | |
-| `zipcode` | ZIP Code used by the United States Postal Service | |
-| `lat` | Latitude coordinate | |
-| `long` | Longitude coordinate | |
-| `sqft_living15` | The square footage of interior housing living space for the nearest 15 neighbors | |
-| `sqft_lot15` | The square footage of the land lots of the nearest 15 neighbors | |
-    
-</details>
+After exploring and appropriately modifying the data I was given, I built numerous multiple linear regression models to determine which features were statistically significant.  The features I chose to consider were the characteristics of a property that could be changed.  Whether a property is on the waterfront is not a feature that can be changed.  Of the features that remained, I analyzed how those features affected the sales price.  I then made recommendations based on the results of my analysis.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Two of the columns, `condition` and `grade`, had categories that required me to check the King County Assessor’s <a href='https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r'>glossary of terms</a> to see what the entities within the columns specifically meant.
-&ensp;I also used the opportunity to explore the site a little, and by doing so I was able to obtain a map of the county from the county government's <a href="https://gismaps.kingcounty.gov/iMap/">iMap</a> feature.
-<br><br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see a Map of King County.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+I analyzed my results to provide my <a href=”https://github.com/sarnadpy32/king_county_development#insights-and-conclusions”>Insights, Conclusions, and Recommendations</a>.  I offered specific standards that should be upheld while designing, renovating, or remodeling properties.  I recommended that <a href=”https://github.com/sarnadpy32/king_county_development#picture-databases”>Picture Databases</a> be created of properties grouped by essential features.  I built a <a href=”https://github.com/sarnadpy32/king_county_development#sales-price-calculator”>Sales Price Calculator</a> to quickly and easily show the change in the sales price based on the effect of a change in a feature and the impact of changes in multiple features.  After demonstrating the usefulness of such a tool, I recommended that King County Development build similar tools with more advanced capabilities.
 
-<p align="center">
-    <img src="images/king_county_imap.svg">
-</p>
-    
-</details>
+While my recommendations were based on my analysis, the data I was given was limited in the period it covered.  Due to that fact, I also made a series of recommendations for any <a href=”https://github.com/sarnadpy32/king_county_development#future-investigations”>Future Investigations</a> to improve the performance of multiple linear regression models and the value of the insights gained through their use.  By doing so, King County Development could provide services and data analysis of the highest quality to their clients and investors and achieve high profits for themselves.
 
 <a id='sect_bus_under'></a>
 
 <h1 align="center"><b><u>Stakeholder & Business Problem</u></b></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;As I previously mentioned, I chose a real estate developer as the stakeholder for this project.
-&ensp;Flatiron had recommended a real estate agency for students having a hard time coming up with a hypothetical stakeholder, so I did have that in mind as I started the project.
-While I could have chosen a real estate agency, I felt a developer could make better use of the insights I gained through my analysis.  
+I chose a real estate developer as the stakeholder for this project.  While I could have chosen a real estate agency, a developer could better use the insights I gained through my analysis.  Real estate agencies would be limited by the desires of their client and the physical location of a client’s property.  Developers have more freedom in their decision-making regarding what changes to make to the properties they acquire and what properties to acquire in the first place.  They may ultimately rely on investors to purchase the property, but they will need an analysis like this to convince those investors of the value of a property or a design.  A real estate developer could also take on clients simply wanting renovations or remodeling services.  I named my hypothetical client King County Development.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Real estate agencies would be limited by the desires of their client and the physical location of the client’s property.
-&ensp;Developers have more freedom in their decision making, both in terms what changes to make to the properties they acquire, and what properties to acquire in the first place.
-&ensp;They may ultimately rely on investors to acquire the property, but they will need an analysis like this, to convince those investors of the potential value of a property or a specific design.
-&ensp;A real estate developer could also take on clients simply wanting renovations, or even remodeling services.
+As a real estate developer, King County Development would want to know which features of a property were important in determining the sales price of a residential property.  They would want to know whether those features affected the sales price positively or negatively.  They would also want to know the magnitude of those features’ effects on the sales price, individually and jointly.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;For a potential business problem, I chose to identify the features that had the most significant impact on, and were the most statistically relevant to, the sales price of residential properties.
-&ensp;I could then develop specific recommendations based on which features were identified as being statistically significant.
-&ensp;That way I could provide King County Development with recommendations that would help them to:
+Knowing what features are important and their effect on the sales price is fundamental for a real estate developer to know.  Such knowledge would allow them to weigh the costs of renovating, remodeling, or constructing properties against the potential increase in the sales price that would be achieved.  It would be invaluable when pitching designs to investors or creating designs based on the resources of their clients.  My recommendations would help them:
 -	Be profitable
 -	Be efficient in their spending
--	Provide the highest quality services to their clients and / or investors
+-	Provide the highest quality services to their clients and investors
 
+This is the business problem I chose to solve for King County Development.  I decided to determine the important features and the effects of those features.  I also chose to provide King County Development with the <a href=”https://github.com/sarnadpy32/king_county_development#sales-price-calculator”>Sales Price Calculator</a>, a tool I created so that they could quickly provide investors and clients with the benefits of any design in a precise dollar amount.
 
 <a id='sect_data_under'></a>
 
 <h1 align="center"><u>Understanding & Preparing the Data</u></h1>
 
-<a id='sect_expl_data'></a>
 
-<h2 align="center">Initial Data Exploration</h2>
+<a href=”https://flatironschool.com/”>Flatiron school</a> provided me with a dataset of residential property sales in King County, Washington, for this project.  While they provided me with a <a href=”https://github.com/sarnadpy32/king_county_development/blob/master/data/column_names.md”>`.md` file</a> with a description of the columns, I also had to go to the King County Assessor’s <a href='https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r'>glossary of terms</a> to understand the meaning of specific columns.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;I began my analysis by importing the dataset provided to me by <a href='https://flatironschool.com/'>Flatiron School</a>.
-&ensp;I decided to sort the dataframe by `id`, as it would make identifying any potential duplicates easier.
-&ensp;During my analysis, I also found out that there were 70 different ZIP codes, so I downloaded the free ZIP code database available at <a href='https://www.unitedstateszipcodes.org/zip-code-database/'>this page</a>, to replace the ZIP codes with the appropriate city names.
-&ensp;This reduced the number of categories in the column to 24 and served as a more useful tool for analysis.
+Flatiron school provided me with a dataset of residential property sales in King County, Washington, for this project.  While they also provided me with a `.md` file with a description of the columns, I also had to go to the King County Assessor’s glossary of terms to understand the meaning of specific columns.
 
-&nbsp;&nbsp;&nbsp;&nbsp;After ensuring there were no duplicates, I handled entries with missing data with the appropriate encoders from `sklearn`, and dropped the columns that served no purpose in my analysis.
-&ensp;I then split the data into the target (dependent variable) series and two separate dataframes for the independent variables, one for the numerical independent variables, and one for the categorical independent variables.
+During my exploration, I discovered that the data only contained one year’s worth of property sales.  I replaced zip codes with the appropriate city names that I retrieved from the free dataset available on this site.  I also found that properties were sold multiple times during that year after I eliminated the possibility that they were duplicates or errors.  I eliminated outliers and columns that were either inappropriate for a multiple regression analysis or deemed unnecessary.  As I previously mentioned, I only kept property features that could be modified.
 
-<a id='sect_dist_viz'></a>
+<a id='sect_three_models'></a>
 
-<h2 align='center'><strong>Feature Distribution Visualizations</strong></h2>
+<h2 align='center'><strong>Three Models</strong></h2>
 
-&nbsp;&nbsp;&nbsp;&nbsp;I created distribution visualizations to explore each of the features.
-&ensp;I used the visualizations, as well as the `describe` and `value_counts` functions, to identify and eliminate outliers, and to restructure features if necessary.
-&ensp;The only visualization that I will specifically discuss in this summary is the one I created for the `City` feature, as it is crucial to understanding my analysis.
-&ensp;As you can see, there were almost 9,000 residential property sales in Seattle alone, much more than any other single city.
-&ensp;I therefore decided it would be highly useful to create three separate models, one for all of King County, one for inside of Seattle, and one for outside of Seattle, and then compare the results.
+While exploring the data, I found that it contained almost 9,000 residential properties in Seattle alone, far more than in any other city.  It would be beneficial to create three separate models, one for all of King County, one for properties inside of Seattle, and one for properties outside of Seattle.  The results of the models could then be compared, and essential insights could be revealed.  The distribution visualization I created that led to this decision can be seen below.
 
 <br>
 <p align='center'>
     <img src='visuals/city_distribution.png'>
 </p>
-<br>
-<details align='center'>
-    <summary><center><strong><center>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the other Visualizations I created.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</center></strong></center></summary>
-
-<h3 align='center'><strong>Price Distribution Visualization</strong></h3>
-<br>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;I first checked the distribution of `price` (the target variable).
-&ensp;Before I created any visualizations, I wrote functions to properly format the ticks of any visualizations and any `pandas` outputs that contained currency information, as well a function to get a lighter version of a simple, prenamed color to use in visualizations as needed. -->
-<!-- <br> -->
-<details align='center'>
-    <summary><center><strong><center>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualization.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</center></strong></center></summary>
-    <p align='center'>
-        <img src='visuals/price_distribution.png'>
-    </p>
-</details>    
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualization.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/price_distribution_2.png'>
-    </p>
-</details>
-<br>
-<h3 align='center'><strong>Numerical Features Distribution Visualizations</strong></h3>
-<br>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;I then created visualizations to explore the distributions of the numerical features. -->
-<!-- <br> -->
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/numeric_features_distributions.png'>
-    </p>
-</details>
-<br>
-<a id='sub_sect_cat_feat_dist_viz'></a>
-<h3 align='center'><strong>Categorical Features Distribution Visualizations</strong></h3>
-<!-- 
-&nbsp;&nbsp;&nbsp;&nbsp;After the numerical features were taken care of, I checked the distribution of the categorical variables.
-&ensp;These would have to be encoded in an appropriate manner to be used in my model. -->
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/categorical_features_distributions.png'>
-    </p>
-</details>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Visualizations.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    <p align='center'>
-        <img src='visuals/categorical_features_distributions_2.png'>
-    </p>
-</details>
-    
-</details>
-
-<a id='sect_preproc'></a>
-
-<h2 align='center'><strong>Preprocessed DataFrames</strong></h2>
-
-&nbsp;&nbsp;&nbsp;&nbsp;After removing the `sqft_above` column because it was highly correlated with the `sqft_living` column, the numerical features were ready, so I turned my attention to the categorical features.
-&ensp;I used the `OneHotEncoder()` on the appropriate columns to create a properly encoded version of `kc_cats`.
-&ensp;I then recombined the numerical and categorical features into a full preprocessed dataframe for all of King County, which I split into preprocessed dataframes for inside of Seattle and outside of Seattle.
-&ensp;Then I split all three preprocessed dataframes into their `X` and `y` components, which you can view by clicking on the collapsible sections below.
-
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Preprocessed DataFrame for each of the Three Models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-<h3 align='center'><strong>All King County Preprocessed DataFrame</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the All King County Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-        kc_X:
-    
-        Index: 21252 entries, 2495 to 15937
-        Data columns (total 32 columns):
-         #------ Column                   Non-Null Count  Dtype  
-        ---  ------                   --------------  -----  
-         0   sqft_living              21252 non-null  int64  
-         1   sqft_lot                 21252 non-null  int64  
-         2   sqft_living15            21252 non-null  int64  
-         3   sqft_lot15               21252 non-null  int64  
-         4   floors                   21252 non-null  float64
-         5   bedrooms                 21252 non-null  int64  
-         6   bathrooms                21252 non-null  float64
-         7   basement                 21252 non-null  int32  
-         8   grade_4_Low              21252 non-null  float64
-         9   grade_5_Fair             21252 non-null  float64
-         10  grade_6_Low_Average      21252 non-null  float64
-         11  grade_7_Average          21252 non-null  float64
-         12  grade_8_Good             21252 non-null  float64
-         13  grade_9_Better           21252 non-null  float64
-         14  grade_10_Very_Good       21252 non-null  float64
-         15  grade_11_Excellent       21252 non-null  float64
-         16  grade_12_Luxury          21252 non-null  float64
-         17  view_FAIR                21252 non-null  float64
-         18  view_AVERAGE             21252 non-null  float64
-         19  view_GOOD                21252 non-null  float64
-         20  view_EXCELLENT           21252 non-null  float64
-         21  waterfront               21252 non-null  int64  
-         22  condition_Fair           21252 non-null  float64
-         23  condition_Average        21252 non-null  float64
-         24  condition_Good           21252 non-null  float64
-         25  condition_Very_Good      21252 non-null  float64
-         26  renovated                21252 non-null  int32  
-         27  yr_built_1920_to_1940_s  21252 non-null  float64
-         28  yr_built_1940_to_1960_s  21252 non-null  float64
-         29  yr_built_1960_to_1980_s  21252 non-null  float64
-         30  yr_built_1980_to_2000_s  21252 non-null  float64
-         31  yr_built_2000_to_2020_s  21252 non-null  float64
-        dtypes: float64(24), int32(2), int64(6)
-        memory usage: 5.7+ MB
-    
-        kc_y:
-    
-        Index: 21252 entries, 2495 to 15937
-        Series name: price
-        Non-Null Count  Dtype  
-        --------------  -----  
-        21252 non-null  float64
-        dtypes: float64(1)
-        memory usage: 848.1+ KB
-    
-</details>
-
-
-<h3 align='center'><strong>Seattle Preprocessed DataFrame</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Seattle Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-    kc_X_seattle:
-    
-    Index: 8828 entries, 6729 to 15937
-    Data columns (total 23 columns):
-     #------ Column                   Non-Null Count  Dtype  
-    ---  ------                   --------------  -----  
-     0   sqft_living              8828 non-null   int64  
-     1   sqft_lot                 8828 non-null   int64  
-     2   sqft_living15            8828 non-null   int64  
-     3   sqft_lot15               8828 non-null   int64  
-     4   floors                   8828 non-null   float64
-     5   bedrooms                 8828 non-null   int64  
-     6   bathrooms                8828 non-null   float64
-     7   grade_5_Fair             8828 non-null   float64
-     8   grade_6_Low_Average      8828 non-null   float64
-     9   grade_8_Good             8828 non-null   float64
-     10  grade_9_Better           8828 non-null   float64
-     11  grade_10_Very_Good       8828 non-null   float64
-     12  grade_11_Excellent       8828 non-null   float64
-     13  grade_12_Luxury          8828 non-null   float64
-     14  view_GOOD                8828 non-null   float64
-     15  view_EXCELLENT           8828 non-null   float64
-     16  waterfront               8828 non-null   int64  
-     17  condition_Good           8828 non-null   float64
-     18  condition_Very_Good      8828 non-null   float64
-     19  yr_built_1940_to_1960_s  8828 non-null   float64
-     20  yr_built_1960_to_1980_s  8828 non-null   float64
-     21  yr_built_1980_to_2000_s  8828 non-null   float64
-     22  yr_built_2000_to_2020_s  8828 non-null   float64
-    dtypes: float64(17), int64(6)
-    memory usage: 1.9+ MB
-    
-    kc_y_seattle:
-    
-    Index: 8828 entries, 6729 to 15937
-    Series name: price
-    Non-Null Count  Dtype  
-    --------------  -----  
-    8828 non-null   float64
-    dtypes: float64(1)
-    memory usage: 396.0+ KB
-    
-</details>
-
-<h3 align='center'><strong>Outside Seattle Preprocessed DataFrame</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>.info()</code> of the X and Y components of the Outside Seattle Preprocessed DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-    
-    kc_X_out_seattle:
-    
-    Index: 12424 entries, 2495 to 20963
-    Data columns (total 26 columns):
-     #------ Column                   Non-Null Count  Dtype  
-    ---  ------                   --------------  -----  
-     0   sqft_lot                 12424 non-null  int64  
-     1   sqft_living15            12424 non-null  int64  
-     2   sqft_lot15               12424 non-null  int64  
-     3   floors                   12424 non-null  float64
-     4   bedrooms                 12424 non-null  int64  
-     5   bathrooms                12424 non-null  float64
-     6   basement                 12424 non-null  int32  
-     7   grade_5_Fair             12424 non-null  float64
-     8   grade_6_Low_Average      12424 non-null  float64
-     9   grade_8_Good             12424 non-null  float64
-     10  grade_9_Better           12424 non-null  float64
-     11  grade_10_Very_Good       12424 non-null  float64
-     12  grade_11_Excellent       12424 non-null  float64
-     13  grade_12_Luxury          12424 non-null  float64
-     14  view_FAIR                12424 non-null  float64
-     15  view_AVERAGE             12424 non-null  float64
-     16  view_GOOD                12424 non-null  float64
-     17  view_EXCELLENT           12424 non-null  float64
-     18  waterfront               12424 non-null  int64  
-     19  condition_Good           12424 non-null  float64
-     20  condition_Very_Good      12424 non-null  float64
-     21  renovated                12424 non-null  int32  
-     22  yr_built_1920_to_1940_s  12424 non-null  float64
-     23  yr_built_1940_to_1960_s  12424 non-null  float64
-     24  yr_built_1960_to_1980_s  12424 non-null  float64
-     25  yr_built_2000_to_2020_s  12424 non-null  float64
-    dtypes: float64(19), int32(2), int64(5)
-    memory usage: 2.7+ MB
-    None
-    
-    kc_y_out_seattle:
-    
-    Index: 12424 entries, 2495 to 20963
-    Series name: price
-    Non-Null Count  Dtype  
-    --------------  -----  
-    12424 non-null  float64
-    dtypes: float64(1)
-    memory usage: 452.2+ KB
-    None
-    
-</details>
-    
-</details>
 
 <a id='sect_model_iter'></a>
 
 <h1 align='center'><strong><u>Model Iterations</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;With the preprocessed dataframes ready, I could begin building models.
-&ensp;The base models for each preprocessed dataframe were simply the relationship between the target variable, `price`, and the most correlated feature, `sqft_living`, which could then be used to judge the performance of any future model iterations.
-&ensp;After establishing a baseline for each preprocessed dataframe, I created models for each with all the predictors available.
-&ensp;I then began eliminating them to create a final model with only the best predictors.
-&ensp;I eliminated the predictors using three methods:
-- `Variance Inflation Factor (VIF)`
-    - Predictors with high levels of multicollinearity missed by my initial correlation examination were eliminated.
-- `Recursive Feature Elimination with Cross-Validation (RFECV)`
-    - Using machine learning to eliminate the weakest features.
-- `P-Values`
-    - Any remaining features with `p-values` less than the standard confidence level of `0.05` were eliminated to only include the predictors of the highest statistical significance.
+For each of the three models, I started by getting a baseline. I then created full models that included all possible features. I then began eliminating them to create a final model with only the best features. First, I removed features with high levels of multicollinearity. I then used machine learning to eliminate all but the best features. Finally, I eliminated all features with `pvalues` less than the standard confidence level of $0.05$ to include only the highest statistically significant features.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Once the predictors for each model were finalized, I could investigate the `Linearity, Normality, and Homoscedasticity` of the predicted values generated by each model.
-&ensp;For each of the models, a log transformation of the target variable was necessary for the model to meet the assumptions required when building multiple linear regression models.
-&ensp;I then had a final equation that I could analyze to produce my [Insights and Conclusions](#sect_insights_and_conclusions).
-&ensp;I transformed the coefficients in the equation to make understanding them easier.
-&ensp;I also created simple dataframes with the coefficients, the $r^2$, and the adjusted $r^2$ scores from each model to make any comparisons between the models easier.
-&ensp;If you click on the collapsible section below, you can see more details on the model iterations I created, as well as the model comparison dataframes and the final equations for each model.
-&ensp;It is 
+After checking to make sure the results met the requirements of linear regression, it was necessary to perform a log transformation of the target variable for each model to meet those requirements.  I then had a final equation that I could analyze to produce my <a href=”https://github.com/sarnadpy32/king_county_development#insights-and-conclusions”>Insights, Conclusions, and Recommendations</a>.  I transformed the coefficients in the equation to make understanding them more accessible.
 
-<a id='sub_sect_kc'></a>
+<h2 align='center'><strong>Final Equations</strong></h2>
 
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the model comparison dataframes and the final equations for the three models.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-<h2 align='center'><strong>All King County Models</strong></h2>
-
-<h3 align='center'><strong>Comparing <code>kc</code> Models</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>kc</code> Model Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-|                         |   base   |     full     |  full_VIF  |  full_RFECV  |    fin     |   log   |
-|:-----------------------:|:--------:|:------------:|:----------:|:------------:|:----------:|:-------:|
-|          const          | -7280.35 | 1.85126e+06  | 181853.63  |  184086.86   | 184086.86  | 12.4751 |
-|       sqft_living       |  261.48  |    101.41    |     -      |      -       |     -      |    -    |
-|        sqft_lot         |    -     |      0       |    0.16    |     0.16     |    0.16    |   0.0   |
-|      sqft_living15      |    -     |    43.95     |   84.43    |     85.0     |    85.0    | 0.0002  |
-|       sqft_lot15        |    -     |    -0.41     |   -0.34    |    -0.34     |   -0.34    |  -0.0   |
-|         floors          |    -     |   32242.4    |  38391.34  |   38596.57   |  38596.57  | 0.0798  |
-|        bedrooms         |    -     |    -20564    |  1876.15   |      -       |     -      |    -    |
-|        bathrooms        |    -     |   43649.6    |  77424.92  |   78637.52   |  78637.52  | 0.1102  |
-|        basement         |    -     |   28271.1    |  46838.03  |   46921.4    |  46921.4   | 0.1023  |
-|       grade_4_Low       |    -     | -1.84586e+06 | -202612.19 |  -205199.69  | -205199.69 | -0.733  |
-|      grade_5_Fair       |    -     | -1.80682e+06 | -156429.53 |  -158160.98  | -158160.98 | -0.4922 |
-|   grade_6_Low_Average   |    -     | -1.75162e+06 | -91864.21  |  -92576.01   | -92576.01  | -0.2792 |
-|     grade_7_Average     |    -     | -1.66648e+06 |     -      |      -       |     -      |    -    |
-|      grade_8_Good       |    -     | -1.58169e+06 |  96157.1   |   96053.56   |  96053.56  | 0.2232  |
-|     grade_9_Better      |    -     | -1.4403e+06  | 267735.68  |  267709.22   | 267709.22  | 0.4668  |
-|   grade_10_Very_Good    |    -     | -1.24836e+06 |  491630.8  |  491261.71   | 491261.71  | 0.6668  |
-|   grade_11_Excellent    |    -     |   -979480    | 796781.64  |  796239.55   | 796239.55  | 0.8407  |
-|     grade_12_Luxury     |    -     |   -732027    | 1073845.32 |  1072828.69  | 1072828.69 | 0.9651  |
-|        view_FAIR        |    -     |    108804    | 112440.75  |  112164.38   | 112164.38  | 0.1442  |
-|      view_AVERAGE       |    -     |   52721.4    |  57588.41  |   57406.37   |  57406.37  | 0.0781  |
-|        view_GOOD        |    -     |    109098    | 112817.17  |  112393.29   | 112393.29  | 0.0971  |
-|     view_EXCELLENT      |    -     |    277423    | 283667.93  |  283371.66   | 283371.66  | 0.2578  |
-|       waterfront        |    -     |    391638    | 403652.08  |   402814.2   |  402814.2  | 0.3097  |
-|     condition_Fair      |    -     |   18184.8    | -26034.46  |      -       |     -      |    -    |
-|    condition_Average    |    -     |   41651.8    |     -      |      -       |     -      |    -    |
-|     condition_Good      |    -     |   70256.4    |  31452.89  |   32015.22   |  32015.22  | 0.0517  |
-|   condition_Very_Good   |    -     |    109976    |  71782.15  |   72384.31   |  72384.31  | 0.1136  |
-|        renovated        |    -     |   43209.9    |  50488.77  |   50507.01   |  50507.01  | 0.0428  |
-| yr_built_1920_to_1940_s |    -     |   -21387.5   | -22770.59  |  -22905.56   | -22905.56  | -0.0518 |
-| yr_built_1940_to_1960_s |    -     |   -90311.3   | -91173.55  |  -91062.34   | -91062.34  | -0.1928 |
-| yr_built_1960_to_1980_s |    -     |   -189001    | -197283.5  |  -196955.07  | -196955.07 | -0.3973 |
-| yr_built_1980_to_2000_s |    -     |   -267220    | -281701.49 |  -282060.51  | -282060.51 | -0.4949 |
-| yr_built_2000_to_2020_s |    -     |   -244944    | -256734.33 |  -257185.94  | -257185.94 | -0.456  |
-|         r_score         |   0.46   |     0.67     |    0.65    |     0.65     |    0.65    | 0.6452  |
-|       r_adj_score       |   0.46   |     0.67     |    0.65    |     0.65     |    0.65    | 0.6448  |
-    
-</details>
-
-<h3 align='center'><strong><code>kc_log_eq</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Final Equation for the <code>kc</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+<h3 align='center'><strong>All King County Model</strong></h3>
 
 ```
-price = 261735 +
-0% * sqft_lot +
-0% * sqft_living15 +
-0% * sqft_lot15 +
-7% * floors +
-11% * bathrooms +
-10% * basement +
--73% * grade_4_Low +
--49% * grade_5_Fair +
--27% * grade_6_Low_Average +
-22% * grade_8_Good +
+price = 247106 +
+0% * sqft_living +
+6% * floors +
+-2% * bedrooms +
+-2% * bathrooms +
+24% * renovated +
+13% * basement +
+-31% * grade_5_Fair +
+-18% * grade_6_Low_Average +
+20% * grade_8_Good +
+42% * grade_9_Better +
+61% * grade_10_Very_Good +
+77% * grade_11_Excellent +
+92% * grade_12_Luxury +
+9% * condition_Good +
+22% * condition_Very_Good
+```
+
+<h3 align='center'><strong>Seattle Model</strong></h3>
+
+```
+price = 266245 +
+0% * sqft_living +
+6% * floors +
+-3% * bedrooms +
+-3% * bathrooms +
+15% * renovated +
+7% * basement +
+-33% * grade_5_Fair +
+-22% * grade_6_Low_Average +
+19% * grade_8_Good +
 46% * grade_9_Better +
 66% * grade_10_Very_Good +
-84% * grade_11_Excellent +
-96% * grade_12_Luxury +
-14% * view_FAIR +
-7% * view_AVERAGE +
-9% * view_GOOD +
-25% * view_EXCELLENT +
-30% * waterfront +
-5% * condition_Good +
-11% * condition_Very_Good +
-4% * renovated +
--5% * yr_built_1920_to_1940_s +
--19% * yr_built_1940_to_1960_s +
--39% * yr_built_1960_to_1980_s +
--49% * yr_built_1980_to_2000_s +
--45% * yr_built_2000_to_2020_s
+82% * grade_11_Excellent +
+82% * grade_12_Luxury +
+14% * condition_Good +
+23% * condition_Very_Good
 ```
-    
-</details>
 
-<h2 align='center'><strong>Seattle Models</strong></h2>
-
-
-<h3 align='center'><strong>Comparing <code>seattle</code> Models</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>seattle</code> Model Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-|                         |  base   |   full   |  full_VIF  |  full_RFECV  |    fin     | log     |
-|:-----------------------:|:-------:|:--------:|:----------:|:------------:|:----------:|:--------|
-|          const          | 7148.41 |  491438  | 158847.89  |  155356.89   | 150633.28  | 12.5694 |
-|       sqft_living       | 293.17  |  135.15  |   136.21   |    136.39    |   134.33   | 0.0002  |
-|        sqft_lot         |    -    |  -2.51   |   -2.51    |    -2.54     |   -2.48    | -0.0    |
-|      sqft_living15      |    -    |  131.77  |   131.11   |    131.46    |   131.75   | 0.0002  |
-|       sqft_lot15        |    -    |  -10.48  |   -10.53   |    -10.54    |   -10.41   | -0.0    |
-|         floors          |    -    |  26516   |  26529.99  |   26635.76   |  29577.71  | 0.0254  |
-|        bedrooms         |    -    | -20287.8 | -20608.57  |  -20596.79   | -20490.59  | -0.0288 |
-|        bathrooms        |    -    | 22132.3  |  22340.04  |   22311.97   |  21428.51  | 0.0455  |
-|        basement         |    -    | -6765.95 |  -7093.05  |   -7230.78   |     -      | -       |
-|      grade_5_Fair       |    -    | -553126  | -85545.22  |  -87652.26   | -85594.76  | -0.412  |
-|   grade_6_Low_Average   |    -    | -536149  | -62415.59  |  -62528.72   | -61946.55  | -0.2459 |
-|     grade_7_Average     |    -    | -474583  |     -      |      -       |     -      | -       |
-|      grade_8_Good       |    -    | -393684  |  80506.23  |   80651.86   |  80722.49  | 0.1949  |
-|     grade_9_Better      |    -    | -190466  | 283354.67  |  283346.02   | 284470.63  | 0.4383  |
-|   grade_10_Very_Good    |    -    | 63240.3  | 536847.91  |  536678.08   | 538149.36  | 0.5654  |
-|   grade_11_Excellent    |    -    |  451839  | 925217.63  |  925367.66   | 927254.11  | 0.706   |
-|     grade_12_Luxury     |    -    |  786496  | 1261792.74 |  1262217.0   | 1261689.34 | 1.1849  |
-|        view_FAIR        |    -    | 13241.9  |  14928.8   |   14573.3    |     -      | -       |
-|      view_AVERAGE       |    -    | 2284.04  |  2245.71   |      -       |     -      | -       |
-|        view_GOOD        |    -    |  40583   |  40385.02  |   39867.15   |  38758.08  | 0.0447  |
-|     view_EXCELLENT      |    -    |  151865  | 150499.34  |  150208.06   | 148506.59  | 0.2145  |
-|       waterfront        |    -    |  288777  |  287809.1  |  287742.45   |  287184.8  | 0.381   |
-|     condition_Fair      |    -    |  123737  | -17472.86  |      -       |     -      | -       |
-|    condition_Average    |    -    |  142631  |     -      |      -       |     -      | -       |
-|     condition_Good      |    -    |  164662  |  22273.24  |   22633.66   |  22578.01  | 0.0705  |
-|   condition_Very_Good   |    -    |  197202  |  54683.97  |   55144.57   |  54934.0   | 0.1024  |
-|        renovated        |    -    | -1184.31 |  -374.69   |      -       |     -      | -       |
-| yr_built_1920_to_1940_s |    -    | -5859.97 |  -4599.04  |      -       |     -      | -       |
-| yr_built_1940_to_1960_s |    -    | -70917.6 | -69411.88  |  -66702.13   | -66135.54  | -0.1483 |
-| yr_built_1960_to_1980_s |    -    | -170904  | -169779.18 |  -166989.49  | -166736.97 | -0.3214 |
-| yr_built_1980_to_2000_s |    -    | -197924  | -197007.95 |  -194238.87  | -193683.66 | -0.3039 |
-| yr_built_2000_to_2020_s |    -    | -202398  | -201521.89 |  -198890.26  | -200151.41 | -0.3417 |
-|         r_score         |  0.49   |   0.75   |    0.75    |     0.75     |    0.75    | 0.6978  |
-|       r_adj_score       |  0.49   |   0.75   |    0.75    |     0.75     |    0.75    | 0.697   |
-    
-</details>
-
-<h3 align='center'><strong><code>seattle_log_eq</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Final Equation for the <code>seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+<h3 align='center'><strong>Outside Seattle Model</strong></h3>
 
 ```
-price = 287626 +
+price = 221242 +
 0% * sqft_living +
-0% * sqft_lot +
-0% * sqft_living15 +
-0% * sqft_lot15 +
-2% * floors +
--2% * bedrooms +
+-6% * floors +
+-1% * bedrooms +
 4% * bathrooms +
--41% * grade_5_Fair +
--24% * grade_6_Low_Average +
-19% * grade_8_Good +
-43% * grade_9_Better +
-56% * grade_10_Very_Good +
-70% * grade_11_Excellent +
-118% * grade_12_Luxury +
-4% * view_GOOD +
-21% * view_EXCELLENT +
-38% * waterfront +
-7% * condition_Good +
-10% * condition_Very_Good +
--14% * yr_built_1940_to_1960_s +
--32% * yr_built_1960_to_1980_s +
--30% * yr_built_1980_to_2000_s +
--34% * yr_built_2000_to_2020_s
+26% * renovated +
+-17% * grade_6_Low_Average +
+21% * grade_8_Good +
+42% * grade_9_Better +
+58% * grade_10_Very_Good +
+69% * grade_11_Excellent +
+82% * grade_12_Luxury +
+6% * condition_Good +
+16% * condition_Very_Good
 ```
-    
-</details>
-      
-<a id='sub_sect_out_seattle'></a>
 
-<h2 align='center'><strong>Outside Seattle Models</strong></h2>
+I also created simple dataframes with the coefficients, the $𝑟^2$, and the adjusted $𝑟^2$ scores from each model to make comparisons between the iterations easier.
 
-<h3 align='center'><strong>Comparing <code>out_seattle</code> Models</strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>out_seattle</code> Model Comparison DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+<h2 align='center'><strong>Comparison Dataframes</strong></h2>
 
-|                         |   base    |     full     |  full_VIF  |  full_RFECV  |    fin     | log     |
-|:-----------------------:|:---------:|:------------:|:----------:|:------------:|:----------:|:--------|
-|          const          | -88031.96 | 1.62385e+06  | -71551.43  |  -71551.43   | -72877.59  | 11.9124 |
-|       sqft_living       |  274.79   |    117.21    |     -      |      -       |     -      | -       |
-|        sqft_lot         |     -     |     0.09     |    0.28    |     0.28     |    0.27    | 0.0     |
-|      sqft_living15      |     -     |    59.57     |   100.06   |    100.06    |   100.09   | 0.0002  |
-|       sqft_lot15        |     -     |    -0.29     |   -0.22    |    -0.22     |   -0.22    | -0.0    |
-|         floors          |     -     |   -33303.7   | -17430.15  |  -17430.15   | -17429.06  | 0.0063  |
-|        bedrooms         |     -     |   -17308.3   |  7787.86   |   7787.86    |  7859.85   | 0.0154  |
-|        bathrooms        |     -     |   50836.9    |  88325.45  |   88325.45   |  88620.09  | 0.1255  |
-|        basement         |     -     |   -12974.7   |  15322.16  |   15322.16   |  15217.88  | 0.0435  |
-|       grade_4_Low       |     -     | -1.54636e+06 | -68083.09  |  -68083.09   |     -      | -       |
-|      grade_5_Fair       |     -     | -1.54258e+06 | -70039.11  |  -70039.11   | -69234.79  | -0.2987 |
-|   grade_6_Low_Average   |     -     | -1.5127e+06  | -44490.69  |  -44490.69   | -44259.22  | -0.1998 |
-|     grade_7_Average     |     -     | -1.46058e+06 |     -      |      -       |     -      | -       |
-|      grade_8_Good       |     -     | -1.39666e+06 |  79979.87  |   79979.87   |  80128.48  | 0.2084  |
-|     grade_9_Better      |     -     | -1.29099e+06 |  218543.6  |   218543.6   | 218659.91  | 0.4119  |
-|   grade_10_Very_Good    |     -     | -1.12667e+06 | 421548.82  |  421548.82   | 421580.38  | 0.6038  |
-|   grade_11_Excellent    |     -     |   -895491    | 694388.83  |  694388.83   | 694329.46  | 0.7448  |
-|     grade_12_Luxury     |     -     |   -620164    | 1008847.43 |  1008847.43  | 1008671.92 | 0.8752  |
-|        view_FAIR        |     -     |    188561    | 195214.73  |  195214.73   | 194746.14  | 0.2116  |
-|      view_AVERAGE       |     -     |   58891.4    |  69604.22  |   69604.22   |  69726.34  | 0.0795  |
-|        view_GOOD        |     -     |   85552.9    |  88884.54  |   88884.54   |  88931.12  | 0.0668  |
-|     view_EXCELLENT      |     -     |    351262    | 367216.01  |  367216.01   | 367194.68  | 0.2614  |
-|       waterfront        |     -     |    584100    | 597325.25  |  597325.25   | 597656.29  | 0.4678  |
-|     condition_Fair      |     -     |   -119906    | -29974.66  |  -29974.66   |     -      | -       |
-|    condition_Average    |     -     |   -92324.2   |     -      |      -       |     -      | -       |
-|     condition_Good      |     -     |   -62367.9   |  35968.72  |   35968.72   |  36503.41  | 0.0491  |
-|   condition_Very_Good   |     -     |   -26097.7   |  77089.86  |   77089.86   |  77828.57  | 0.1325  |
-|        renovated        |     -     |    139379    | 160733.11  |  160733.11   |  161218.9  | 0.1626  |
-| yr_built_1920_to_1940_s |     -     |    341.04    |  71212.78  |   71212.78   |  69159.6   | 0.1454  |
-| yr_built_1940_to_1960_s |     -     |   74516.7    | 158097.61  |  158097.61   | 157501.35  | 0.2579  |
-| yr_built_1960_to_1980_s |     -     |   -20379.1   |  60449.98  |   60449.98   |  60335.75  | 0.0878  |
-| yr_built_1980_to_2000_s |     -     |   -78898.1   |     -      |      -       |     -      | -       |
-| yr_built_2000_to_2020_s |     -     |   -67913.1   |  23061.71  |   23061.71   |  23224.04  | 0.0279  |
-|         r_score         |    0.5    |     0.67     |    0.65    |     0.65     |    0.65    | 0.6557  |
-|       r_adj_score       |    0.5    |     0.67     |    0.65    |     0.65     |    0.65    | 0.655   |
-    
-</details>
+<h3 align='center'><strong>All King County Model</strong></h3>
 
-<h3 align='center'><strong><code>out_seattle_log_eq</code></strong></h3>
-<br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Final Equation for the <code>out_seattle</code> Model.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
+|                     |   base   |    full     |  full_VIF  |  full_RFECV  |    fin     |  log  |
+|:-------------------:|:--------:|:-----------:|:----------:|:------------:|:----------:|:-----:|
+|        const        | -9971.04 | 1703859.53  | 154498.66  |  154081.19   | 154081.19  | 12.42 |
+|     sqft_living     |  263.16  |   140.41    |   146.48   |    146.51    |   146.51   |  0.0  |
+|       floors        |    -     |  22726.76   |  23217.92  |   23243.39   |  23243.39  | 0.06  |
+|      bedrooms       |    -     |  -21777.63  | -23178.87  |  -23123.99   | -23123.99  | -0.03 |
+|      bathrooms      |    -     |  -11206.55  |  -11716.3  |  -11679.28   | -11679.28  | -0.03 |
+|      renovated      |    -     |  181119.06  | 181923.97  |  181930.52   | 181930.52  | 0.24  |
+|      basement       |    -     |  69626.24   |  68594.06  |   68635.8    |  68635.8   | 0.13  |
+|     grade_4_Low     |    -     | -1517768.34 | -45367.09  |      -       |     -      |   -   |
+|    grade_5_Fair     |    -     | -1524888.40 | -55131.79  |  -54848.37   | -54848.37  | -0.32 |
+| grade_6_Low_Average |    -     | -1504414.35 | -37038.44  |  -36835.73   | -36835.73  | -0.19 |
+|   grade_7_Average   |    -     | -1465915.91 |     -      |      -       |     -      |   -   |
+|    grade_8_Good     |    -     | -1385018.24 |  77346.95  |   77366.58   |  77366.58  |  0.2  |
+|   grade_9_Better    |    -     | -1233625.54 | 224878.96  |  224842.46   | 224842.46  | 0.43  |
+| grade_10_Very_Good  |    -     | -1024006.32 | 430919.78  |  430839.46   | 430839.46  | 0.61  |
+| grade_11_Excellent  |    -     | -730707.33  | 719936.13  |  719795.31   | 719795.31  | 0.77  |
+|   grade_12_Luxury   |    -     | -410107.78  | 1036957.95 |  1036795.91  | 1036795.91 | 0.93  |
+|   condition_Fair    |    -     |  -77405.19  |  1475.96   |      -       |     -      |   -   |
+|  condition_Average  |    -     |  -79715.71  |     -      |      -       |     -      |   -   |
+|   condition_Good    |    -     |  -17962.22  |  60874.46  |   60830.85   |  60830.85  | 0.09  |
+| condition_Very_Good |    -     |  65505.18   | 144022.38  |  144020.17   | 144020.17  | 0.23  |
+|       r_score       |   0.47   |    0.60     |    0.59    |     0.59     |    0.59    | 0.58  |
+|     r_adj_score     |   0.47   |    0.60     |    0.59    |     0.59     |    0.59    | 0.58  |
 
-```
-price = 149110 +
-0% * sqft_lot +
-0% * sqft_living15 +
-0% * sqft_lot15 +
-0% * floors +
-1% * bedrooms +
-12% * bathrooms +
-4% * basement +
--29% * grade_5_Fair +
--19% * grade_6_Low_Average +
-20% * grade_8_Good +
-41% * grade_9_Better +
-60% * grade_10_Very_Good +
-74% * grade_11_Excellent +
-87% * grade_12_Luxury +
-21% * view_FAIR +
-7% * view_AVERAGE +
-6% * view_GOOD +
-26% * view_EXCELLENT +
-46% * waterfront +
-4% * condition_Good +
-13% * condition_Very_Good +
-16% * renovated +
-14% * yr_built_1920_to_1940_s +
-25% * yr_built_1940_to_1960_s +
-8% * yr_built_1960_to_1980_s +
-2% * yr_built_2000_to_2020_s
-```
-    
-</details>
-    
-</details>
+<h3 align='center'><strong>Seattle Model</strong></h3>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Unfortunately, none of the models I created could truly be relied upon to predict the sales prices of a residential property.
-&ensp;The $𝑟^2$, and the adjusted $𝑟^2$ scores never even broke a value of .7, meaning that the models were not reliable as predictive algorithms.
-&ensp;I could have refined the models further to increase their predictive abilities, but I will discuss why I didn’t in the [Future Investigations](#sect_fut_invest) section.
-&ensp;While the [Insights and Conclusions](#sect_insights_and_conclusions) I gleaned from my analysis are certainly an important first step, more data will need to be gathered if King County Development is to build a regression model that serves as a reliable predictive algorithm.
+|                     |  base   |    full    |  full_VIF  |  full_RFECV  |    fin     |  log  |
+|:-------------------:|:-------:|:----------:|:----------:|:------------:|:----------:|:-----:|
+|        const        | 6025.12 | 718614.03  | 174482.27  |  174683.85   | 174683.85  | 12.49 |
+|     sqft_living     | 294.04  |   184.66   |   187.29   |    187.3     |   187.3    |  0.0  |
+|       floors        |    -    |  27634.74  |  27933.29  |   27889.48   |  27889.48  | 0.06  |
+|      bedrooms       |    -    | -22775.69  | -23582.54  |  -23585.69   | -23585.69  | -0.03 |
+|      bathrooms      |    -    | -23920.65  | -24081.66  |  -24093.65   | -24093.65  | -0.03 |
+|      renovated      |    -    |  82079.33  |  82422.22  |   82342.85   |  82342.85  | 0.16  |
+|      basement       |    -    |  15712.48  |  14859.01  |   14825.5    |  14825.5   | 0.07  |
+|    grade_5_Fair     |    -    | -590885.08 | -45239.29  |  -44434.65   | -44434.65  | -0.33 |
+| grade_6_Low_Average |    -    | -601699.90 | -56100.52  |  -55951.24   | -55951.24  | -0.23 |
+|   grade_7_Average   |    -    | -545630.88 |     -      |      -       |     -      |   -   |
+|    grade_8_Good     |    -    | -453898.98 |  90137.91  |   90095.61   |  90095.61  |  0.2  |
+|   grade_9_Better    |    -    | -235354.60 |  307268.3  |  307233.45   | 307233.45  | 0.47  |
+| grade_10_Very_Good  |    -    |  62677.45  | 603706.67  |  603709.83   | 603709.83  | 0.66  |
+| grade_11_Excellent  |    -    | 453157.78  | 992514.98  |  992496.19   | 992496.19  | 0.82  |
+|   grade_12_Luxury   |    -    | 605889.08  | 1143498.83 |  1143492.96  | 1143492.96 | 0.83  |
+|   condition_Fair    |    -    |  9632.18   |  7250.82   |      -       |     -      |   -   |
+|  condition_Average  |    -    |  1971.63   |     -      |      -       |     -      |   -   |
+|   condition_Good    |    -    |  71790.87  |  69072.73  |   68935.18   |  68935.18  | 0.15  |
+| condition_Very_Good |    -    | 131047.49  |  128206.3  |  128087.95   | 128087.95  | 0.23  |
+|       r_score       |   0.5   |    0.66    |    0.66    |     0.66     |    0.66    |  0.6  |
+|     r_adj_score     |   0.5   |    0.66    |    0.66    |     0.66     |    0.66    |  0.6  |
+
+<h3 align='center'><strong>Outside Seattle Model</strong></h3>
+
+|                     |   base    |    full     |  full_VIF  |  full_RFECV  |    fin    |  log  |
+|:-------------------:|:---------:|:-----------:|:----------:|:------------:|:---------:|:-----:|
+|        const        | -91819.36 | 1572682.14  | 134905.34  |  136007.95   | 133291.01 | 12.31 |
+|     sqft_living     |  276.92   |   158.60    |   163.7    |    164.52    |  164.72   |  0.0  |
+|       floors        |     -     |  -56699.56  | -58086.85  |   -60113.1   | -60315.98 | -0.07 |
+|      bedrooms       |     -     |  -20231.90  | -21478.18  |  -21535.73   | -21441.37 | -0.02 |
+|      bathrooms      |     -     |  30944.55   |  30521.39  |   31254.04   | 32069.22  | 0.05  |
+|      renovated      |     -     |  240012.33  |  238588.9  |  238554.48   | 238464.61 | 0.26  |
+|      basement       |     -     |   5653.46   |  3955.64   |      -       |     -     |   -   |
+|     grade_4_Low     |     -     | -1274230.51 |  14331.81  |      -       |     -     |   -   |
+|    grade_5_Fair     |     -     | -1311348.91 | -31293.35  |   -31772.7   |     -     |   -   |
+| grade_6_Low_Average |     -     | -1304850.91 |  -27068.7  |  -27763.58   | -26189.38 | -0.17 |
+|   grade_7_Average   |     -     | -1276829.89 |     -      |      -       |     -     |   -   |
+|    grade_8_Good     |     -     | -1202304.02 |  71721.48  |   71620.96   |  71997.1  | 0.22  |
+|   grade_9_Better    |     -     | -1078215.11 | 192902.31  |  192260.67   | 192295.88 | 0.42  |
+| grade_10_Very_Good  |     -     | -896194.07  | 372210.28  |  371205.11   | 370825.14 | 0.58  |
+| grade_11_Excellent  |     -     | -637499.77  | 627474.21  |  625882.61   | 624957.84 |  0.7  |
+|   grade_12_Luxury   |     -     | -321870.82  | 940021.89  |  937667.39   | 936340.61 | 0.82  |
+|   condition_Fair    |     -     | -174244.42  | -14624.14  |      -       |     -     |   -   |
+|  condition_Average  |     -     | -160787.67  |     -      |      -       |     -     |   -   |
+|   condition_Good    |     -     | -107988.52  |  51847.46  |   52185.95   | 52027.61  | 0.07  |
+| condition_Very_Good |     -     |  -49586.81  | 109942.38  |  110270.99   | 109455.1  | 0.16  |
+|       r_score       |   0.51    |    0.62     |    0.61    |     0.61     |   0.61    | 0.63  |
+|     r_adj_score     |   0.51    |    0.62     |    0.61    |     0.61     |   0.61    | 0.63  |
+
+After I had created the comparison dataframes for each of the models, I could analyze the performance of the models.
+
+<h2 align='center'><strong>Analyzing Model Performance</strong></h2>
+
+Unfortunately, the models I created could not be relied upon to predict the sales prices of a residential property. The $𝑟^2$ and the adjusted $𝑟^2$ scores never even broke a value of $.7$, meaning that the models were unreliable as predictive algorithms. I could have refined the models further to increase their predictive abilities, but I will discuss why I chose not to in the <a href=”https://github.com/sarnadpy32/king_county_development#future-investigations”>Future Investigations</a> section. While the <a href=”https://github.com/sarnadpy32/king_county_development#insights-and-conclusions”>Insights, Conclusions, and Recommendations</a> I gleaned from my analysis are certainly a first step, more data will need to be gathered if King County Development is to build a regression model that serves as a reliable predictive algorithm.
 
 <a id='sect_insights_and_conclusions'></a>
 
-<h1 align='center'><strong><u>Insights and Conclusions</u></strong></h1>
+<h1 align='center'><strong><u>Insights, Conclusions, and Recommendations</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;By creating the separate models, I was able to gain valuable insights.
-&ensp;I created a dataframe and visualiztions with the coefficients of the three log-transformed models to identify the differences between the predictors that were included in each model and their values more easily.
-&ensp;Based on my results, I developed specific recommendations for King County Development.
+By creating separate models, I was able to gain valuable insights.  I made a dataframe and visualizations with the coefficients of the three log-transformed models to quickly identify the differences between the predictors included in each model and their values.
 
-&nbsp;&nbsp;&nbsp;&nbsp;The most important feature in all three models was the `grade` of a property.
-&ensp;King County Development should therefore develop a database of pictures of properties with each `grade` category.
-&ensp;This should also be done for each of the `condition` and `view` categories, as they also had a significant impact on the sales price of a property.
-&ensp;These databases could guide King County Development as they design and build new properties, or to properly advise clients seeking renovation or remodeling services as to the cost versus the reward in making changes to a property.
-&ensp;They could also serve in any promotional material advertising those services.
+You can see the markdown version of the final equation comparison dataframe for the three models below.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Besides the picture databases for the `grade`, `condition`, and `view` features, my only other specific recommendations concern [Future Investigations](#sect_fut_invest), but there were other important, or at least interesting, features in my results of which King County Development should be aware.
+|                     |    kc     |  seattle  |  out_seattle  |
+|:-------------------:|:---------:|:---------:|:-------------:|
+|        const        | 247106.13 | 266245.11 |   221242.74   |
+|     sqft_living     |   0.02%   |   0.03%   |     0.03%     |
+|       floors        |   6.34%   |   6.19%   |    -6.65%     |
+|      bedrooms       |  -2.86%   |  -3.07%   |    -1.82%     |
+|      bathrooms      |  -2.83%   |  -3.23%   |     4.90%     |
+|      renovated      |  24.36%   |  15.88%   |    26.15%     |
+|      basement       |  13.09%   |   7.13%   |       -       |
+|     grade_4_Low     |     -     |     -     |       -       |
+|    grade_5_Fair     |  -31.92%  |  -33.28%  |       -       |
+| grade_6_Low_Average |  -18.69%  |  -22.94%  |    -17.16%    |
+|   grade_7_Average   |     -     |     -     |       -       |
+|    grade_8_Good     |  20.21%   |  19.97%   |    21.86%     |
+|   grade_9_Better    |  42.96%   |  46.72%   |    42.17%     |
+| grade_10_Very_Good  |  61.30%   |  66.12%   |    58.11%     |
+| grade_11_Excellent  |  77.40%   |  82.36%   |    69.67%     |
+|   grade_12_Luxury   |  92.86%   |  82.82%   |    82.16%     |
+|   condition_Fair    |     -     |     -     |       -       |
+|  condition_Average  |     -     |     -     |       -       |
+|   condition_Good    |   9.32%   |  14.86%   |     6.80%     |
+| condition_Very_Good |  22.84%   |  23.14%   |    16.15%     |
+|       r_score       |   0.582   |   0.596   |     0.628     |
+|     r_adj_score     |   0.581   |   0.596   |     0.627     |
 
-&nbsp;&nbsp;&nbsp;&nbsp;While the square footage features were not important on a per unit basis, `Living Area` does seem to a be extremely important inside of Seattle, as it was the only model in which the `Square Footage – Living Area` feature was even included.
-&ensp;It is also exhibited by the negative effect caused by increasing the number of bedrooms, holding everything else constant, in the Seattle model.
-&ensp;By itself, this would actually decrease the `Living Area`, again showing its value in Seattle.
-&ensp;This makes sense in an area where apartments are going to be more common than houses, which also would explain why, on the other hand, the `Basement` feature was not included inside of Seattle.
-
-&nbsp;&nbsp;&nbsp;&nbsp;It was also very interesting that the `Renovated` feature was not included at all in the Seattle model but was very important in the Outside Seattle model.
-&ensp;It was impossible to say for sure whether this was because renovations were expected in Seattle properties, or because it was not important, and people are happy just to get an apartment.
-&ensp;Either way, it is absolutely something that King County Development should address in an any [Future Investigations](#sect_fut_invest).
-
-&nbsp;&nbsp;&nbsp;&nbsp;Of course, being a `Waterfront` property adds significant value to a property, with the effect being the greatest in the Outside Seattle model.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Finally, my adjustment of the `yr_built` feature from a numerical feature to a categorical one split into periods of 20 years did not lead to any revelations worth mentioning, but I did notice a general negative trend in all three models.
-&ensp;I therefore created ***insert_link_here***another version*** of my analysis in which I did not make such an adjustment to investigate this further, which confirmed my hypothesis.
-&ensp;If the `yr_built` feature increased, in had a negative effect in all three models.
-&ensp;This could possibly indicate that older properties are preferred to newer properties.
-&ensp;This could also be addressed in any [Future Investigations](#sect_fut_invest), although I would say it should not be as high a priority as the investigating the `Renovated` feature.
-&ensp;If you wish to view my analysis of each individual feature, you can click on the collapsible section below.
-
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see my full analysis of the results.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-<ul style='list-style-type: none;'>
-    <li>Intercepts</li>
-        <ul>
-            <li>The Seattle model had the highest intercept, the entire King County model had the second highest, and the Outside Seattle model had the lowest.</li>
-            <li>Seattle Model - &dollar;287,626.85</li>
-            <li>Entire King County Model - &dollar;261,735.06</li>
-            <li>Outside Seattle Model - &dollar;149,110.47</li>
-        </ul>
-    <li><code>sqft</code> Columns</li>
-        <ul>
-            <li>These columns were not important on a per unit basis, but I could still judge them by whether they were included, whether they were positive or negative, and if they were $= 0.02$ in the dataframe / visualizations, or $\approx 0$.</li>
-            <li><code>sqft_living</code></li>
-                <ul>
-                    <li>It was only even included for the prices of residential property inside Seattle, and the fact that it was $0.02$ and positive, showing that living space is very important inside Seattle.</li>
-                </ul>
-            <li><code>sqft_living15</code></li>
-                <ul>
-                    <li>It was positive $0.02$, or very important, in all three models.</li>
-                </ul>
-            <li><code>sqft_lot</code></li>
-                <ul>
-                    <li>It was positive $\approx 0$ in the entire King County and the Outside Seattle models, and negative $\approx 0$ in the Seattle model, meaning that it was beneficial to the former, and detrimental to the latter, but not as important or harmful as if it was $0.02$.</li>
-                </ul>
-            <li><code>sqft_lot15</code></li>
-                <ul>
-                    <li>It was negative $\approx 0$, or detrimental, in all three models.</li>
-                </ul>
-        </ul>
-    <li><code>floors</code></li>
-        <ul>
-            <li>This was interesting.  It was most important in the entire King County model.  In the Seattle model, it was still important, but in the Outside Seattle model, it was barely important at all.</li>
-        </ul>
-    <li><code>bedrooms</code></li>
-        <ul>
-            <li>Another interesting predictor.  It wasn’t even included in the entire King County model, and it actually had a negative effect in the Seattle model.  However, it did have a positive effect in the Outside Seattle model.</li>
-        </ul>
-    <li><code>bathrooms</code></li>
-        <ul>
-            <li>It was very important in the entire King County model, and even more so in the Outside Seattle model.  In the Seattle model it was important, especially compared to the previous predictors, but not nearly as much as in the other models.</li>
-        </ul>
-    <li><code>basement</code></li>
-        <ul>
-            <li>It wasn’t even included in the Seattle model.  It was very important in the entire King County model. In the Outside Seattle model, it was important, and its worth noting that having a basement adds more value than additional floors outside of Seattle.
-        </ul>
-    <li><code>grade</code></li> 
-        <ul>
-            <li>This seems to be the most important feature when determining the price of a property.  The categories in this feature resulted in the largest changes in price, both positively and negatively.   Anything below <code>7_Average</code> had a negative effect if it was included at all, and the lower the <code>grade</code>, the worse the effect.  <code>7_Average</code> itself was not included in any of the models.  Anything above <code>7_Average</code> had a positive effect, and the size of the effect increases as <code>grade</code> does.</li>
-            <li><u>Specific Recommendation</u></li>
-                <ul>
-                    <li>Create a database of example pictures of properties with each <code>grade</code> value (<em>as many as can be gathered</em>)</li>
-                    <li>These could be used to guide King County Development as they design new properties, or act as a guide, or as an incentive in any promotional material, for any clients seeking renovation or remodeling services.</li>
-                </ul>
-        </ul>
-    <li><code>view</code></li>
-        <ul>
-            <li>The <code>FAIR</code> and <code>AVERAGE</code> dummy columns weren’t even included in the Seattle model, while even having a <code>FAIR</code> view was very important in the Outside Seattle model.  It is also important in the entire King County model, although less so.  Having an <code>AVERAGE</code> view added a similar increase in value in both the Outside Seattle and entire King County models, so an <code>AVERAGE</code> view could possibly be the standard / baseline in Seattle, as the <code>grade_7_Average</code> column seemed to be the standard / baseline in the <code>grade</code> column.  It is also especially worth noting how much of increase having an <code>EXCELLENT</code> view has on the price.</li>
-            <li><u>Specific Recommendation</u></li>
-                <ul>
-                    <li>Again, create a database of example pictures of properties with each <code>view</code> value, which could be used for the purposes I've previously described.</li>
-                </ul>
-        </ul>
-    <li><code>waterfront</code></li>
-        <ul>
-            <li>Having a waterfront property understandably adds significant value to the price, in all three models, and is the most significant in the Outside Seattle model.</li>
-        </ul>
-    <li><code>condition</code></li>
-        <ul>
-            <li>The <code>Fair</code> and <code>Average</code> dummy columns weren’t included in any of the models, and the <code>Average</code> column again seemed to be standard / baseline.  Having a <code>condition</code> of <code>Good</code> was slightly more important inside of Seattle, while having a <code>condition</code> of <code>Very_Good</code> was slightly more important outside of Seattle.</li>
-            <li><u>Specific Recommendation</u></li>
-                <ul>
-                    <li>Once again, create a database of example pictures of properties with each <code>condition</code> value, which could be used for the purposes I've previously described.</li>
-                </ul>
-        </ul>
-    <li><code>renovated</code></li>
-        <ul>
-            <li>An extremely important insight was gained for this predictor.  It wasn’t even included in the Seattle model, and it corresponded to a much smaller increase in value in the entire King County model than in the Outside Seattle model, where it was very important.</li>
-        </ul>
-    <li><code>yr_built</code></li>
-        <ul>
-            <li>This was the most difficult predictor to analyze.  In the entire King County model, the effect was negative for each dummy column and, generally, was less negative the further back in time the property was built.  In the Seattle model, the <code>1920s to 1940s</code> dummy column wasn’t even included, neither was the <code>1980s to 2000s</code> in the Outside Seattle model.  Both the Seattle and Outside Seattle models showed that older built properties seemed to be more valuable in general, although the trend was much clearer Outside Seattle.  Just to confirm that there was an overall negative effect as the <code>yr_built</code> increases in each model, I created a <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>copy of this notebook in which I did not restructure the <code>yr_built</code> column</a>, which confirmed my hypothesis.  I included the <code>yr_built</code> results from the other notebook below.</li>
-        </ul>
-</ul>
-    
-</details>
-
-&nbsp;&nbsp;&nbsp;&nbsp;If you would like to see the final equations of the three models from my primary analysis in a dataframe, click on the collapsible section below.
-<br><br>
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the Primary Results compared in a DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-<table align="center" width='99%'>
-
-<tr><td>
-
-|                         |   kc    |  seattle  |  out_seattle  |
-|:-----------------------:| :-------: |:---------:|:-------------:|
-|          const          | \$262K |   \$288K   |  \$149K     |
-|       sqft_living       |    -    |   0.02%   |       -       |
-|        sqft_lot         |  0.00%  |  -0.00%   |     0.00%     |
-|      sqft_living15      |  0.02%  |   0.02%   |     0.02%     |
-|       sqft_lot15        | -0.00%  |  -0.00%   |    -0.00%     |
-|         floors          |  7.98%  |   2.54%   |     0.63%     |
-|        bedrooms         |    -    |  -2.88%   |     1.54%     |
-|        bathrooms        | 11.02%  |   4.55%   |    12.55%     |
-|        basement         | 10.23%  |     -     |     4.35%     |
-|       grade_4_Low       | -73.30% |     -     |       -       |
-|      grade_5_Fair       | -49.22% |  -41.20%  |    -29.87%    |
-|   grade_6_Low_Average   | -27.92% |  -24.59%  |    -19.98%    |
-|     grade_7_Average     |    -    |     -     |       -       |
-|      grade_8_Good       | 22.32%  |  19.49%   |    20.84%     |
-|     grade_9_Better      | 46.68%  |  43.83%   |    41.19%     |
-|   grade_10_Very_Good    | 66.68%  |  56.54%   |    60.38%     |
-|   grade_11_Excellent    | 84.07%  |  70.60%   |    74.48%     |
-|     grade_12_Luxury     | 96.51%  |  118.49%  |    87.52%     |
-|        view_FAIR        | 14.42%  |     -     |    21.16%     |
-|      view_AVERAGE       |  7.81%  |     -     |     7.95%     |
-|        view_GOOD        |  9.71%  |   4.47%   |     6.68%     |
-|     view_EXCELLENT      | 25.78%  |  21.45%   |    26.14%     |
-|       waterfront        | 30.97%  |  38.10%   |    46.78%     |
-|     condition_Fair      |    -    |     -     |       -       |
-|    condition_Average    |    -    |     -     |       -       |
-|     condition_Good      |  5.17%  |   7.05%   |     4.91%     |
-|   condition_Very_Good   | 11.36%  |  10.24%   |    13.25%     |
-|        renovated        |  4.28%  |     -     |    16.26%     |
-| yr_built_1920_to_1940_s | -5.18%  |     -     |    14.54%     |
-| yr_built_1940_to_1960_s | -19.28% |  -14.83%  |    25.79%     |
-| yr_built_1960_to_1980_s | -39.73% |  -32.14%  |     8.78%     |
-| yr_built_1980_to_2000_s | -49.49% |  -30.39%  |       -       |
-| yr_built_2000_to_2020_s | -45.60% |  -34.17%  |     2.79%     |
-|         r_score         |  0.645  |   0.698   |     0.656     |
-|       r_adj_score       |  0.645  |   0.697   |     0.655     |
-    
-</td></tr> 
-</table>
-
-</details>
-
-&nbsp;&nbsp;&nbsp;&nbsp;If you wish to see the `yr_built` Results from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a> in a dataframe, click on the collapsible section below.
-
-<br>
-
-<details align='center'>
-    <summary><center><strong>&mdash;&nbsp;&nbsp;&nbsp;&nbsp;Click Here to see the <code>yr_built</code> Results from the Secondary Analysis in a DataFrame.&nbsp;&nbsp;&nbsp;&nbsp;&mdash;</strong></center></summary>
-
-<table align="center" width='99%'>
-  <tr valign="middle">
-    <td>
-
-
-|          |   kc   |  seattle  |  out_seattle  |
-|:--------:|:------:|:---------:|:-------------:|
-| yr_built | -0.58% |  -0.44%   |    -0.32%     |
-        
-        
-  </td>
-  </tr>
-</table>
-
-</details>
+<a id='sect_viz_coeff'></a>
 
 <h2 align='center'><strong>Visualizations of the Coefficients of the Three Log Models</strong></h2>
 
-<img src='visuals/presentation_pic_1.png'>
-<img src='visuals/presentation_pic_2.png'>
-<img src='visuals/presentation_pic_3.png'>
-<img src='visuals/presentation_pic_4.png'>
-<img src='visuals/presentation_pic_5.png'>
-<img src='visuals/presentation_pic_6.png'>
+I used the visualizations I created in the presentation to my stakeholder.  I also used them to help guide my recommendations.  I made lists of columns to loop through to create the visualizations and styled each of them accordingly.
 
-<h2 align='center'><strong><code>yr_built</code> Coefficient Visualization from the <a href='https://github.com/sarnadpy32/king_county_development/blob/master/Phase%202%20-%20Project%20-%20yr_built%20changed.ipynb'>Secondary Analysis</a></strong></h2>
-    
-<img src='visuals/presentation_pic_6_special.png'>
+As the living area's square footage was not important per unit basis, it required a unique visualization to show its effect correctly.
+
+<h3 align='center'><strong>Living Area Square Footage & Renovated</strong></h3>
+<img src='visuals/presentation_pic_1.png'>
+
+<h3 align='center'><strong>Sales Price vs. Living Area Square Footage</strong></h3>
+<img src='visuals/presentation_pic_1_special.png'>
+
+<h3 align='center'><strong>Floors, Bedrooms, Bathrooms & Basement</strong></h3>
+<img src='visuals/presentation_pic_2.png'>
+
+<h3 align='center'><strong>Grade</strong></h3>
+<img src='visuals/presentation_pic_3.png'>
+
+<h3 align='center'><strong>Condition</strong></h3>
+<img src='visuals/presentation_pic_4.png'>
+
+<a id='reco_concl'></a>
+
+<h2 align='center'><strong>General Conclusions</strong></h2>
+
+It made sense that the square footage of the living area was included in all three models.  The more living space in the property, the more expensive the property.  Its effect on the sales price was exponential and dependent on both a starting point and a specific increase.  Therefore, any recommendation I provided would be arbitrary and its value limited.  This is the primary reason I built the <a href=”https://github.com/sarnadpy32/king_county_development#sales-price-calculator”>Sales Price Calculator</a>.  Using it, King County Development could easily show the effect of an increase in the square footage of the living area for any property.
+
+While renovations may not be considered a feature that can be changed, the fact that they were included in all three models showed that they were important in determining the sales price.  Their positive effect also indicates that renovations can add significant value to a property.  However, the size of the effect varied between the models.  In the All King County and Outside Seattle models, renovations increased the sales price by around $25\%$.  In the Seattle model, the effect was lower at around $16\%$.  Regardless, this data can be used to prove to investors, clients, or the public via marketing that renovations make a difference.
+
+The purpose of creating three separate models was to compare the results.  This was particularly interesting for the `floors`, `bathrooms`, and `basement` features.  They were similar in effect in the All King County and Seattle models.  In both models, the `floors` feature had a positive effect of around $6%$, while the `bathrooms` feature had a negative effect of about $3%$.  The `basement` feature had a positive effect in both models, but the effect was almost double in the All King County model compared to the Seattle model.  The `floors` and `bathrooms` features had the opposite effect in the Outside Seattle model, almost the exact opposite.  The fact that adding a `floor` Outside of Seattle had a negative effect was quite interesting. Still, the most interesting contradiction was that the `basement` feature wasn’t even included in the Outside Seattle Model.  
+
+While the models contradicted each other in those three features, they were all aligned in that the `bedrooms` feature decreased the sales price in all three models.  This may be because you are decreasing the amount of living space by increasing the number of bedrooms and holding everything else constant.  The results for the `floors`, `bedrooms`, `bathrooms`, and `basement` features were perplexing and, unfortunately, did not lead to any actionable recommendations.  I will discuss how these results can be improved in the <a href=”https://github.com/sarnadpy32/king_county_development#future-investigations”>Future Investigations</a> section.
+
+The most important feature by far was the `grade` of a property.  The categories in this feature resulted in the most significant changes in the sales price, both positively and negatively.  The `Average` `grade` was the point of zero effect and was not included in any of the models.  The categories above `Average` had increasingly positive effects, and the categories below it had increasingly negative effects, if they were included at all.  I recommend that King County Development at least design properties with a `grade` of `Better`, as it resulted in a significant increase of around $40\%$ in all three models and may be more attainable than the higher `grade`s.
+
+The effect of the `condition` feature was also significant and followed a similar pattern as the `grade` feature. However, none of the categories below `Average` were included in any models.  This means that if King County Development is looking to increase the price of a property, it must attain a `Good` or `Very Good` `condition` if the property is not already in such a `condition.`  The `Very Good` `condition` is more desirable.
+
+The importance of these features led to my recommendation to create <a href=”https://github.com/sarnadpy32/king_county_development#picture-databases”>Picture Databases</a>.  It was also difficult to recommend one `grade` or `condition` over another without knowledge of a property's original state.  This is another reason I created the <a href=”https://github.com/sarnadpy32/king_county_development#sales-price-calculator”>Sales Price Calculator</a>.  It, and any similar tool built by King County Development, allows recommendations to be adjusted for all properties.
+
+<a id='reco_pic_dbs'></a>
+
+<h2 align='center'><strong>Picture Databases</strong></h2>
+
+Based on the results of my analysis and the visualizations I created, my first recommendation to King County Development would be to generate picture databases of properties grouped by their `grade`s and `condition`s.  The `grade` of a property was the most important feature in terms of its effect on the sales price.  The effect of the `condition` of the property, while not as important as `grade`, is another feature that can be easily documented with example pictures, and its effect was not insignificant.
+
+The picture databases could be used while designing new properties, to justify a design’s building costs to investors, or to guide clients seeking renovation or remodeling services with a cost/benefit analysis.  Also, suppose a building or renovation did not obtain the desired `grade` or `condition` from the county assessor.  In that case, the picture databases could be used as evidence in any legal proceedings resulting from such an unwanted occurrence.
+
+<a id='reco_sales_calc'></a>
+
+<h2 align='center'><strong>Sales Price Calculator</strong></h2>
+
+The visualizations I created help view each of the predictors' relative importance and compare the models themselves.  However, they do not provide a way to see how the predictors interact or what the final sales price would be when they do.  I built the Sales Price Calculator below to provide King County Development with a tool to show clients or investors how much of an increase can be gained by increasing the square footage while also upgrading the `grade` and `condition` of a property.
+
+While the tool I created assumes that the property in question currently has both an `Average` `grade` and `condition`, more complex tools could and should indeed be built by King County Development in which the original `grade` and `condition` could also be included.
+
+The first step in the version of the tool I created is entering a property's original square footage.  Next, you enter the increase in the square footage.  Once the user enters that information, a series of dropdown menus appear.  The first menu allows the user to choose which model is desired.  The original and the increase in the sales price are shown at this point.  The second and third menus allow the user to choose how much of an upgrade to the `grade` and `condition` of a property is desired.  After a choice is made in each dropdown, the increase in the sales price is shown, and after all the choices are made, the overall change in the sales price is also shown.
 
 <a id='sect_fut_invest'></a>
 
 <h1 align='center'><strong><u>Future Investigations</u></strong></h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Besides the picture databases I mentioned regarding the `grade`, `view`, and `condition` features, there is a lot more work that King County Development will need to perform if they want to be profitable, efficient in their spending, and if they want to provide the highest quality services to their clients and / or investors.
-&ensp;There is more valuable information that can no doubt be gleaned from the dataset that was provided to me for this project, including testing interactions and / or building polynomial regression models, but the dataset only covered one year’s worth of sales, so any further investigation would still be limited.
+Besides the picture databases I mentioned regarding the `grade`, `view`, and `condition` features, there is a lot more work that King County Development will need to perform if they want to be profitable, efficient in their spending and if they want to provide the highest quality services to their clients or investors. More valuable information can no doubt be gleaned from the dataset provided to me for this project, including testing interactions and building polynomial regression models. However, the dataset only covered one year’s worth of sales, so any further investigation would still be limited.
 
-&nbsp;&nbsp;&nbsp;&nbsp;A much larger dataset, possibly with even more predictors to build models with, can undoubtedly be <a href='https://kingcountyexec.govqa.us/WEBAPP/_rs/'>obtained</a>.
-&ensp;Data on commercial property could also be gathered.
-&ensp;At that point there should be enough data to build separate models for each city in King County, and to also analyze the various ZIP codes within each city.
-&ensp;They should then develop maps of each city and / or ZIP code, separated with the appropriate zoning laws, to see what is even possible in every inch of King County.
+A much larger dataset, possibly with even more predictors to build models with, can undoubtedly be <a href='https://kingcountyexec.govqa.us/WEBAPP/_rs/'>obtained</a>.  Data on commercial property could also be gathered.  At that point, there should be enough data to create separate models for each city in King County and analyze the various ZIP codes within each city.  They should then develop maps of each city and ZIP code, separated by the appropriate zoning laws, to see what is possible in every inch of King County.
 
-&ensp;Areas of high potential should be identified, and the owners of any potentially lucrative properties should be approached to gauge their interest in either their property being acquired, or if they are at least interested in any renovation or remodeling services.
-&ensp;If not, King County Development will at least be fully prepared should any enticing properties become available, or if they are approached for their other services.
-&ensp;The image below is from a <a href='https://www.youtube.com/watch?v=ZeRd3aurWz8'>video</a> from the <a href='https://www.youtube.com/c/RealEstateforNoobs'>Real Estate for Noobs</a> YouTube channel, and the steps that it shows is still only one small piece of the puzzle when it comes to real estate development.
+Areas of high potential should be identified, and the owners of any potentially lucrative properties should be approached to gauge their interest in purchasing their property or if they are at least interested in any renovation or remodeling services.  If not, King County Development will at least be fully prepared should any enticing properties become available or if they are approached for their other services.  The image below is from a video <a href='https://www.youtube.com/watch?v=ZeRd3aurWz8'>video</a> from the <a href='https://www.youtube.com/c/RealEstateforNoobs'>Real Estate for Noobs</a> YouTube channel, and the steps it shows are still only one small piece of the puzzle regarding real estate development.
 
 <p align='center'>
     <img src='images/rd_dev_video_still.png'>
